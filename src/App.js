@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         font-size:14px;
         font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        height:100%;
     }
     a{
         text-decoration:none;

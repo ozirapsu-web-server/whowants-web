@@ -1,8 +1,8 @@
 import React from "react";
-import Carousel from "components/Carousel";
+import Slider from "containers/Slider";
 
 const CarouselContainer = () => {
-  return <Carousel></Carousel>;
+  return <Slider></Slider>;
 };
 
 export default CarouselContainer;
