@@ -1,7 +1,8 @@
 import React from "react";
 import reset from "styled-reset";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import theme from "share/theme";
+import theme from "styles/theme";
+import Story from "pages/Story";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -37,7 +38,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <h1>default</h1>
+      <Story />
     </ThemeProvider>
   );
 };
