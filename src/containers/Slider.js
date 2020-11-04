@@ -15,6 +15,18 @@ const Carousel = styled.div`
   display: flex;
   justify-content: flex-start;
   position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10%;
+    background: inherit;
+    filter: blur(10px);
+    transition: all 0.5s;
+  }
 `;
 
 const Sliders = styled.div`

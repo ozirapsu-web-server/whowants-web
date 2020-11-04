@@ -2,7 +2,6 @@ import React from "react";
 import Logo from "components/Logo";
 import styled from "styled-components";
 import study1 from "images/study1.jpg";
-import { ArrowRightCircle } from "@styled-icons/feather/ArrowRightCircle";
 
 const SlideWrapper = styled.div`
   width: 20%;
@@ -10,6 +9,7 @@ const SlideWrapper = styled.div`
   background: url(${(props) => props.src}) no-repeat center center;
   background-size: cover;
   flex-shrink: 0;
+  position: relative;
 `;
 
 const Slide = ({ img }) => {
