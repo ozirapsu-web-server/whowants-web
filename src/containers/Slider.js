@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { ArrowRightCircle } from "@styled-icons/feather/ArrowRightCircle";
+import DotWrapper from "components/Dot";
 
 import Slide from "components/Slide";
 import study1 from "images/study1.jpg";
@@ -106,6 +107,7 @@ const Slider = () => {
           <Slide key={item} img={item}></Slide>
         ))}
       </Sliders>
+      <DotWrapper />
       <PrevButton onClick={prevClicked}>prev</PrevButton>
       <NextButton onClick={nextClicked}>next</NextButton>
     </Carousel>
