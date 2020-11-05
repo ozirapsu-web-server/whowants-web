@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "containers/Slider";
+import Summary from "components/Summary";
 import styled from "styled-components";
 
 const StoryContainer = styled.section`
@@ -7,12 +8,13 @@ const StoryContainer = styled.section`
   height: 100vh;
 `;
 
-const Story = () => {
+const Story = React.memo(() => {
   return (
     <StoryContainer>
       <Slider />
+      <Summary />
     </StoryContainer>
   );
-};
+});
 
 export default Story;
