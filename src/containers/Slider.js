@@ -16,6 +16,7 @@ const Carousel = styled.div`
   display: flex;
   justify-content: flex-start;
   position: relative;
+  overflow: hidden;
 `;
 
 const Sliders = styled.div`
@@ -24,6 +25,7 @@ const Sliders = styled.div`
   width: 500%;
   flex-shrink: 0;
   transition: all 0.5s;
+  overflow: hidden;
 `;
 
 const Button = styled(ArrowRightCircle)`
