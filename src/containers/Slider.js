@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { ArrowRightCircle } from "@styled-icons/feather/ArrowRightCircle";
-import DotWrapper from "components/Dot";
+import DotContainer from "containers/DotContainer";
 
 import Slide from "components/Slide";
 import study1 from "images/study1.jpg";
@@ -51,6 +51,7 @@ const Slider = () => {
   const [sliderStyle, setSliderStyle] = useState({});
   const [carouselStyle, setCarouselStyle] = useState({});
   const [direction, setDirection] = useState(RIGHT);
+  const [active, setActive] = useState(0);
 
   const moveSlide = useCallback(() => {
     if (direction === RIGHT) {
@@ -73,7 +74,10 @@ const Slider = () => {
     if (direction === LEFT) {
       moveSlide();
     }
-
+    setActive((active) => {
+      if (active + 1 === imgs.length) return 0;
+      else return active + 1;
+    });
     setDirection((direction) => RIGHT);
     setCarouselStyle((carouselStyle) => ({
       justifyContent: `flex-start`,
@@ -82,12 +86,18 @@ const Slider = () => {
     setSliderStyle((sliderStyle) => ({
       transform: `translate(-20%)`,
     }));
-  }, [direction, moveSlide]);
+  }, [direction, moveSlide, active]);
 
   const prevClicked = useCallback(() => {
     if (direction === RIGHT) {
       moveSlide();
     }
+
+    setActive((active) => {
+      if (active === 0) {
+        return imgs.length - 1;
+      } else return active - 1;
+    });
 
     setDirection((direction) => LEFT);
 
@@ -98,7 +108,7 @@ const Slider = () => {
     setSliderStyle((sliderStyle) => ({
       transform: `translate(20%)`,
     }));
-  }, [direction, moveSlide]);
+  }, [direction, moveSlide, active]);
 
   return (
     <Carousel style={carouselStyle}>
@@ -107,7 +117,7 @@ const Slider = () => {
           <Slide key={item} img={item}></Slide>
         ))}
       </Sliders>
-      <DotWrapper />
+      <DotContainer active={active} len={imgs.length} />
       <PrevButton onClick={prevClicked}>prev</PrevButton>
       <NextButton onClick={nextClicked}>next</NextButton>
     </Carousel>
