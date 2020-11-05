@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { ArrowRightCircle } from "@styled-icons/feather/ArrowRightCircle";
 
@@ -15,18 +15,6 @@ const Carousel = styled.div`
   display: flex;
   justify-content: flex-start;
   position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 10%;
-    background: inherit;
-    filter: blur(10px);
-    transition: all 0.5s;
-  }
 `;
 
 const Sliders = styled.div`
@@ -63,53 +51,53 @@ const Slider = () => {
   const [carouselStyle, setCarouselStyle] = useState({});
   const [direction, setDirection] = useState(RIGHT);
 
-  const nextClicked = () => {
+  const moveSlide = useCallback(() => {
+    if (direction === RIGHT) {
+      // move the first slide to the end
+      const firstSlide = imgs.shift();
+      setImgs((imgs) => [...imgs, firstSlide]);
+    } else {
+      // move the last slide to the front
+      const lastSlide = imgs.pop();
+      setImgs((imgs) => [lastSlide, ...imgs]);
+    }
+
+    setSliderStyle((sliderStyle) => ({
+      transition: "none",
+      transform: "translate(0)",
+    }));
+  }, [direction, imgs]);
+
+  const nextClicked = useCallback(() => {
     if (direction === LEFT) {
       moveSlide();
     }
 
-    setDirection(RIGHT);
-    setCarouselStyle({
+    setDirection((direction) => RIGHT);
+    setCarouselStyle((carouselStyle) => ({
       justifyContent: `flex-start`,
-    });
+    }));
 
-    setSliderStyle({
+    setSliderStyle((sliderStyle) => ({
       transform: `translate(-20%)`,
-    });
-  };
+    }));
+  }, [direction, moveSlide]);
 
-  const prevClicked = () => {
+  const prevClicked = useCallback(() => {
     if (direction === RIGHT) {
       moveSlide();
     }
 
-    setDirection(LEFT);
+    setDirection((direction) => LEFT);
 
-    setCarouselStyle({
+    setCarouselStyle((carouselStyle) => ({
       justifyContent: `flex-end`,
-    });
+    }));
 
-    setSliderStyle({
+    setSliderStyle((sliderStyle) => ({
       transform: `translate(20%)`,
-    });
-  };
-
-  const moveSlide = () => {
-    if (direction === RIGHT) {
-      // move the first slide to the end
-      const firstSlide = imgs.shift();
-      setImgs([...imgs, firstSlide]);
-    } else {
-      // move the last slide to the front
-      const lastSlide = imgs.pop();
-      setImgs([lastSlide, ...imgs]);
-    }
-
-    setSliderStyle({
-      transition: "none",
-      transform: "translate(0)",
-    });
-  };
+    }));
+  }, [direction, moveSlide]);
 
   return (
     <Carousel style={carouselStyle}>

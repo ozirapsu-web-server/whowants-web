@@ -16,12 +16,12 @@ const Header = styled.header`
   }
 `;
 
-const Logo = () => {
+const Logo = React.memo(() => {
   return (
     <Header>
       <img src={logo} alt="로고" />
     </Header>
   );
-};
+});
 
 export default Logo;

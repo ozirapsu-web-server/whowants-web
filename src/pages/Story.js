@@ -1,5 +1,5 @@
 import React from "react";
-import CarouselContainer from "containers/CarouselContainer";
+import Slider from "containers/Slider";
 import styled from "styled-components";
 
 const StoryContainer = styled.section`
@@ -10,7 +10,7 @@ const StoryContainer = styled.section`
 const Story = () => {
   return (
     <StoryContainer>
-      <CarouselContainer />
+      <Slider />
     </StoryContainer>
   );
 };

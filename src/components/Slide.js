@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "components/Logo";
 import styled from "styled-components";
-import study1 from "images/study1.jpg";
 
 const SlideWrapper = styled.div`
   width: 20%;
@@ -12,12 +11,12 @@ const SlideWrapper = styled.div`
   position: relative;
 `;
 
-const Slide = ({ img }) => {
+const Slide = React.memo(({ img }) => {
   return (
     <SlideWrapper src={img}>
       <Logo />
     </SlideWrapper>
   );
-};
+});
 
 export default Slide;
