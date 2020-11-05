@@ -34,6 +34,10 @@ const Button = styled(ArrowRightCircle)`
   width: 40px;
   height: 40px;
   color: #fff;
+
+  &:active {
+    color: ${(props) => props.theme.color.blue};
+  }
 `;
 
 const NextButton = styled(Button)`

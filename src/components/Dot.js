@@ -9,7 +9,7 @@ const ActiveDot = styled(DotSingle)`
 `;
 
 const NonActiveDot = styled(ActiveDot)`
-  color: rgba(255, 255, 255, 0.4);
+  color: ${(props) => props.theme.color.notActive};
 `;
 
 const Dot = React.memo(({ active }) => {
