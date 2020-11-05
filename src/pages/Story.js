@@ -1,6 +1,6 @@
 import React from "react";
-import Slider from "containers/Slider";
-import Summary from "components/Summary";
+import SlideContainer from "containers/SlideContainer";
+import SummaryContainer from "containers/SummaryContainer";
 import styled from "styled-components";
 
 const StoryContainer = styled.section`
@@ -11,8 +11,8 @@ const StoryContainer = styled.section`
 const Story = React.memo(() => {
   return (
     <StoryContainer>
-      <Slider />
-      <Summary />
+      <SlideContainer />
+      <SummaryContainer />
     </StoryContainer>
   );
 });

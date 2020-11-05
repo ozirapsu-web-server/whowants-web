@@ -19,9 +19,9 @@ const DotContainer = React.memo(({ active, len }) => {
         .fill(0)
         .map((item, idx) => {
           if (active === idx) {
-            return <Dot active></Dot>;
+            return <Dot key={`dot-${idx}`} active></Dot>;
           }
-          return <Dot></Dot>;
+          return <Dot key={`dot-${idx}`}></Dot>;
         })}
     </DotWrapper>
   );

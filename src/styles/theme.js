@@ -1,8 +1,7 @@
 const theme = {
   color: {
     blue: "#334FF0",
-    lightBlue: "#7DC1E0",
-    deepPurple: "#5f27cd",
+    lightBlue: "#E5F2FF",
     notActive: "rgba(255, 255, 255, 0.4)",
   },
   size: {
