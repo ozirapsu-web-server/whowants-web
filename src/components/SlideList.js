@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { ArrowRightCircle } from "@styled-icons/feather/ArrowRightCircle";
-import DotContainer from "containers/DotContainer";
+import DotList from "components/DotList";
 import Slide from "components/Slide";
 
 const Carousel = styled.div`
   width: 100%;
-  height: 60%;
+  height: 350px;
   display: flex;
   justify-content: flex-start;
   position: relative;
@@ -58,7 +58,7 @@ const SlideList = ({
           <Slide key={item} img={item}></Slide>
         ))}
       </Sliders>
-      <DotContainer active={active} len={imgs.length} />
+      <DotList active={active} len={imgs.length} />
       <PrevButton onClick={prevClicked}>prev</PrevButton>
       <NextButton onClick={nextClicked}>next</NextButton>
     </Carousel>

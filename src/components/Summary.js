@@ -16,7 +16,7 @@ const Header = styled.header`
 `;
 
 const SummaryContent = styled.div`
-  font-size: 16px;
+  font-size: ${(props) => props.theme.size.smd};
   line-height: 1.5em;
 `;
 

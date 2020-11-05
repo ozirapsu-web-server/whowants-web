@@ -12,7 +12,7 @@ const DotWrapper = styled.div`
   align-items: center;
 `;
 
-const DotContainer = React.memo(({ active, len }) => {
+const DotList = React.memo(({ active, len }) => {
   return (
     <DotWrapper>
       {Array(len)
@@ -27,4 +27,4 @@ const DotContainer = React.memo(({ active, len }) => {
   );
 });
 
-export default DotContainer;
+export default DotList;
