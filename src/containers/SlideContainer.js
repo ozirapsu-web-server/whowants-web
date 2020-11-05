@@ -16,10 +16,10 @@ const SlideContainer = React.memo(() => {
       sliderStyle: state.slide.sliderStyle,
       direction: state.slide.direction,
       active: state.slide.active,
+      carouselStyle: state.slide.carouselStyle,
     })
   );
   const dispatch = useDispatch();
-  console.log(direction);
   const onSetImgs = useCallback((imgs) => dispatch(setImgs(imgs)), [dispatch]);
   const onSetSliderStyle = useCallback(
     (sliderStyle) => dispatch(setSliderStyle(sliderStyle)),
