@@ -35,11 +35,11 @@ const Button = styled(ArrowRightCircle)`
 `;
 
 const NextButton = styled(Button)`
-  right: 5px;
+  right: 20px;
 `;
 
 const PrevButton = styled(Button)`
-  left: 5px;
+  left: 20px;
   transform: scaleX(-1);
 `;
 
@@ -86,7 +86,7 @@ const Slider = () => {
     setSliderStyle((sliderStyle) => ({
       transform: `translate(-20%)`,
     }));
-  }, [direction, moveSlide, active]);
+  }, [direction, moveSlide, imgs.length]);
 
   const prevClicked = useCallback(() => {
     if (direction === RIGHT) {
@@ -108,7 +108,7 @@ const Slider = () => {
     setSliderStyle((sliderStyle) => ({
       transform: `translate(20%)`,
     }));
-  }, [direction, moveSlide, active]);
+  }, [direction, moveSlide, imgs.length]);
 
   return (
     <Carousel style={carouselStyle}>
