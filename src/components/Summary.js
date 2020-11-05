@@ -20,13 +20,13 @@ const SummaryContent = styled.div`
   line-height: 1.5em;
 `;
 
-const Summary = ({ header, content }) => {
+const Summary = React.memo(({ header, content }) => {
   return (
     <Wrapper>
       <Header>{header}</Header>
       <SummaryContent>{content}</SummaryContent>
     </Wrapper>
   );
-};
+});
 
 export default Summary;

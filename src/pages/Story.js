@@ -3,17 +3,17 @@ import SlideContainer from "containers/SlideContainer";
 import SummaryContainer from "containers/SummaryContainer";
 import styled from "styled-components";
 
-const StoryContainer = styled.section`
+const StoryWrapper = styled.section`
   width: 100%;
   height: 100vh;
 `;
 
 const Story = React.memo(() => {
   return (
-    <StoryContainer>
+    <StoryWrapper>
       <SlideContainer />
       <SummaryContainer />
-    </StoryContainer>
+    </StoryWrapper>
   );
 });
 
