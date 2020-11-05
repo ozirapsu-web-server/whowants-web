@@ -52,7 +52,7 @@ const PrevButton = styled(Button)`
 const LEFT = "left";
 const RIGHT = "right";
 
-const Slider = () => {
+const SlideContainer = () => {
   const [imgs, setImgs] = useState([study1, study2, study3, study4, study5]);
   const [sliderStyle, setSliderStyle] = useState({});
   const [carouselStyle, setCarouselStyle] = useState({});
@@ -130,4 +130,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default SlideContainer;
