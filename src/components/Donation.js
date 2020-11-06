@@ -108,7 +108,7 @@ const Point = styled.p`
   font-weight: bold;
 `;
 
-const Donation = ({ amount, target, percent }) => {
+const Donation = React.memo(({ amount, target, percent }) => {
   return (
     <DonationWrapper>
       <Header>
@@ -139,6 +139,6 @@ const Donation = ({ amount, target, percent }) => {
       </Notice>
     </DonationWrapper>
   );
-};
+});
 
 export default Donation;

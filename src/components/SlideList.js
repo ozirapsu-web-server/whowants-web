@@ -42,27 +42,29 @@ const PrevButton = styled(Button)`
   transform: scaleX(-1);
 `;
 
-const SlideList = ({
-  carouselStyle,
-  sliderStyle,
-  imgs,
-  moveSlide,
-  active,
-  prevClicked,
-  nextClicked,
-}) => {
-  return (
-    <Carousel style={carouselStyle}>
-      <Sliders style={sliderStyle} onTransitionEnd={moveSlide}>
-        {imgs.map((item) => (
-          <Slide key={item} img={item}></Slide>
-        ))}
-      </Sliders>
-      <DotList active={active} len={imgs.length} />
-      <PrevButton onClick={prevClicked}>prev</PrevButton>
-      <NextButton onClick={nextClicked}>next</NextButton>
-    </Carousel>
-  );
-};
+const SlideList = React.memo(
+  ({
+    carouselStyle,
+    sliderStyle,
+    imgs,
+    moveSlide,
+    active,
+    prevClicked,
+    nextClicked,
+  }) => {
+    return (
+      <Carousel style={carouselStyle}>
+        <Sliders style={sliderStyle} onTransitionEnd={moveSlide}>
+          {imgs.map((item) => (
+            <Slide key={item} img={item}></Slide>
+          ))}
+        </Sliders>
+        <DotList active={active} len={imgs.length} />
+        <PrevButton onClick={prevClicked}>prev</PrevButton>
+        <NextButton onClick={nextClicked}>next</NextButton>
+      </Carousel>
+    );
+  }
+);
 
 export default SlideList;
