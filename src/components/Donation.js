@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import rocket from "images/rocket.png";
+import { numberWithCommas } from "utils/util";
 
 const DonationWrapper = styled.section`
   width: 100%;
@@ -109,20 +110,29 @@ const Point = styled.p`
 `;
 
 const Donation = React.memo(({ amount, target, percent }) => {
+  percent = 0;
+  let rocketPercent;
+  if (percent >= 100) {
+    rocketPercent = 85;
+  } else if (percent > 10) {
+    rocketPercent = percent - 10;
+  } else {
+    rocketPercent = percent - 5;
+  }
   return (
     <DonationWrapper>
       <Header>
-        <p>{amount}</p>원이 모였어요!
+        <p>{numberWithCommas(amount)}</p>원이 모였어요!
       </Header>
       <ProgressWrapper>
         <Bar></Bar>
-        <ProgressBar onprogress={70}></ProgressBar>
-        <Rocket onprogress={60} src={rocket} />
+        <ProgressBar onprogress={rocketPercent + 10}></ProgressBar>
+        <Rocket onprogress={rocketPercent} src={rocket} />
       </ProgressWrapper>
       <Status>
         <Target>
           <p>목표금액</p>
-          <p>{target} 원</p>
+          <p>{numberWithCommas(target)} 원</p>
         </Target>
         <Percent>
           <p>{percent}</p>
