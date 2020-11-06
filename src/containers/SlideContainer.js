@@ -1,133 +1,126 @@
-import React, { useState, useCallback } from "react";
-import styled from "styled-components";
-import { ArrowRightCircle } from "@styled-icons/feather/ArrowRightCircle";
-import DotContainer from "containers/DotContainer";
+import React, { useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setImgs,
+  setSliderStyle,
+  setCarouselStyle,
+  setDirection,
+  setActive,
+} from "modules/slide";
+import SlideList from "components/SlideList";
 
-import Slide from "components/Slide";
-import study1 from "images/study1.jpg";
-import study2 from "images/study2.jpg";
-import study3 from "images/study3.jpg";
-import study4 from "images/study4.jpg";
-import study5 from "images/study5.jpg";
-
-const Carousel = styled.div`
-  width: 100%;
-  height: 60%;
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
-  overflow: hidden;
-`;
-
-const Sliders = styled.div`
-  display: flex;
-  height: 100%;
-  width: 500%;
-  flex-shrink: 0;
-  transition: all 0.5s;
-  overflow: hidden;
-`;
-
-const Button = styled(ArrowRightCircle)`
-  position: absolute;
-  top: 30vh;
-  width: 40px;
-  height: 40px;
-  color: #fff;
-
-  &:active {
-    color: ${(props) => props.theme.color.blue};
-  }
-`;
-
-const NextButton = styled(Button)`
-  right: 20px;
-`;
-
-const PrevButton = styled(Button)`
-  left: 20px;
-  transform: scaleX(-1);
-`;
-
-const LEFT = "left";
-const RIGHT = "right";
-
-const SlideContainer = () => {
-  const [imgs, setImgs] = useState([study1, study2, study3, study4, study5]);
-  const [sliderStyle, setSliderStyle] = useState({});
-  const [carouselStyle, setCarouselStyle] = useState({});
-  const [direction, setDirection] = useState(RIGHT);
-  const [active, setActive] = useState(0);
+const SlideContainer = React.memo(() => {
+  const { imgs, sliderStyle, carouselStyle, direction, active } = useSelector(
+    (state) => ({
+      imgs: state.slide.imgs,
+      sliderStyle: state.slide.sliderStyle,
+      direction: state.slide.direction,
+      active: state.slide.active,
+      carouselStyle: state.slide.carouselStyle,
+    })
+  );
+  const dispatch = useDispatch();
+  const onSetImgs = useCallback((imgs) => dispatch(setImgs(imgs)), [dispatch]);
+  const onSetSliderStyle = useCallback(
+    (sliderStyle) => dispatch(setSliderStyle(sliderStyle)),
+    [dispatch]
+  );
+  const onSetCarouselStyle = useCallback(
+    (carouselStyle) => dispatch(setCarouselStyle(carouselStyle)),
+    [dispatch]
+  );
+  const onSetDirection = useCallback(
+    (direction) => dispatch(setDirection(direction)),
+    [dispatch]
+  );
+  const onSetActive = useCallback((active) => dispatch(setActive(active)), [
+    dispatch,
+  ]);
 
   const moveSlide = useCallback(() => {
-    if (direction === RIGHT) {
+    if (direction === "right") {
       // move the first slide to the end
       const firstSlide = imgs.shift();
-      setImgs((imgs) => [...imgs, firstSlide]);
+      onSetImgs([...imgs, firstSlide]);
     } else {
       // move the last slide to the front
       const lastSlide = imgs.pop();
-      setImgs((imgs) => [lastSlide, ...imgs]);
+      onSetImgs([lastSlide, ...imgs]);
     }
-
-    setSliderStyle((sliderStyle) => ({
+    onSetSliderStyle({
       transition: "none",
       transform: "translate(0)",
-    }));
-  }, [direction, imgs]);
+    });
+  }, [direction, imgs, onSetSliderStyle, onSetImgs]);
 
   const nextClicked = useCallback(() => {
-    if (direction === LEFT) {
+    if (direction === "left") {
       moveSlide();
     }
-    setActive((active) => {
-      if (active + 1 === imgs.length) return 0;
-      else return active + 1;
-    });
-    setDirection((direction) => RIGHT);
-    setCarouselStyle((carouselStyle) => ({
+    if (active + 1 === imgs.length) {
+      onSetActive(0);
+    } else {
+      onSetActive(active + 1);
+    }
+    onSetDirection("right");
+    onSetCarouselStyle({
       justifyContent: `flex-start`,
-    }));
-
-    setSliderStyle((sliderStyle) => ({
+    });
+    onSetSliderStyle({
       transform: `translate(-20%)`,
-    }));
-  }, [direction, moveSlide, imgs.length]);
+    });
+  }, [
+    active,
+    direction,
+    moveSlide,
+    imgs.length,
+    onSetActive,
+    onSetCarouselStyle,
+    onSetSliderStyle,
+    onSetDirection,
+  ]);
 
   const prevClicked = useCallback(() => {
-    if (direction === RIGHT) {
+    if (direction === "right") {
       moveSlide();
     }
+    if (active === 0) {
+      onSetActive(imgs.length - 1);
+    } else {
+      onSetActive(active - 1);
+    }
 
-    setActive((active) => {
-      if (active === 0) {
-        return imgs.length - 1;
-      } else return active - 1;
+    onSetDirection("left");
+
+    onSetCarouselStyle({
+      justifyContent: `flex-end`,
     });
 
-    setDirection((direction) => LEFT);
-
-    setCarouselStyle((carouselStyle) => ({
-      justifyContent: `flex-end`,
-    }));
-
-    setSliderStyle((sliderStyle) => ({
+    onSetSliderStyle({
       transform: `translate(20%)`,
-    }));
-  }, [direction, moveSlide, imgs.length]);
+    });
+  }, [
+    direction,
+    moveSlide,
+    imgs.length,
+    active,
+    onSetDirection,
+    onSetActive,
+    onSetCarouselStyle,
+    onSetSliderStyle,
+  ]);
 
   return (
-    <Carousel style={carouselStyle}>
-      <Sliders style={sliderStyle} onTransitionEnd={moveSlide}>
-        {imgs.map((item) => (
-          <Slide key={item} img={item}></Slide>
-        ))}
-      </Sliders>
-      <DotContainer active={active} len={imgs.length} />
-      <PrevButton onClick={prevClicked}>prev</PrevButton>
-      <NextButton onClick={nextClicked}>next</NextButton>
-    </Carousel>
+    <SlideList
+      carouselStyle={carouselStyle}
+      sliderStyle={sliderStyle}
+      imgs={imgs}
+      moveSlide={moveSlide}
+      active={active}
+      prevClicked={prevClicked}
+      nextClicked={nextClicked}
+    ></SlideList>
   );
-};
+});
 
 export default SlideContainer;

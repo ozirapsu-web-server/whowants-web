@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import summary from "modules/summary";
-
-const rootReducer = combineReducers({ summary });
+import slide from "modules/slide";
+import donation from "modules/donation";
+const rootReducer = combineReducers({ summary, slide, donation });
 
 export default rootReducer;
