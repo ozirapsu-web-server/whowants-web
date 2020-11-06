@@ -8,11 +8,13 @@ const GlobalStyle = createGlobalStyle`
     ${reset}
     *{
         box-sizing:border-box;
+        
     }
     body{
         font-size:14px;
         font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
         height:100%;
+        background:#F0F0F0;
     }
     a{
         text-decoration:none;

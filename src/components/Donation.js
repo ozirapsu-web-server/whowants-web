@@ -110,7 +110,6 @@ const Point = styled.p`
 `;
 
 const Donation = React.memo(({ amount, target, percent }) => {
-  percent = 0;
   let rocketPercent;
   if (percent >= 100) {
     rocketPercent = 85;
