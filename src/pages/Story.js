@@ -8,6 +8,7 @@ import styled from "styled-components";
 const StoryWrapper = styled.section`
   width: 100%;
   height: 100%;
+  background: #fff;
 `;
 
 const Story = React.memo(() => {
