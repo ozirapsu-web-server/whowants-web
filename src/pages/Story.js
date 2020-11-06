@@ -2,6 +2,7 @@ import React from "react";
 import SlideContainer from "containers/SlideContainer";
 import SummaryContainer from "containers/SummaryContainer";
 import DonationContainer from "containers/DonationContainer";
+import TabsContainer from "containers/TabsContainer";
 import styled from "styled-components";
 
 const StoryWrapper = styled.section`
@@ -15,6 +16,7 @@ const Story = React.memo(() => {
       <SlideContainer />
       <SummaryContainer />
       <DonationContainer />
+      <TabsContainer />
     </StoryWrapper>
   );
 });
