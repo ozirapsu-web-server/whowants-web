@@ -9,7 +9,7 @@ const SET_SLIDER_STYLE = "SET_SLIDER_STYLE";
 const SET_CAROUSEL_STYLE = "SET_CAROUSEL_STLYE";
 const SET_DIRECTION = "SET_DIRECTION";
 const SET_ACTIVE = "SET_ACTIVE";
-const LEFT = "left";
+// const LEFT = "left";
 const RIGHT = "right";
 
 export const setImgs = (imgs) => {

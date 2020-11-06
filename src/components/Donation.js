@@ -69,6 +69,9 @@ const Target = styled.div`
   display: flex;
   font-weight: bold;
   margin-top: -10px;
+  & p:nth-child(1) {
+    margin-right: 3px;
+  }
 `;
 
 const Percent = styled(Target)`
@@ -105,11 +108,11 @@ const Point = styled.p`
   font-weight: bold;
 `;
 
-const Donation = ({ amount, target, percent, notice }) => {
+const Donation = ({ amount, target, percent }) => {
   return (
     <DonationWrapper>
       <Header>
-        <p>1240400</p>원이 모였어요!
+        <p>{amount}</p>원이 모였어요!
       </Header>
       <ProgressWrapper>
         <Bar></Bar>
@@ -119,10 +122,10 @@ const Donation = ({ amount, target, percent, notice }) => {
       <Status>
         <Target>
           <p>목표금액</p>
-          <p>3,000,000 원</p>
+          <p>{target} 원</p>
         </Target>
         <Percent>
-          <p>41</p>
+          <p>{percent}</p>
           <p>% 진행중</p>
         </Percent>
       </Status>
