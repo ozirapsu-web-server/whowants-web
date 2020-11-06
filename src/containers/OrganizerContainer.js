@@ -1,7 +1,8 @@
 import React from "react";
+import Organizer from "components/Organizer";
 
 const OrganizerContainer = () => {
-  return <div></div>;
+  return <Organizer></Organizer>;
 };
 
 export default OrganizerContainer;

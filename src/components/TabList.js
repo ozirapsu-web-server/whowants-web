@@ -10,6 +10,8 @@ import Tab1 from "components/Tab1";
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    background: "#fff",
+    boxShadow: "none",
   },
   tabs: {
     display: "flex",

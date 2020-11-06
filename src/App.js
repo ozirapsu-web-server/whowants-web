@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     ${reset}
     *{
         box-sizing:border-box;
-        
+        outline:none;
     }
     body{
         font-size:14px;
