@@ -20,11 +20,14 @@ const useStyles = makeStyles({
     fontSize: "16px",
     color: "#000",
   },
+  box: {
+    padding: "20px",
+  },
 });
 
 const TabPanel = React.memo((props) => {
   const { children, value, index, ...other } = props;
-
+  const classes = useStyles();
   return (
     <div
       role="tabpanel"
@@ -34,8 +37,8 @@ const TabPanel = React.memo((props) => {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
+        <Box p={3} className={classes.box}>
+          <Typography component={"span"}>{children}</Typography>
         </Box>
       )}
     </div>
