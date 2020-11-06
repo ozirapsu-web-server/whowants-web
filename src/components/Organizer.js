@@ -34,19 +34,24 @@ const Author = styled.div`
   width: 30%;
   display: flex;
   flex-direction: column;
+  & > div:nth-child(1) {
+    font-weight: bold;
+  }
   & > * {
     margin: 3px 0;
   }
 `;
 
 const InquiryBtn = styled.button`
-  height: 50px;
+  height: 40px;
   width: 80px;
   border-radius: 10px;
-  background: ${(props) => props.theme.color.blue};
+  background: ${(props) =>
+    props.disabled ? "#ddd" : (props) => props.theme.color.blue};
   border: none;
   color: #fff;
   margin-left: auto;
+  font-weight: bold;
 `;
 
 const Organizer = () => {
@@ -59,7 +64,7 @@ const Organizer = () => {
           <div>이성민</div>
           <div>본인인증회원</div>
         </Author>
-        <InquiryBtn>문의하기</InquiryBtn>
+        <InquiryBtn disabled>문의하기</InquiryBtn>
       </OrganizerProfile>
     </OrganizerWrapper>
   );
