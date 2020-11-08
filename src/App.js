@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "styles/theme";
 import Story from "pages/Story";
-import ParticipateContainer from "containers/ParticipateContainer";
+import Participate from "pages/Participate";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -45,11 +45,7 @@ const App = () => {
       <GlobalStyle />
       <Route path="/" component={Story} exact={true} />
       <Route path="/story" component={Story} exact={true} />
-      <Route
-        path="/participate"
-        component={ParticipateContainer}
-        exact={true}
-      />
+      <Route path="/participate" component={Participate} exact={true} />
       <Route path="/" exact={true}>
         NOT FOUND
       </Route>
