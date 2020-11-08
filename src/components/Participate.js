@@ -79,7 +79,7 @@ const CloseBtn = styled(Link)`
     color: black;
   }
 `;
-const Participate = () => {
+const Participate = React.memo(() => {
   return (
     <Wrapper>
       <LabelWrapper>
@@ -106,6 +106,6 @@ const Participate = () => {
       </CloseBtn>
     </Wrapper>
   );
-};
+});
 
 export default Participate;

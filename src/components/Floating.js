@@ -27,7 +27,7 @@ const Participate = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 90%;
   height: 40px;
   background: ${(props) => props.theme.color.blue};
   color: #fff;
@@ -35,7 +35,7 @@ const Participate = styled.button`
 `;
 
 const ExtraWrapper = styled.div`
-  width: 80%;
+  width: 90%;
   height: 40px;
   display: flex;
   justify-content: space-between;
