@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Heart } from "@styled-icons/boxicons-regular/Heart";
+import { Link } from "react-router-dom";
 const FloatWrapper = styled.section`
   border: none;
   width: 100%;
@@ -13,10 +14,12 @@ const FloatWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+
   & * {
     border: none;
     font-size: ${(props) => props.theme.size.smd};
     font-weight: bold;
+    width: 100%;
   }
 `;
 
@@ -61,7 +64,10 @@ const UnLiked = styled(Heart)`
 const Floating = () => {
   return (
     <FloatWrapper>
-      <Participate>응원 참여하기</Participate>
+      <Participate>
+        <Link to="/participate">응원 참여하기</Link>
+      </Participate>
+
       <ExtraWrapper>
         <div>
           <UnLiked />
