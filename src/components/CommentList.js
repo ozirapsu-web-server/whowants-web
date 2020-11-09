@@ -29,7 +29,7 @@ const SeeAllBtn = styled.button`
   height: 45px;
   background: ${(props) => props.theme.color.blue};
   color: #fff;
-  font-size: ${(props) => props.theme.size.mmd};
+  font-size: ${(props) => props.theme.size.smd};
   font-weight: bold;
   display: flex;
   align-items: center;
