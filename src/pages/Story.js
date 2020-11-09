@@ -5,6 +5,7 @@ import DonationContainer from "containers/DonationContainer";
 import TabsContainer from "containers/TabsContainer";
 import OrganizerContainer from "containers/OrganizerContainer";
 import FloatingContainer from "containers/FloatingContainer";
+import CommentContainer from "containers/CommentContainer";
 import styled from "styled-components";
 
 const StoryWrapper = styled.section`
@@ -21,6 +22,7 @@ const Story = React.memo(() => {
       <DonationContainer />
       <TabsContainer />
       <OrganizerContainer />
+      <CommentContainer />
       <FloatingContainer />
     </StoryWrapper>
   );

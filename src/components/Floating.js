@@ -28,7 +28,7 @@ const Participate = styled.button`
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 40px;
+  height: 45px;
   background: ${(props) => props.theme.color.blue};
   color: #fff;
   border-radius: 10px;
@@ -36,7 +36,7 @@ const Participate = styled.button`
 
 const ExtraWrapper = styled.div`
   width: 90%;
-  height: 40px;
+  height: 45px;
   display: flex;
   justify-content: space-between;
 
