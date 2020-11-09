@@ -24,14 +24,24 @@ const NumberOfSupporter = styled.div`
   font-size: 16px;
 `;
 
-const CommentList = ({ numOfSupporter }) => {
+const CommentList = ({ comments }) => {
   return (
     <CommentWrapper>
       <Notice>
-        <NumberOfSupporter>{numOfSupporter}명의 서포터</NumberOfSupporter>
+        <NumberOfSupporter>
+          {comments ? comments.length : 0}
+          명의 서포터
+        </NumberOfSupporter>
         <div>가 이 사연을 응원합니다.</div>
       </Notice>
-      <Comment name="최해랑" amount="50000" comment="응원합니다" />
+      {comments &&
+        comments.map((comment, idx) => (
+          <Comment
+            name={comment.name}
+            amount={comment.amount}
+            comment={comment.comment}
+          />
+        ))}
     </CommentWrapper>
   );
 };

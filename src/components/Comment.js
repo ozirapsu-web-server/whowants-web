@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { numberWithCommas } from "utils/util";
 const CommentItem = styled.div`
   width: 100%;
-  min-height: 90px;
+  min-height: 60px;
   border-radius: 10px;
   background: #fff;
   display: flex;
@@ -25,20 +25,24 @@ const AmountContainer = styled.div`
     color: ${(props) => props.theme.color.blue};
   }
   display: flex;
+  margin-top: 5px;
 `;
 
 const CommentSection = styled.div`
   font-size: ${(props) => props.theme.size.smd};
+  margin-top: 5px;
 `;
 
 const Comment = ({ name, amount, comment }) => {
   return (
     <CommentItem>
       <Name>{name}</Name>
-      <AmountContainer>
-        <div>{numberWithCommas(amount)}</div>
-        <div>원 후원</div>
-      </AmountContainer>
+      {amount !== 0 && (
+        <AmountContainer>
+          <div>{numberWithCommas(amount)}</div>
+          <div>원 후원</div>
+        </AmountContainer>
+      )}
       <CommentSection>{comment}</CommentSection>
     </CommentItem>
   );
