@@ -1,6 +1,6 @@
 import React from "react";
 import CommentList from "components/CommentList";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const CommentContainer = () => {
   let { comments, see_all_comments } = useSelector((state) => ({

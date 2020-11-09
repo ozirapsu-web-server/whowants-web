@@ -24,6 +24,21 @@ const NumberOfSupporter = styled.div`
   font-size: 16px;
 `;
 
+const SeeAllBtn = styled.button`
+  width: 100%;
+  height: 45px;
+  background: ${(props) => props.theme.color.blue};
+  color: #fff;
+  font-size: ${(props) => props.theme.size.mmd};
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+`;
+
 const CommentList = ({ comments, see_all_comments }) => {
   return (
     <CommentWrapper>
@@ -45,6 +60,7 @@ const CommentList = ({ comments, see_all_comments }) => {
             />
           );
         })}
+      <SeeAllBtn>응원 모두 보기</SeeAllBtn>
     </CommentWrapper>
   );
 };
