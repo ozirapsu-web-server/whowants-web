@@ -39,30 +39,37 @@ const SeeAllBtn = styled.button`
   margin-top: 20px;
 `;
 
-const CommentList = ({ comments, see_all_comments }) => {
-  return (
-    <CommentWrapper>
-      <Notice>
-        <NumberOfSupporter>
-          {comments ? comments.length : 0}
-          명의 서포터
-        </NumberOfSupporter>
-        <div>가 이 사연을 응원합니다.</div>
-      </Notice>
-      {comments &&
-        comments.map((comment, idx) => {
-          return (
-            <Comment
-              key={`top3-comment-${idx}`}
-              name={comment.name}
-              amount={comment.amount}
-              comment={comment.comment}
-            />
-          );
-        })}
-      <SeeAllBtn>응원 모두 보기</SeeAllBtn>
-    </CommentWrapper>
-  );
-};
+const CommentList = React.memo(
+  ({ comments, onGetAllComments, onGetTop3Comments, seeAllComments }) => {
+    return (
+      <CommentWrapper>
+        <Notice>
+          <NumberOfSupporter>
+            {comments ? comments.length : 0}
+            명의 서포터
+          </NumberOfSupporter>
+          <div>가 이 사연을 응원합니다.</div>
+        </Notice>
+        {comments &&
+          comments.map((comment, idx) => {
+            return (
+              <Comment
+                key={`top3-comment-${idx}`}
+                name={comment.name}
+                amount={comment.amount}
+                comment={comment.comment}
+              />
+            );
+          })}
+        {!seeAllComments && (
+          <SeeAllBtn onClick={onGetAllComments}>응원 모두 보기</SeeAllBtn>
+        )}
+        {seeAllComments && (
+          <SeeAllBtn onClick={onGetTop3Comments}>접기</SeeAllBtn>
+        )}
+      </CommentWrapper>
+    );
+  }
+);
 
 export default CommentList;

@@ -33,7 +33,7 @@ const CommentSection = styled.div`
   margin-top: 5px;
 `;
 
-const Comment = ({ name, amount, comment }) => {
+const Comment = React.memo(({ name, amount, comment }) => {
   return (
     <CommentItem>
       <Name>{name}</Name>
@@ -46,6 +46,6 @@ const Comment = ({ name, amount, comment }) => {
       <CommentSection>{comment}</CommentSection>
     </CommentItem>
   );
-};
+});
 
 export default Comment;
