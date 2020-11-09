@@ -9,6 +9,7 @@ const CommentContainer = React.memo(() => {
     comments: state.comment.comments,
     seeAllComments: state.comment.see_all_comments,
   }));
+  const lenOfComments = !comments ? 0 : comments.length;
   if (!seeAllComments) {
     comments = comments.slice(0, 3);
   }
@@ -27,6 +28,7 @@ const CommentContainer = React.memo(() => {
       onGetAllComments={onGetAllComments}
       onGetTop3Comments={onGetTop3Comments}
       seeAllComments={seeAllComments}
+      lenOfComments={lenOfComments}
     ></CommentList>
   );
 });

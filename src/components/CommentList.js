@@ -40,12 +40,18 @@ const SeeAllBtn = styled.button`
 `;
 
 const CommentList = React.memo(
-  ({ comments, onGetAllComments, onGetTop3Comments, seeAllComments }) => {
+  ({
+    comments,
+    onGetAllComments,
+    onGetTop3Comments,
+    seeAllComments,
+    lenOfComments,
+  }) => {
     return (
       <CommentWrapper>
         <Notice>
           <NumberOfSupporter>
-            {comments ? comments.length : 0}
+            {lenOfComments}
             명의 서포터
           </NumberOfSupporter>
           <div>가 이 사연을 응원합니다.</div>
@@ -61,10 +67,10 @@ const CommentList = React.memo(
               />
             );
           })}
-        {!seeAllComments && (
+        {!seeAllComments && lenOfComments !== 0 && (
           <SeeAllBtn onClick={onGetAllComments}>응원 모두 보기</SeeAllBtn>
         )}
-        {seeAllComments && (
+        {seeAllComments && lenOfComments !== 0 && (
           <SeeAllBtn onClick={onGetTop3Comments}>접기</SeeAllBtn>
         )}
       </CommentWrapper>
