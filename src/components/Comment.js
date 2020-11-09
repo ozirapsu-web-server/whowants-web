@@ -43,7 +43,7 @@ const Comment = React.memo(({ name, amount, comment }) => {
           <div>원 후원</div>
         </AmountContainer>
       )}
-      <CommentSection>{comment}</CommentSection>
+      <CommentSection>{!comment ? "응원합니다" : comment}</CommentSection>
     </CommentItem>
   );
 });
