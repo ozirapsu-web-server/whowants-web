@@ -71,7 +71,7 @@ const CommentList = React.memo(
           <SeeAllBtn onClick={onGetAllComments}>응원 모두 보기</SeeAllBtn>
         )}
         {seeAllComments && lenOfComments !== 0 && (
-          <SeeAllBtn onClick={onGetTop3Comments}>접기</SeeAllBtn>
+          <SeeAllBtn onClick={onGetTop3Comments}>응원 모두 보기 접기</SeeAllBtn>
         )}
       </CommentWrapper>
     );
