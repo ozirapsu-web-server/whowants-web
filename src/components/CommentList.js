@@ -24,7 +24,7 @@ const NumberOfSupporter = styled.div`
   font-size: 16px;
 `;
 
-const CommentList = ({ comments }) => {
+const CommentList = ({ comments, see_all_comments }) => {
   return (
     <CommentWrapper>
       <Notice>
@@ -35,13 +35,16 @@ const CommentList = ({ comments }) => {
         <div>가 이 사연을 응원합니다.</div>
       </Notice>
       {comments &&
-        comments.map((comment, idx) => (
-          <Comment
-            name={comment.name}
-            amount={comment.amount}
-            comment={comment.comment}
-          />
-        ))}
+        comments.map((comment, idx) => {
+          return (
+            <Comment
+              key={`top3-comment-${idx}`}
+              name={comment.name}
+              amount={comment.amount}
+              comment={comment.comment}
+            />
+          );
+        })}
     </CommentWrapper>
   );
 };
