@@ -1,6 +1,7 @@
-const GET_TOP3_COMMENTS = "GET_TOP3_COMMENTS";
+import { createAction, handleActions } from "redux-actions";
 
-const GET_ALL_COMMENTS = "GET_ALL_COMMENTS";
+const GET_TOP3_COMMENTS = "comment/GET_TOP3_COMMENTS";
+const GET_ALL_COMMENTS = "comment/GET_ALL_COMMENTS";
 
 const initialState = {
   comments: [
@@ -12,27 +13,21 @@ const initialState = {
   see_all_comments: false,
 };
 
-export const getAllComments = () => {
-  return { type: GET_ALL_COMMENTS };
-};
+export const getAllComments = createAction(GET_ALL_COMMENTS);
+export const getTop3Comments = createAction(GET_TOP3_COMMENTS);
 
-export const getTop3Comments = () => {
-  return { type: GET_TOP3_COMMENTS };
-};
+const comment = handleActions(
+  {
+    [GET_ALL_COMMENTS]: (state, { payload: see_all_comments }) => ({
+      ...state,
+      see_all_comments: true,
+    }),
+    [GET_TOP3_COMMENTS]: (state, { payload: see_all_comments }) => ({
+      ...state,
+      see_all_comments: false,
+    }),
+  },
+  initialState
+);
 
-export default function comment(state = initialState, action) {
-  switch (action.type) {
-    case GET_ALL_COMMENTS:
-      return {
-        ...state,
-        see_all_comments: true,
-      };
-    case GET_TOP3_COMMENTS:
-      return {
-        ...state,
-        see_all_comments: false,
-      };
-    default:
-      return state;
-  }
-}
+export default comment;

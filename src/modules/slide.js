@@ -1,32 +1,37 @@
+import { createAction, handleActions } from "redux-actions";
+
 import study1 from "images/study1.jpg";
 import study2 from "images/study2.jpg";
 import study3 from "images/study3.jpg";
 import study4 from "images/study4.jpg";
 import study5 from "images/study5.jpg";
 
-const SET_IMGS = "SET_IMGS";
-const SET_SLIDER_STYLE = "SET_SLIDER_STYLE";
-const SET_CAROUSEL_STYLE = "SET_CAROUSEL_STLYE";
-const SET_DIRECTION = "SET_DIRECTION";
-const SET_ACTIVE = "SET_ACTIVE";
+const SET_IMGS = "slide/SET_IMGS";
+const SET_SLIDER_STYLE = "slide/SET_SLIDER_STYLE";
+const SET_CAROUSEL_STYLE = "slide/SET_CAROUSEL_STLYE";
+const SET_DIRECTION = "slide/SET_DIRECTION";
+const SET_ACTIVE = "slide/SET_ACTIVE";
 // const LEFT = "left";
 const RIGHT = "right";
 
-export const setImgs = (imgs) => {
-  return { type: SET_IMGS, imgs };
-};
+export const setImgs = createAction(SET_IMGS, (imgs) => imgs);
 
-export const setSliderStyle = (sliderStyle) => {
-  return { type: SET_SLIDER_STYLE, sliderStyle };
-};
-export const setCarouselStyle = (carouselStyle) => ({
-  type: SET_CAROUSEL_STYLE,
-  carouselStyle,
-});
+export const setSliderStyle = createAction(
+  SET_SLIDER_STYLE,
+  (sliderStyle) => sliderStyle
+);
 
-export const setDirection = (direction) => ({ type: SET_DIRECTION, direction });
+export const setCarouselStyle = createAction(
+  SET_CAROUSEL_STYLE,
+  (carouselStyle) => carouselStyle
+);
 
-export const setActive = (active) => ({ type: SET_ACTIVE, active });
+export const setDirection = createAction(
+  SET_DIRECTION,
+  (direction) => direction
+);
+
+export const setActive = createAction(SET_ACTIVE, (active) => active);
 
 const initialState = {
   imgs: [study1, study2, study3, study4, study5],
@@ -36,34 +41,30 @@ const initialState = {
   active: 0,
 };
 
-export default function slide(state = initialState, action) {
-  switch (action.type) {
-    case SET_IMGS:
-      return {
-        ...state,
-        imgs: action.imgs,
-      };
-    case SET_SLIDER_STYLE:
-      return {
-        ...state,
-        sliderStyle: action.sliderStyle,
-      };
-    case SET_CAROUSEL_STYLE:
-      return {
-        ...state,
-        carouselStyle: action.carouselStyle,
-      };
-    case SET_DIRECTION:
-      return {
-        ...state,
-        direction: action.direction,
-      };
-    case SET_ACTIVE:
-      return {
-        ...state,
-        active: action.active,
-      };
-    default:
-      return state;
-  }
-}
+const slide = handleActions(
+  {
+    [SET_IMGS]: (state, { payload: imgs }) => ({
+      ...state,
+      imgs,
+    }),
+    [SET_SLIDER_STYLE]: (state, { payload: sliderStyle }) => ({
+      ...state,
+      sliderStyle,
+    }),
+    [SET_CAROUSEL_STYLE]: (state, { payload: carouselStyle }) => ({
+      ...state,
+      carouselStyle,
+    }),
+    [SET_DIRECTION]: (state, { payload: direction }) => ({
+      ...state,
+      direction,
+    }),
+    [SET_ACTIVE]: (state, { payload: active }) => ({
+      ...state,
+      active,
+    }),
+  },
+  initialState
+);
+
+export default slide;
