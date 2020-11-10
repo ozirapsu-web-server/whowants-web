@@ -9,13 +9,15 @@ const ParticipateContainer = React.memo(({ history }) => {
     { nickname, comment, amount, phoneNumber },
     onChange,
     reset,
+    alert,
+    setAlert,
   ] = useInputs({
     nickname: "",
     phoneNumber: "",
     comment: "응원합니다",
     amount: 0,
   });
-  const [alert, setAlert] = useState(false);
+
   const [visible, setVisible] = useState(false);
   const dispatch = useDispatch();
 
@@ -32,6 +34,7 @@ const ParticipateContainer = React.memo(({ history }) => {
   };
 
   const onAddComment = () => {
+    setAlert(false);
     setVisible(false);
     dispatch(addComment({ name: nickname, comment, amount }));
     reset();

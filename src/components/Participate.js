@@ -101,13 +101,13 @@ const ModalContent = styled.div`
   justify-content: center;
   align-items: flex-start;
   text-align: left;
+  line-height: 1.3em;
 
   & > * {
     margin: 5px 0;
   }
   & > div:nth-child(2) {
     font-size: ${(props) => props.theme.size.smd};
-    line-height: 1.5em;
   }
 `;
 
