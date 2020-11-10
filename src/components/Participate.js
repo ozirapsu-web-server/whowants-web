@@ -181,13 +181,6 @@ const Participate = React.memo(
               <option value="10000">10000</option>
               <option value="50000">50000</option>
             </select>
-            {/* <input
-              type="text"
-              name="amount"
-              id="amount-input"
-              onChange={onChange}
-              value={amount}
-            /> */}
           </LabelWrapper>
           <SubmitBtn onClick={onToggleModal}>응원 참여하기</SubmitBtn>
           <StyledClose onClick={goBack} />
