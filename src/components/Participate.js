@@ -61,12 +61,21 @@ const CloseBtn = styled(Link)`
     color: black;
   }
 `;
+
+const Alert = styled.div`
+  font-size: ${(props) => props.theme.size.smd};
+  color: red;
+  width: 100%;
+  height: 20px;
+  display: ${(props) => (props.alert ? "inline-block" : "none")};
+`;
 const Participate = React.memo(
-  ({ nickname, comment, amount, onChange, onAddComment }) => {
+  ({ nickname, comment, amount, onChange, onAddComment, alert }) => {
     return (
       <Wrapper>
         <LabelWrapper>
           <label htmlFor="nickname">닉네임</label>
+          <Alert alert={alert}>이름을 입력해주세요</Alert>
           <input
             type="text"
             name="nickname"
@@ -99,9 +108,7 @@ const Participate = React.memo(
             value={amount}
           />
         </LabelWrapper>
-        <StyledLink to="/story" onClick={onAddComment}>
-          응원 참여하기
-        </StyledLink>
+        <StyledLink onClick={onAddComment}>응원 참여하기</StyledLink>
         <CloseBtn to="/story">
           <Close />
         </CloseBtn>

@@ -1,24 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import Participate from "components/Participate";
 import useInputs from "customHooks/useInputs";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addComment } from "modules/comment";
-const ParticipateContainer = React.memo(() => {
+import { withRouter } from "react-router-dom";
+const ParticipateContainer = React.memo(({ history }) => {
   const [{ nickname, comment, amount }, onChange, reset] = useInputs({
     nickname: "",
     comment: "",
     amount: "",
   });
-  console.log("nickname", nickname);
-
-  console.log("comment", comment);
-  console.log("amount", amount);
-
+  const [alert, setAlert] = useState(false);
   const dispatch = useDispatch();
 
   const onAddComment = () => {
+    if (nickname === "") {
+      setAlert(true);
+      return;
+    }
     dispatch(addComment({ name: nickname, comment, amount }));
     reset();
+    history.push("/");
   };
 
   return (
@@ -28,8 +30,9 @@ const ParticipateContainer = React.memo(() => {
       amount={amount}
       onChange={onChange}
       onAddComment={onAddComment}
+      alert={alert}
     ></Participate>
   );
 });
 
-export default ParticipateContainer;
+export default withRouter(ParticipateContainer);
