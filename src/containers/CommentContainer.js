@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import CommentList from "components/CommentList";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -14,13 +14,13 @@ const CommentContainer = React.memo(() => {
     comments = comments.slice(0, 3);
   }
   const dispatch = useDispatch();
-  const onGetAllComments = () => {
+  const onGetAllComments = useCallback(() => {
     dispatch(getAllComments());
-  };
+  }, [dispatch]);
 
-  const onGetTop3Comments = () => {
+  const onGetTop3Comments = useCallback(() => {
     dispatch(getTop3Comments());
-  };
+  }, [dispatch]);
 
   return (
     <CommentList

@@ -37,7 +37,7 @@ const Participate = styled.button`
 const ExtraWrapper = styled.div`
   width: 90%;
   height: 45px;
-  display: flex;
+  display: none;
   justify-content: space-between;
 
   & > div {
