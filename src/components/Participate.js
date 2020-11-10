@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Close } from "@styled-icons/evaicons-solid/Close";
+
 const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
@@ -33,25 +34,6 @@ const LabelWrapper = styled.div`
   }
 `;
 
-const ParticipateBtn = styled.button`
-  width: 100%;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  background: ${(props) => props.theme.color.blue};
-  color: #fff;
-  font-weight: bold;
-`;
-
-const StyledClose = styled(Close)`
-  width: 30px;
-  height: 30px;
-  color: black;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-`;
-
 const StyledLink = styled(Link)`
   width: 100%;
   background: ${(props) => props.theme.color.blue};
@@ -79,33 +61,53 @@ const CloseBtn = styled(Link)`
     color: black;
   }
 `;
-const Participate = React.memo(() => {
-  return (
-    <Wrapper>
-      <LabelWrapper>
-        <label htmlFor="nickname">닉네임</label>
-        <input type="text" name="nickname" id="nickname-input" />
-      </LabelWrapper>
-      <LabelWrapper>
-        <label htmlFor="comment">응원의 한마디</label>
-        <textarea
-          name="comment"
-          id="comment-textarea"
-          cols="30"
-          rows="5"
-          maxLength="100"
-        ></textarea>
-      </LabelWrapper>
-      <LabelWrapper>
-        <label htmlFor="donation">기부금액 (선택가능) </label>
-        <input type="text" name="donation" id="donation-input" />
-      </LabelWrapper>
-      <StyledLink to="/story">응원 참여하기</StyledLink>
-      <CloseBtn to="/story">
-        <Close />
-      </CloseBtn>
-    </Wrapper>
-  );
-});
+const Participate = React.memo(
+  ({ nickname, comment, amount, onChange, onAddComment }) => {
+    return (
+      <Wrapper>
+        <LabelWrapper>
+          <label htmlFor="nickname">닉네임</label>
+          <input
+            type="text"
+            name="nickname"
+            id="nickname-input"
+            onChange={onChange}
+            value={nickname}
+            placeholder="닉네임"
+          />
+        </LabelWrapper>
+        <LabelWrapper>
+          <label htmlFor="comment">응원의 한마디</label>
+          <textarea
+            name="comment"
+            id="comment-textarea"
+            cols="30"
+            rows="5"
+            maxLength="100"
+            onChange={onChange}
+            nickname={comment}
+            placeholder="응원합니다"
+          ></textarea>
+        </LabelWrapper>
+        <LabelWrapper>
+          <label htmlFor="donation">기부금액 (선택가능) </label>
+          <input
+            type="text"
+            name="amount"
+            id="amount-input"
+            onChange={onChange}
+            value={amount}
+          />
+        </LabelWrapper>
+        <StyledLink to="/story" onClick={onAddComment}>
+          응원 참여하기
+        </StyledLink>
+        <CloseBtn to="/story">
+          <Close />
+        </CloseBtn>
+      </Wrapper>
+    );
+  }
+);
 
 export default Participate;
