@@ -34,7 +34,7 @@ const LabelWrapper = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
+const SubmitBtn = styled.div`
   width: 100%;
   background: ${(props) => props.theme.color.blue};
   height: 50px;
@@ -108,7 +108,7 @@ const Participate = React.memo(
             value={amount}
           />
         </LabelWrapper>
-        <StyledLink onClick={onAddComment}>응원 참여하기</StyledLink>
+        <SubmitBtn onClick={onAddComment}>응원 참여하기</SubmitBtn>
         <CloseBtn to="/story">
           <Close />
         </CloseBtn>

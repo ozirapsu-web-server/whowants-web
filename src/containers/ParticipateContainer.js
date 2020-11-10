@@ -7,8 +7,8 @@ import { withRouter } from "react-router-dom";
 const ParticipateContainer = React.memo(({ history }) => {
   const [{ nickname, comment, amount }, onChange, reset] = useInputs({
     nickname: "",
-    comment: "",
-    amount: "",
+    comment: "응원합니다",
+    amount: 0,
   });
   const [alert, setAlert] = useState(false);
   const dispatch = useDispatch();
