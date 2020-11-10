@@ -70,7 +70,15 @@ const Alert = styled.div`
   display: ${(props) => (props.alert ? "inline-block" : "none")};
 `;
 const Participate = React.memo(
-  ({ nickname, comment, amount, onChange, onAddComment, alert }) => {
+  ({
+    nickname,
+    phoneNumber,
+    comment,
+    amount,
+    onChange,
+    onAddComment,
+    alert,
+  }) => {
     return (
       <Wrapper>
         <LabelWrapper>
@@ -83,6 +91,17 @@ const Participate = React.memo(
             onChange={onChange}
             value={nickname}
             placeholder="닉네임"
+          />
+        </LabelWrapper>
+        <LabelWrapper>
+          <label htmlFor="phoneNumber">전화번호</label>
+          <input
+            type="text"
+            name="phoneNumber"
+            id="phoneNumber-input"
+            onChange={onChange}
+            value={phoneNumber}
+            placeholder="010-0000-0000"
           />
         </LabelWrapper>
         <LabelWrapper>

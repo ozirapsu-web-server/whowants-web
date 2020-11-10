@@ -5,8 +5,13 @@ import { useDispatch } from "react-redux";
 import { addComment } from "modules/comment";
 import { withRouter } from "react-router-dom";
 const ParticipateContainer = React.memo(({ history }) => {
-  const [{ nickname, comment, amount }, onChange, reset] = useInputs({
+  const [
+    { nickname, comment, amount, phoneNumber },
+    onChange,
+    reset,
+  ] = useInputs({
     nickname: "",
+    phoneNumber: "",
     comment: "응원합니다",
     amount: 0,
   });
@@ -26,6 +31,7 @@ const ParticipateContainer = React.memo(({ history }) => {
   return (
     <Participate
       nickname={nickname}
+      phoneNumber={phoneNumber}
       comment={comment}
       amount={amount}
       onChange={onChange}
