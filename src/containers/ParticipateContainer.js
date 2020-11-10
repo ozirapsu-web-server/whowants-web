@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Participate from "components/Participate";
 import useInputs from "customHooks/useInputs";
-import { useDispatch } from "react-redux";
-import { addComment } from "modules/comment";
+import { useDispatch, useSelector } from "react-redux";
+import { addComment, toggleModal } from "modules/comment";
 import { withRouter } from "react-router-dom";
 const ParticipateContainer = React.memo(({ history }) => {
   const [
@@ -16,13 +16,23 @@ const ParticipateContainer = React.memo(({ history }) => {
     amount: 0,
   });
   const [alert, setAlert] = useState(false);
+  const [visible, setVisible] = useState(false);
   const dispatch = useDispatch();
 
-  const onAddComment = () => {
+  const goBack = () => {
+    history.goBack();
+  };
+
+  const onToggleModal = () => {
     if (nickname === "") {
       setAlert(true);
       return;
     }
+    setVisible((visible) => !visible);
+  };
+
+  const onAddComment = () => {
+    setVisible(false);
     dispatch(addComment({ name: nickname, comment, amount }));
     reset();
     history.push("/");
@@ -37,6 +47,9 @@ const ParticipateContainer = React.memo(({ history }) => {
       onChange={onChange}
       onAddComment={onAddComment}
       alert={alert}
+      goBack={goBack}
+      visible={visible}
+      onToggleModal={onToggleModal}
     ></Participate>
   );
 });
