@@ -12,7 +12,6 @@ const SummaryContainer = React.memo(() => {
   useEffect(() => {
     dispatch(getStoryInfo(1));
   }, [dispatch]);
-
   return <Summary title={title} summary={summary}></Summary>;
 });
 

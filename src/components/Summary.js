@@ -21,11 +21,11 @@ const SummaryContent = styled.div`
   line-height: 1.5em;
 `;
 
-const Summary = React.memo(({ title, content }) => {
+const Summary = React.memo(({ title, summary }) => {
   return (
     <Wrapper>
       <Header>{title}</Header>
-      <SummaryContent>{content}</SummaryContent>
+      <SummaryContent>{summary}</SummaryContent>
     </Wrapper>
   );
 });
