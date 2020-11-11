@@ -1,3 +1,6 @@
+import { createAction, handleActions } from "redux-actions";
+import * as api from "utils/api";
+
 const initialState = {
   story: `안녕하세요. 저는 사고를 당한 아이의 같은 반 친구
 이성민이라고 합니다. 부디 제 친구의 억울한 사연을 한 번만 들어주세요. 제 친구는 어머니와 단둘이서 생활을 하면서도 항상 긍정적이고 다른 사람을 잘 챙겨주던 웃음 많은 친구였습니다. 

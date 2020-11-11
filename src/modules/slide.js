@@ -1,10 +1,5 @@
 import { createAction, handleActions } from "redux-actions";
 import * as api from "utils/api";
-import study1 from "images/study1.jpg";
-import study2 from "images/study2.jpg";
-import study3 from "images/study3.jpg";
-import study4 from "images/study4.jpg";
-import study5 from "images/study5.jpg";
 
 const GET_IMGS = "slide/GET_IMGS";
 const GET_IMGS_SUCCESS = "slide/GET_IMGS_SUCCESS";
