@@ -1,6 +1,7 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  getImgs,
   setImgs,
   setSliderStyle,
   setCarouselStyle,
@@ -13,6 +14,7 @@ const SlideContainer = React.memo(() => {
   const { imgs, sliderStyle, carouselStyle, direction, active } = useSelector(
     (state) => ({
       imgs: state.slide.imgs,
+      loading: state.slide.loading.GET_IMGS,
       sliderStyle: state.slide.sliderStyle,
       direction: state.slide.direction,
       active: state.slide.active,
@@ -20,6 +22,10 @@ const SlideContainer = React.memo(() => {
     })
   );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getImgs(1));
+  }, [dispatch]);
   const onSetImgs = useCallback((imgs) => dispatch(setImgs(imgs)), [dispatch]);
   const onSetSliderStyle = useCallback(
     (sliderStyle) => dispatch(setSliderStyle(sliderStyle)),
