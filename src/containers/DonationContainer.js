@@ -13,7 +13,6 @@ const DonationContainer = React.memo(() => {
   useEffect(() => {
     dispatch(getDonationInfo(1));
   }, [dispatch]);
-  console.log(target, amount, percent);
   return (
     <div>
       <Donation target={target} amount={amount} percent={percent} />

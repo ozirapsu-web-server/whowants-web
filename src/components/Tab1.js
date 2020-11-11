@@ -7,8 +7,8 @@ const Tab1Wrapper = styled.div`
   font-size: ${(props) => props.theme.size.mmd};
 `;
 
-const Tab1 = React.memo(({ story }) => {
-  return <Tab1Wrapper>{story}</Tab1Wrapper>;
+const Tab1 = React.memo(({ content }) => {
+  return <Tab1Wrapper>{content}</Tab1Wrapper>;
 });
 
 export default Tab1;
