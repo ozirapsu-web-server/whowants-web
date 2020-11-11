@@ -33,5 +33,5 @@ jobs:
         run: |
           aws s3 cp \
             --recursive \
-            --region ap-east-2 \
+            --region ap-northeast-2 \
             build s3://whowants2 # 자신의 레포지토리로 변경해주세요.
