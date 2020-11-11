@@ -54,14 +54,14 @@ const InquiryBtn = styled.button`
   font-weight: bold;
 `;
 
-const Organizer = () => {
+const Organizer = ({ organizer }) => {
   return (
     <OrganizerWrapper>
       <Header>모금함 생성자</Header>
       <OrganizerProfile>
         <ProfileImg></ProfileImg>
         <Author>
-          <div>이성민</div>
+          <div>{organizer}</div>
           <div>본인인증회원</div>
         </Author>
         <InquiryBtn disabled>문의하기</InquiryBtn>

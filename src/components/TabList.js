@@ -54,7 +54,7 @@ function a11yProps(index) {
   };
 }
 
-const TabList = React.memo(({ story }) => {
+const TabList = React.memo(({ content }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -77,7 +77,7 @@ const TabList = React.memo(({ story }) => {
         <Tab label="서포터" className={classes.tab} disabled />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Tab1 story={story} />
+        <Tab1 content={content} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

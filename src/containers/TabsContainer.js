@@ -3,11 +3,13 @@ import TabList from "components/TabList";
 import { useSelector } from "react-redux";
 
 const TabsContainer = () => {
-  const { story } = useSelector((state) => ({ story: state.story.story }));
+  const { content } = useSelector((state) => ({
+    content: state.story.content,
+  }));
 
   return (
     <>
-      <TabList story={story}></TabList>
+      <TabList content={content}></TabList>
     </>
   );
 };
