@@ -16,6 +16,7 @@ const initialState = {
   summary: "",
   title: "",
   content: "",
+  organizer: "",
 };
 
 const story = handleActions(
@@ -25,6 +26,7 @@ const story = handleActions(
       content: action.payload.content,
       title: action.payload.title,
       summary: action.payload.summary,
+      organizer: action.payload.host_name,
     }),
   },
   initialState
