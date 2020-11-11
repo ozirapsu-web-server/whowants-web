@@ -5,6 +5,7 @@ const Tab1Wrapper = styled.div`
   width: 100%;
   text-align: left;
   font-size: ${(props) => props.theme.size.mmd};
+  font-family: "NanumBarunGothic", sans-serif !important;
 `;
 
 const Tab1 = React.memo(({ content }) => {
