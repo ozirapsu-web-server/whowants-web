@@ -3,7 +3,7 @@ on:
   pull_request: # master Branch에서 push 이벤트가 일어났을 때만 실행
     branches:
       - dev
-      types:[closed]
+        types:[closed]
 
 jobs:
   build:
