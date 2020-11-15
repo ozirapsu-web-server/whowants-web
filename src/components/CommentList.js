@@ -40,13 +40,7 @@ const SeeAllBtn = styled.button`
 `;
 
 const CommentList = React.memo(
-  ({
-    comments,
-    onGetAllComments,
-    onGetTop3Comments,
-    seeAllComments,
-    lenOfComments,
-  }) => {
+  ({ comments, lenOfComments, onToggleComments, seeAllComments }) => {
     return (
       <CommentWrapper>
         <Notice>
@@ -61,17 +55,17 @@ const CommentList = React.memo(
             return (
               <Comment
                 key={`top3-comment-${idx}`}
-                name={comment.name}
-                amount={comment.amount}
-                comment={comment.comment}
+                name={comment.support_nickname}
+                amount={comment.support_amount}
+                comment={comment.support_comment}
               />
             );
           })}
         {!seeAllComments && lenOfComments !== 0 && (
-          <SeeAllBtn onClick={onGetAllComments}>응원 모두 보기</SeeAllBtn>
+          <SeeAllBtn onClick={onToggleComments}>응원 모두 보기</SeeAllBtn>
         )}
         {seeAllComments && lenOfComments !== 0 && (
-          <SeeAllBtn onClick={onGetTop3Comments}>응원 모두 보기 접기</SeeAllBtn>
+          <SeeAllBtn onClick={onToggleComments}>응원 모두 보기 접기</SeeAllBtn>
         )}
       </CommentWrapper>
     );

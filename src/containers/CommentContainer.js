@@ -1,34 +1,40 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import CommentList from "components/CommentList";
 import { useSelector, useDispatch } from "react-redux";
 
-import { getAllComments, getTop3Comments } from "modules/comment";
+import {
+  getAllComments,
+  getTop3Comments,
+  toggleComments,
+} from "modules/comment";
 
 const CommentContainer = React.memo(() => {
-  let { comments, seeAllComments } = useSelector((state) => ({
+  let { comments, seeAllComments, supportCount } = useSelector((state) => ({
     comments: state.comment.comments,
     seeAllComments: state.comment.see_all_comments,
+    supportCount: state.comment.supportCount,
   }));
-  const lenOfComments = !comments ? 0 : comments.length;
+
   if (!seeAllComments) {
     comments = comments.slice(0, 3);
   }
+
   const dispatch = useDispatch();
-  const onGetAllComments = useCallback(() => {
-    dispatch(getAllComments());
+
+  useEffect(() => {
+    dispatch(getAllComments(1, 0));
   }, [dispatch]);
 
-  const onGetTop3Comments = useCallback(() => {
-    dispatch(getTop3Comments());
+  const onToggleComments = useCallback(() => {
+    dispatch(toggleComments());
   }, [dispatch]);
 
   return (
     <CommentList
       comments={comments}
-      onGetAllComments={onGetAllComments}
-      onGetTop3Comments={onGetTop3Comments}
       seeAllComments={seeAllComments}
-      lenOfComments={lenOfComments}
+      onToggleComments={onToggleComments}
+      lenOfComments={supportCount}
     ></CommentList>
   );
 });
