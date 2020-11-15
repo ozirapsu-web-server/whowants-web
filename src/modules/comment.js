@@ -1,7 +1,6 @@
 import { createAction, handleActions } from "redux-actions";
 import * as api from "utils/api";
 
-const GET_TOP3_COMMENTS = "comment/GET_TOP3_COMMENTS";
 const GET_ALL_COMMENTS = "comment/GET_ALL_COMMENTS";
 const ADD_COMMENT = "comment/ADD_COMMENT";
 const TOGGLE_MODAL = "comment/TOGGLE_MODAL";
@@ -17,15 +16,21 @@ const initialState = {
 export const getAllComments = (idx, filter) => async (dispatch) => {
   try {
     const response = await api.getAllComments(idx, filter);
-    // console.log(response.data.data);
     dispatch({ type: GET_ALL_COMMENTS, payload: response.data.data });
   } catch (e) {
     throw e;
   }
 };
+export const addComment = (idx, comment) => async (dispatch) => {
+  try {
+    await api.addComment(idx, comment);
 
-export const getTop3Comments = createAction(GET_TOP3_COMMENTS);
-export const addComment = createAction(ADD_COMMENT, (comment) => comment);
+    dispatch({ type: ADD_COMMENT, payload: comment });
+  } catch (e) {
+    throw e;
+  }
+};
+
 export const toggleModal = createAction(TOGGLE_MODAL, (visible) => visible);
 export const toggleComments = createAction(TOGGLE_COMMENTS);
 
@@ -35,9 +40,6 @@ const comment = handleActions(
       ...state,
       comments: action.payload.support,
       supportCount: action.payload.supportCount,
-    }),
-    [GET_TOP3_COMMENTS]: (state, { payload: see_all_comments }) => ({
-      ...state,
     }),
     [ADD_COMMENT]: (state, { payload: comment }) => ({
       ...state,

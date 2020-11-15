@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { Close } from "@styled-icons/evaicons-solid/Close";
 import { withRouter } from "react-router-dom";
 
@@ -164,7 +163,7 @@ const Participate = React.memo(
               rows="5"
               maxLength="100"
               onChange={onChange}
-              nickname={comment}
+              value={comment}
               placeholder="응원합니다"
             ></textarea>
           </LabelWrapper>
@@ -188,7 +187,7 @@ const Participate = React.memo(
         <ModalContainer visible={visible}>
           <ModalOverlay>
             <ModalContent>
-              <StyledClose onClick={onAddComment} />
+              <StyledClose onClick={() => onAddComment(1)} />
               <ModalHeader>아직 구현되지 않은 기능입니다.</ModalHeader>
               <div>
                 기부 기능이 오픈되면 가장 먼저 연락 메세지를 드리겠습니다.
