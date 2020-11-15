@@ -1,12 +1,14 @@
 name: React build
 on:
-  push: # master Branch에서 push 이벤트가 일어났을 때만 실행
+  pull_request: # master Branch에서 push 이벤트가 일어났을 때만 실행
     branches:
       - dev
+      types:[closed]
 
 jobs:
   build:
     runs-on: ubuntu-18.04
+    if: github.event.pull_request.merged == true
     steps:
       - name: Checkout source code. # 레포지토리 체크아웃
         uses: actions/checkout@v2

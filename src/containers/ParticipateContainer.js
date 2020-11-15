@@ -33,10 +33,17 @@ const ParticipateContainer = React.memo(({ history }) => {
     setVisible((visible) => !visible);
   };
 
-  const onAddComment = () => {
+  const onAddComment = (idx) => {
     setAlert(false);
     setVisible(false);
-    dispatch(addComment({ name: nickname, comment, amount }));
+    dispatch(
+      addComment(idx, {
+        support_nickname: nickname,
+        support_comment: comment,
+        support_amount: amount,
+        support_phone_number: phoneNumber,
+      })
+    );
     reset();
     history.push("/");
   };

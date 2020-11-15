@@ -2,11 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import CommentList from "components/CommentList";
 import { useSelector, useDispatch } from "react-redux";
 
-import {
-  getAllComments,
-  getTop3Comments,
-  toggleComments,
-} from "modules/comment";
+import { getAllComments, toggleComments } from "modules/comment";
 
 const CommentContainer = React.memo(() => {
   let { comments, seeAllComments, supportCount } = useSelector((state) => ({
