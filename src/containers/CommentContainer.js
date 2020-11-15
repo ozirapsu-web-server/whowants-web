@@ -25,14 +25,6 @@ const CommentContainer = React.memo(() => {
     dispatch(getAllComments(1, 0));
   }, [dispatch]);
 
-  const onGetAllComments = useCallback(() => {
-    dispatch(getAllComments(1, 0));
-  }, [dispatch]);
-
-  const onGetTop3Comments = useCallback(() => {
-    dispatch(getTop3Comments());
-  }, [dispatch]);
-
   const onToggleComments = useCallback(() => {
     dispatch(toggleComments());
   }, [dispatch]);
