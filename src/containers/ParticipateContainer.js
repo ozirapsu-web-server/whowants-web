@@ -4,6 +4,8 @@ import useInputs from "customHooks/useInputs";
 import { useDispatch, useSelector } from "react-redux";
 import { addComment, toggleModal } from "modules/comment";
 import { withRouter } from "react-router-dom";
+
+// 후원하는 자의 작성 컴포넌트
 const ParticipateContainer = React.memo(({ history }) => {
   const [
     { nickname, comment, amount, phoneNumber },
@@ -17,7 +19,7 @@ const ParticipateContainer = React.memo(({ history }) => {
     comment: "응원합니다",
     amount: 0,
   });
-
+  //  모달 보여주기 상태 visible
   const [visible, setVisible] = useState(false);
   const dispatch = useDispatch();
 
@@ -32,8 +34,10 @@ const ParticipateContainer = React.memo(({ history }) => {
     }
     setVisible((visible) => !visible);
   };
-
+  //  댓글 추가 기능
   const onAddComment = (idx) => {
+    // 경고 메세지와 모달 메세지는 보이지 않도록 한다.
+    // 댓글 추가 api와 연동하여 댓글을 추가한다
     setAlert(false);
     setVisible(false);
     dispatch(
@@ -45,6 +49,7 @@ const ParticipateContainer = React.memo(({ history }) => {
       })
     );
     reset();
+    // 사연 페이지로 이동
     history.push("/");
   };
 

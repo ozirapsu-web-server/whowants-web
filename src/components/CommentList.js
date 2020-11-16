@@ -38,7 +38,7 @@ const SeeAllBtn = styled.button`
   border-radius: 10px;
   margin-top: 20px;
 `;
-
+//  댓글 리스트 컴포넌트
 const CommentList = React.memo(
   ({ comments, lenOfComments, onToggleComments, seeAllComments }) => {
     return (

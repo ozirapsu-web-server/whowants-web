@@ -3,6 +3,7 @@ import Summary from "components/Summary";
 import { useSelector, useDispatch } from "react-redux";
 import { getStoryInfo } from "modules/story";
 
+//  사연 요약 정보 컴포넌트
 const SummaryContainer = React.memo(() => {
   const { title, summary } = useSelector((state) => ({
     title: state.story.title,

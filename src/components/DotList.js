@@ -11,7 +11,7 @@ const DotWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
+// 이미지 슬라이드에서 활성화되고 안된 부분을 나타내는 점
 const DotList = React.memo(({ active, len }) => {
   return (
     <DotWrapper>

@@ -1,6 +1,7 @@
 import { createAction, handleActions } from "redux-actions";
 import * as api from "utils/api";
 
+// 액션
 const GET_IMGS = "slide/GET_IMGS";
 const GET_IMGS_SUCCESS = "slide/GET_IMGS_SUCCESS";
 const GET_IMGS_FAILURE = "slide/GET_IMGS_FAILURE";
@@ -13,6 +14,7 @@ const SET_ACTIVE = "slide/SET_ACTIVE";
 // const LEFT = "left";
 const RIGHT = "right";
 
+// 액션 생성함수
 export const getImgs = (idx) => async (dispatch) => {
   dispatch({ type: GET_IMGS });
   try {
@@ -43,17 +45,18 @@ export const setDirection = createAction(
 
 export const setActive = createAction(SET_ACTIVE, (active) => active);
 
+//  초기 상태
 const initialState = {
   imgs: [],
-  sliderStyle: {},
+  sliderStyle: {}, //슬라이더 스타일 상태
   carouselStyle: {},
-  direction: RIGHT,
-  active: 0,
+  direction: RIGHT, //슬라이드 방향
+  active: 0, // 현재 보이는 이미지
   loading: {
     GET_IMGS: false,
   },
 };
-
+//  슬라이드 리듀서
 const slide = handleActions(
   {
     [GET_IMGS]: (state) => ({

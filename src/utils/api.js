@@ -2,6 +2,8 @@ import axios from "axios";
 
 export const getStory = (idx) => axios.get(`/story/${idx}`);
 
+//  api 모음
+
 export const getImgs = (idx) => axios.get(`/story/${idx}/image`);
 
 export const getAllComments = (idx, filter) =>

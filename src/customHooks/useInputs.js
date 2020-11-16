@@ -1,7 +1,9 @@
 import { useState, useCallback } from "react";
 
+//  input change에 대한 customHooks
 function useInputs(initialForm) {
   const [form, setForm] = useState(initialForm);
+  // validation 메세지
   const [alert, setAlert] = useState(false);
   // change
   const onChange = useCallback((e) => {
