@@ -37,12 +37,12 @@ const Comment = React.memo(({ name, amount, comment }) => {
   return (
     <CommentItem>
       <Name>{name}</Name>
-      {parseInt(amount) !== 0 && (
+      {/* {parseInt(amount) !== 0 && (
         <AmountContainer>
           <div>{numberWithCommas(amount)}</div>
           <div>원 후원</div>
         </AmountContainer>
-      )}
+      )} */}
       <CommentSection>{!comment ? "응원합니다" : comment}</CommentSection>
     </CommentItem>
   );

@@ -6,13 +6,17 @@ const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 10;
 
   & img {
-    margin: 25px 0;
+    margin: 20px 0;
     width: 30%;
     height: auto;
-    z-index: 10;
   }
 `;
 //  후원츠 로고

@@ -27,7 +27,7 @@ const ProfileImg = styled.img`
   background: ${(props) => props.theme.color.middleBlue};
   border-radius: 50%;
   border: none;
-  margin-right: 5px;
+  margin-right: 1.2em;
 `;
 
 const Author = styled.div`
