@@ -36,7 +36,7 @@ const ParticipateContainer = React.memo(({ history }) => {
   const goBack = () => {
     history.goBack();
   };
-  console.log(visible);
+
   return (
     <>
       <Participate
@@ -46,9 +46,11 @@ const ParticipateContainer = React.memo(({ history }) => {
         goBack={goBack}
         onToggleModal={onToggleModal}
       ></Participate>
-      <Modal amount={form.amount} visible={visible} onAddComment={onAddComment}>
-        modal
-      </Modal>
+      <Modal
+        amount={form.amount}
+        visible={visible}
+        onAddComment={onAddComment}
+      ></Modal>
     </>
   );
 });

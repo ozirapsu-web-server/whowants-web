@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import Comment from "components/Comment";
 
@@ -40,7 +40,24 @@ const SeeAllBtn = styled.button`
 `;
 //  댓글 리스트 컴포넌트
 const CommentList = React.memo(
-  ({ comments, lenOfComments, onToggleComments, seeAllComments }) => {
+  ({
+    comments,
+    lenOfComments,
+    onToggleComments,
+    seeAllComments,
+    added,
+    onToggleAdded,
+  }) => {
+    const myComment = useRef();
+    useEffect(() => {
+      if (added) {
+        window.scrollTo({
+          behavior: "smooth",
+          top: myComment.current.offsetTop,
+        });
+        onToggleAdded();
+      }
+    }, [onToggleAdded, added]);
     return (
       <CommentWrapper>
         <Notice>
@@ -50,6 +67,7 @@ const CommentList = React.memo(
           </NumberOfSupporter>
           <div>가 이 사연을 응원합니다.</div>
         </Notice>
+
         {comments &&
           comments.map((comment, idx) => {
             return (
@@ -61,6 +79,7 @@ const CommentList = React.memo(
               />
             );
           })}
+        <div ref={myComment}></div>
         {!seeAllComments && lenOfComments !== 0 && (
           <SeeAllBtn onClick={onToggleComments}>응원 모두 보기</SeeAllBtn>
         )}

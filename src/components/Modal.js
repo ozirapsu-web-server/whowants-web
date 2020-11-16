@@ -61,8 +61,7 @@ const ModalBtn = styled(SubmitBtn)`
   background: ${(props) => props.theme.color.blue};
 `;
 
-const Modal = ({ visible, onAddComment, amount }) => {
-  console.log(visible);
+const Modal = React.memo(({ visible, onAddComment, amount }) => {
   return (
     <ModalWrapper visible={visible}>
       <ModalOverlay>
@@ -80,6 +79,6 @@ const Modal = ({ visible, onAddComment, amount }) => {
       </ModalOverlay>
     </ModalWrapper>
   );
-};
+});
 
 export default Modal;

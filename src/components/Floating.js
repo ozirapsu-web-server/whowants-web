@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Heart } from "@styled-icons/boxicons-regular/Heart";
 import { Link } from "react-router-dom";
+
 const FloatWrapper = styled.section`
   border: none;
   width: 100%;
