@@ -16,6 +16,7 @@ function useInputs(initialForm) {
   const onToggleModal = () => {
     const [newAlert, valid] = validInputs(form);
     setAlert(newAlert);
+    console.log(newAlert, valid);
     if (valid) {
       setVisible((visible) => !visible);
     }

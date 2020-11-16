@@ -1,20 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Participate from "components/Participate";
+import Modal from "components/Modal";
 import useInputs from "customHooks/useInputs";
-import { useDispatch, useSelector } from "react-redux";
-import { addComment, toggleModal } from "modules/comment";
+import { useDispatch } from "react-redux";
+import { addComment } from "modules/comment";
 import { withRouter } from "react-router-dom";
 
 // 후원하는 자의 작성 컴포넌트
 const ParticipateContainer = React.memo(({ history }) => {
-  const [
-    { nickname, comment, amount, phoneNumber },
-    onChange,
-    alert,
-    onToggleModal,
-    visible,
-    reset,
-  ] = useInputs({
+  const [form, onChange, alert, onToggleModal, visible, reset] = useInputs({
     nickname: "",
     phoneNumber: "",
     comment: "응원합니다",
@@ -28,10 +22,10 @@ const ParticipateContainer = React.memo(({ history }) => {
     // 댓글 추가 api와 연동하여 댓글을 추가한다
     dispatch(
       addComment(idx, {
-        support_nickname: nickname,
-        support_comment: comment,
-        support_amount: amount,
-        support_phone_number: phoneNumber,
+        support_nickname: form.nickname,
+        support_comment: form.comment,
+        support_amount: form.amount,
+        support_phone_number: form.phoneNumber,
       })
     );
     reset();
@@ -42,20 +36,20 @@ const ParticipateContainer = React.memo(({ history }) => {
   const goBack = () => {
     history.goBack();
   };
-
+  console.log(visible);
   return (
-    <Participate
-      nickname={nickname}
-      phoneNumber={phoneNumber}
-      comment={comment}
-      amount={amount}
-      onChange={onChange}
-      onAddComment={onAddComment}
-      alert={alert}
-      goBack={goBack}
-      visible={visible}
-      onToggleModal={onToggleModal}
-    ></Participate>
+    <>
+      <Participate
+        form={form}
+        onChange={onChange}
+        alert={alert}
+        goBack={goBack}
+        onToggleModal={onToggleModal}
+      ></Participate>
+      <Modal amount={form.amount} visible={visible} onAddComment={onAddComment}>
+        modal
+      </Modal>
+    </>
   );
 });
 
