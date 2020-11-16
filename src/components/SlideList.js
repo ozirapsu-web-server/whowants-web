@@ -3,13 +3,12 @@ import styled from "styled-components";
 import { ArrowRightCircle } from "@styled-icons/feather/ArrowRightCircle";
 import DotList from "components/DotList";
 import Slide from "components/Slide";
-
 const Carousel = styled.div`
   width: 100%;
   height: 350px;
   display: flex;
   justify-content: flex-start;
-  position: relative;
+
   overflow: hidden;
 `;
 
