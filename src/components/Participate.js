@@ -61,7 +61,6 @@ const Alert = styled.div`
   color: red;
   width: 100%;
   height: 20px;
-  display: ${(props) => (props.alert ? "inline-block" : "none")};
 `;
 
 const ModalContainer = styled.section`
@@ -133,7 +132,7 @@ const Participate = React.memo(
         <Wrapper>
           <LabelWrapper>
             <label htmlFor="nickname">닉네임</label>
-            <Alert alert={alert}>이름을 입력해주세요</Alert>
+
             <input
               type="text"
               name="nickname"
@@ -142,6 +141,9 @@ const Participate = React.memo(
               value={nickname}
               placeholder="닉네임"
             />
+            {alert.nickname && (
+              <Alert alert={alert.nickname}>{alert.nickname}</Alert>
+            )}
           </LabelWrapper>
           <LabelWrapper>
             <label htmlFor="phoneNumber">전화번호</label>
@@ -153,6 +155,9 @@ const Participate = React.memo(
               value={phoneNumber}
               placeholder="010-0000-0000"
             />
+            {alert.phoneNumber && (
+              <Alert alert={alert.phoneNumber}>{alert.phoneNumber}</Alert>
+            )}
           </LabelWrapper>
           <LabelWrapper>
             <label htmlFor="comment">응원의 한마디</label>
