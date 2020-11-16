@@ -41,7 +41,7 @@ const PrevButton = styled(Button)`
   left: 20px;
   transform: scaleX(-1);
 `;
-
+// 이미지 슬라이드 컴포넌트
 const SlideList = React.memo(
   ({
     carouselStyle,

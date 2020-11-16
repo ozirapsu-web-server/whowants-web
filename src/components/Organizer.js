@@ -53,7 +53,7 @@ const InquiryBtn = styled.button`
   margin-left: auto;
   font-weight: bold;
 `;
-
+//  모금함 생성자 컴포넌트
 const Organizer = ({ organizer }) => {
   return (
     <OrganizerWrapper>

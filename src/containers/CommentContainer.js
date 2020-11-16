@@ -10,7 +10,7 @@ const CommentContainer = React.memo(() => {
     seeAllComments: state.comment.see_all_comments,
     supportCount: state.comment.supportCount,
   }));
-
+  //  3명의 댓글만 보여준다. seeAllComments가 true인 경우 전체 댓글을 보여준다
   if (!seeAllComments) {
     comments = comments.slice(0, 3);
   }
@@ -20,7 +20,7 @@ const CommentContainer = React.memo(() => {
   useEffect(() => {
     dispatch(getAllComments(1, 0));
   }, [dispatch]);
-
+  //  댓글을 전체 보여주기 토글 기능
   const onToggleComments = useCallback(() => {
     dispatch(toggleComments());
   }, [dispatch]);

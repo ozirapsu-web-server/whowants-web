@@ -15,7 +15,7 @@ const Header = styled.header`
     z-index: 10;
   }
 `;
-
+//  후원츠 로고
 const Logo = React.memo(() => {
   return (
     <Header>

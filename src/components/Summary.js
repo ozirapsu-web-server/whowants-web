@@ -20,7 +20,7 @@ const SummaryContent = styled.div`
   font-size: ${(props) => props.theme.size.smd};
   line-height: 1.5em;
 `;
-
+//  사연 요약 정보 컴포넌트
 const Summary = React.memo(({ title, summary }) => {
   return (
     <Wrapper>

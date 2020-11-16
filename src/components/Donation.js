@@ -108,7 +108,7 @@ const Notice = styled.div`
 const Point = styled.p`
   font-weight: bold;
 `;
-
+// 후원 금액 컴포넌트
 const Donation = React.memo(({ amount, target, percent }) => {
   let rocketPercent;
   if (percent >= 100) {

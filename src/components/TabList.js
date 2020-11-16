@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     padding: "20px",
   },
 });
-
+// 탭 컴포넌트 (스토리(구현), 새소식, 서포터 컴포넌트로 구성 (진행))
 const TabPanel = React.memo((props) => {
   const { children, value, index, ...other } = props;
   const classes = useStyles();

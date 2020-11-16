@@ -114,7 +114,7 @@ const ModalHeader = styled.div`
   font-size: ${(props) => props.theme.size.mmd};
   font-weight: bold;
 `;
-
+// 후원 참석자 폼 컴포넌트
 const Participate = React.memo(
   ({
     nickname,

@@ -32,7 +32,7 @@ const CommentSection = styled.div`
   font-size: ${(props) => props.theme.size.smd};
   margin-top: 5px;
 `;
-
+//  하나의 댓글
 const Comment = React.memo(({ name, amount, comment }) => {
   return (
     <CommentItem>

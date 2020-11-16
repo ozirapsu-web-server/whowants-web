@@ -60,7 +60,7 @@ const UnLiked = styled(Heart)`
   height: 20px;
   width: 20px;
 `;
-
+//  웹 모바일 화면 밑에 떠다니며 참여하기, 공유하기, 좋아요 기능이 있는 FLOATING 컴포넌트
 const Floating = () => {
   return (
     <FloatWrapper>

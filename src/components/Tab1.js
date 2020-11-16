@@ -7,7 +7,7 @@ const Tab1Wrapper = styled.div`
   font-size: ${(props) => props.theme.size.mmd};
   font-family: "NanumBarunGothic", sans-serif !important;
 `;
-
+//  탭 첫 번째 컴포넌트 (사연 컨텐츠)
 const Tab1 = React.memo(({ content }) => {
   return <Tab1Wrapper>{content}</Tab1Wrapper>;
 });
