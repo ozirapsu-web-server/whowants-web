@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import kakao from "images/kakao.png";
-import logo from "images/logo.png";
-import styled from "styled-components";
+// import kakao from "images/kakao.png";
 
 const KakaoShareButton = () => {
   useEffect(() => {
@@ -27,8 +25,8 @@ const KakaoShareButton = () => {
           imageUrl:
             "https://images.unsplash.com/photo-1579208575657-c595a05383b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", // i.e. process.env.FETCH_URL + '/logo.png'
           link: {
-            mobileWebUrl: window.location.href,
-            webUrl: window.location.href,
+            mobileWebUrl: document.location.href,
+            webUrl: document.location.href,
           },
         },
         social: {
@@ -40,25 +38,21 @@ const KakaoShareButton = () => {
           {
             title: "웹으로 보기",
             link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href,
+              mobileWebUrl: document.location.href,
+              webUrl: document.location.href,
             },
           },
           {
             title: "앱으로 보기",
             link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href,
+              mobileWebUrl: document.location.href,
+              webUrl: document.location.href,
             },
           },
         ],
       });
     }
   };
-  return (
-    <>
-      <div id="kakao-link-btn">공유하기</div>
-    </>
-  );
+  return <div id="kakao-link-btn">공유하기</div>;
 };
 export default KakaoShareButton;
