@@ -38,7 +38,7 @@ const Participate = styled.button`
 const ExtraWrapper = styled.div`
   width: 90%;
   height: 45px;
-  display: none;
+  display: flex;
   justify-content: space-between;
 
   & > div {
@@ -50,10 +50,12 @@ const ExtraWrapper = styled.div`
   }
 
   & > div:nth-child(1) {
+    // 좋아요 버튼 임시 삭제
+    display: none;
     width: 20%;
   }
   & > div:nth-child(2) {
-    width: 70%;
+    width: 100%;
   }
 `;
 
