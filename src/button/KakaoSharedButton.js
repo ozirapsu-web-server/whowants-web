@@ -30,9 +30,9 @@ const KakaoShareButton = () => {
           },
         },
         social: {
-          likeCount: 77,
-          commentCount: 55,
-          sharedCount: 333,
+          likeCount: 0,
+          commentCount: 0,
+          sharedCount: 0,
         },
         buttons: [
           {
