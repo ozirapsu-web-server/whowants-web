@@ -1,7 +1,8 @@
-import React from "react";
+import react from "react";
 import styled from "styled-components";
 import { Heart } from "@styled-icons/boxicons-regular/Heart";
 import { Link } from "react-router-dom";
+import KakaoShareButton from "button/KakaoSharedButton";
 
 const FloatWrapper = styled.section`
   border: none;
@@ -38,22 +39,22 @@ const Participate = styled.button`
 const ExtraWrapper = styled.div`
   width: 90%;
   height: 45px;
-  display: none;
+  display: flex;
   justify-content: space-between;
 
+  //  좋아요, 공유하기
   & > div {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     border-radius: 10px;
     border: 1px solid rgba(36, 36, 36, 0.5);
   }
 
   & > div:nth-child(1) {
+    // 좋아요 버튼 임시 삭제
     width: 20%;
-  }
-  & > div:nth-child(2) {
-    width: 70%;
+    display: none;
   }
 `;
 
@@ -64,18 +65,20 @@ const UnLiked = styled(Heart)`
 //  웹 모바일 화면 밑에 떠다니며 참여하기, 공유하기, 좋아요 기능이 있는 FLOATING 컴포넌트
 const Floating = () => {
   return (
-    <FloatWrapper>
-      <Participate>
-        <Link to="/participate">응원 참여하기</Link>
-      </Participate>
+    <>
+      <FloatWrapper>
+        <Participate>
+          <Link to="/participate">응원 참여하기</Link>
+        </Participate>
 
-      <ExtraWrapper>
-        <div>
-          <UnLiked />
-        </div>
-        <div>공유하기</div>
-      </ExtraWrapper>
-    </FloatWrapper>
+        <ExtraWrapper>
+          <div>
+            <UnLiked />
+          </div>
+          <KakaoShareButton />
+        </ExtraWrapper>
+      </FloatWrapper>
+    </>
   );
 };
 
