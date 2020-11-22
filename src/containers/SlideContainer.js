@@ -63,11 +63,6 @@ const SlideContainer = React.memo(() => {
     if (direction === "left") {
       moveSlide();
     }
-    if (active + 1 === imgs.length) {
-      onSetActive(0);
-    } else {
-      onSetActive(active + 1);
-    }
     onSetDirection("right");
     onSetCarouselStyle({
       justifyContent: `flex-start`,
@@ -75,6 +70,11 @@ const SlideContainer = React.memo(() => {
     onSetSliderStyle({
       transform: `translate(-20%)`,
     });
+    if (active + 1 === imgs.length) {
+      onSetActive(0);
+    } else {
+      onSetActive(active + 1);
+    }
   }, [
     active,
     direction,

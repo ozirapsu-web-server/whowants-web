@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const SlideWrapper = styled.div`
-  width: 20%;
-  flex-basis: 20%;
+  width: 100%;
+  flex-basis: 33.3%;
   background: url(${(props) => props.src}) no-repeat center center;
   background-size: cover;
   flex-shrink: 0;
