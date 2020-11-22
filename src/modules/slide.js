@@ -32,14 +32,17 @@ export const setSliderStyle = createAction(
   (sliderStyle) => sliderStyle
 );
 
-export const setCarouselStyle = (carouselStyle) => ({
-  type: SET_CAROUSEL_STYLE,
-  carouselStyle,
-});
+export const setCarouselStyle = createAction(
+  SET_CAROUSEL_STYLE,
+  (carouselStyle) => carouselStyle
+);
 
-export const setDirection = (direction) => ({ type: SET_DIRECTION, direction });
+export const setDirection = createAction(
+  SET_DIRECTION,
+  (direction) => direction
+);
 
-export const setActive = (active) => ({ type: SET_ACTIVE, active });
+export const setActive = createAction(SET_ACTIVE, (active) => active);
 
 //  초기 상태
 const initialState = {

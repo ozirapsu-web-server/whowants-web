@@ -21,6 +21,7 @@ const SlideContainer = React.memo(() => {
       carouselStyle: state.slide.carouselStyle, //carousel컴포넌트 스타일
     })
   );
+  console.log(active, direction);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -39,9 +40,13 @@ const SlideContainer = React.memo(() => {
     (direction) => dispatch(setDirection(direction)),
     [dispatch]
   );
-  const onSetActive = useCallback((active) => dispatch(setActive(active)), [
-    dispatch,
-  ]);
+  const onSetActive = useCallback(
+    (active) => {
+      console.log(active);
+      dispatch(setActive(active));
+    },
+    [dispatch]
+  );
   //  현재 이동 방향이 오른쪽이냐 왼쪽이냐에 따라 이미지의 순서를 변경한다
   const moveSlide = useCallback(() => {
     if (direction === "right") {
@@ -68,7 +73,7 @@ const SlideContainer = React.memo(() => {
       justifyContent: `flex-start`,
     });
     onSetSliderStyle({
-      transform: `translate(-20%)`,
+      transform: `translate(-33.3%)`,
     });
     if (active + 1 === imgs.length) {
       onSetActive(0);
@@ -103,7 +108,7 @@ const SlideContainer = React.memo(() => {
     });
 
     onSetSliderStyle({
-      transform: `translate(20%)`,
+      transform: `translate(33.3%)`,
     });
   }, [
     direction,

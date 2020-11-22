@@ -13,6 +13,7 @@ const DotWrapper = styled.div`
 `;
 // 이미지 슬라이드에서 활성화되고 안된 부분을 나타내는 점
 const DotList = React.memo(({ active, len }) => {
+  // console.log(active, len);
   return (
     <DotWrapper>
       {Array(len)

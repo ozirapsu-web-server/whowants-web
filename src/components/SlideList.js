@@ -52,6 +52,7 @@ const SlideList = React.memo(
     prevClicked,
     nextClicked,
   }) => {
+    // console.log(active);
     return (
       <Carousel style={carouselStyle}>
         <Sliders
