@@ -9,6 +9,8 @@ const TOGGLE_COMMENTS = "comment/TOGGLE_COMMENTS";
 // 댓글이 새로 추가되었는지에 대한 액션(새 댓글로 이동하기 위함)
 const TOGGLE_ADDED = "comment/TOGGLE_ADDED";
 //  초기 상태
+const GET_TOP3_COMMENTS = "GET_TOP3_COMMENTS";
+
 const initialState = {
   comments: [], //댓글 리스트
   see_all_comments: false, // 전체 댓글 보여주기 여부
@@ -69,5 +71,9 @@ const comment = handleActions(
   },
   initialState
 );
+
+export const getTop3Comments = () => {
+  return { type: GET_TOP3_COMMENTS };
+};
 
 export default comment;

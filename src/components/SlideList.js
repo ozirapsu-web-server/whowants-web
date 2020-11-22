@@ -8,24 +8,24 @@ const Carousel = styled.div`
   height: 350px;
   display: flex;
   justify-content: flex-start;
-
   overflow: hidden;
+  position: relative;
 `;
 
 const Sliders = styled.div`
   display: flex;
   height: 100%;
-  width: 500%;
+  width: ${(props) => props.len}%;
   flex-shrink: 0;
   transition: all 0.5s;
 `;
 
 const Button = styled(ArrowRightCircle)`
   position: absolute;
-  top: 30vh;
+  top: 50%;
   width: 40px;
   height: 40px;
-  color: #fff;
+  color: ${(props) => props.theme.color.mint};
 
   &:active {
     color: ${(props) => props.theme.color.blue};
@@ -38,6 +38,7 @@ const NextButton = styled(Button)`
 
 const PrevButton = styled(Button)`
   left: 20px;
+  //거꾸로 뒤집기
   transform: scaleX(-1);
 `;
 // 이미지 슬라이드 컴포넌트
@@ -51,14 +52,19 @@ const SlideList = React.memo(
     prevClicked,
     nextClicked,
   }) => {
+    const slideWidth = imgs.length;
     return (
       <Carousel style={carouselStyle}>
-        <Sliders style={sliderStyle} onTransitionEnd={moveSlide}>
+        <Sliders
+          style={sliderStyle}
+          onTransitionEnd={moveSlide}
+          len={slideWidth * 100}
+        >
           {imgs.map((item) => (
-            <Slide key={item} img={item}></Slide>
+            <Slide key={item} img={item} len={slideWidth}></Slide>
           ))}
         </Sliders>
-        <DotList active={active} len={imgs.length} />
+        <DotList active={active} len={slideWidth} />
         <PrevButton onClick={prevClicked}>prev</PrevButton>
         <NextButton onClick={nextClicked}>next</NextButton>
       </Carousel>

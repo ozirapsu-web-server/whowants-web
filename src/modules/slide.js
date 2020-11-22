@@ -6,12 +6,11 @@ const GET_IMGS = "slide/GET_IMGS";
 const GET_IMGS_SUCCESS = "slide/GET_IMGS_SUCCESS";
 const GET_IMGS_FAILURE = "slide/GET_IMGS_FAILURE";
 
-const SET_IMGS = "slide/SET_IMGS";
-const SET_SLIDER_STYLE = "slide/SET_SLIDER_STYLE";
-const SET_CAROUSEL_STYLE = "slide/SET_CAROUSEL_STLYE";
-const SET_DIRECTION = "slide/SET_DIRECTION";
-const SET_ACTIVE = "slide/SET_ACTIVE";
-// const LEFT = "left";
+const SET_IMGS = "SET_IMGS";
+const SET_SLIDER_STYLE = "SET_SLIDER_STYLE";
+const SET_CAROUSEL_STYLE = "SET_CAROUSEL_STLYE";
+const SET_DIRECTION = "SET_DIRECTION";
+const SET_ACTIVE = "SET_ACTIVE";
 const RIGHT = "right";
 
 // 액션 생성함수
@@ -50,7 +49,7 @@ const initialState = {
   imgs: [],
   sliderStyle: {}, //슬라이더 스타일 상태
   carouselStyle: {},
-  direction: RIGHT, //슬라이드 방향
+  direction: null, //슬라이드 방향
   active: 0, // 현재 보이는 이미지
   loading: {
     GET_IMGS: false,
