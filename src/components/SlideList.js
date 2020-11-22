@@ -8,7 +8,6 @@ const Carousel = styled.div`
   height: 350px;
   display: flex;
   justify-content: flex-start;
-
   overflow: hidden;
 `;
 

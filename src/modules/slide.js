@@ -6,12 +6,11 @@ const GET_IMGS = "slide/GET_IMGS";
 const GET_IMGS_SUCCESS = "slide/GET_IMGS_SUCCESS";
 const GET_IMGS_FAILURE = "slide/GET_IMGS_FAILURE";
 
-const SET_IMGS = "slide/SET_IMGS";
-const SET_SLIDER_STYLE = "slide/SET_SLIDER_STYLE";
-const SET_CAROUSEL_STYLE = "slide/SET_CAROUSEL_STLYE";
-const SET_DIRECTION = "slide/SET_DIRECTION";
-const SET_ACTIVE = "slide/SET_ACTIVE";
-// const LEFT = "left";
+const SET_IMGS = "SET_IMGS";
+const SET_SLIDER_STYLE = "SET_SLIDER_STYLE";
+const SET_CAROUSEL_STYLE = "SET_CAROUSEL_STLYE";
+const SET_DIRECTION = "SET_DIRECTION";
+const SET_ACTIVE = "SET_ACTIVE";
 const RIGHT = "right";
 
 // 액션 생성함수
@@ -33,17 +32,14 @@ export const setSliderStyle = createAction(
   (sliderStyle) => sliderStyle
 );
 
-export const setCarouselStyle = createAction(
-  SET_CAROUSEL_STYLE,
-  (carouselStyle) => carouselStyle
-);
+export const setCarouselStyle = (carouselStyle) => ({
+  type: SET_CAROUSEL_STYLE,
+  carouselStyle,
+});
 
-export const setDirection = createAction(
-  SET_DIRECTION,
-  (direction) => direction
-);
+export const setDirection = (direction) => ({ type: SET_DIRECTION, direction });
 
-export const setActive = createAction(SET_ACTIVE, (active) => active);
+export const setActive = (active) => ({ type: SET_ACTIVE, active });
 
 //  초기 상태
 const initialState = {
