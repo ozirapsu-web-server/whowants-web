@@ -52,19 +52,19 @@ const SlideList = React.memo(
     prevClicked,
     nextClicked,
   }) => {
-    // console.log(active);
+    const slideWidth = imgs.length;
     return (
       <Carousel style={carouselStyle}>
         <Sliders
           style={sliderStyle}
           onTransitionEnd={moveSlide}
-          len={imgs.length * 100}
+          len={slideWidth * 100}
         >
           {imgs.map((item) => (
-            <Slide key={item} img={item}></Slide>
+            <Slide key={item} img={item} len={slideWidth}></Slide>
           ))}
         </Sliders>
-        <DotList active={active} len={imgs.length} />
+        <DotList active={active} len={slideWidth} />
         <PrevButton onClick={prevClicked}>prev</PrevButton>
         <NextButton onClick={nextClicked}>next</NextButton>
       </Carousel>

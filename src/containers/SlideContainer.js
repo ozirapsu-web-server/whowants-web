@@ -21,105 +21,74 @@ const SlideContainer = React.memo(() => {
       carouselStyle: state.slide.carouselStyle, //carousel컴포넌트 스타일
     })
   );
-  console.log(active, direction);
+
+  const imgLength = imgs.length;
+  const slideWidth = 100 / imgLength;
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getImgs(1));
   }, [dispatch]);
-  const onSetImgs = useCallback((imgs) => dispatch(setImgs(imgs)), [dispatch]);
-  const onSetSliderStyle = useCallback(
-    (sliderStyle) => dispatch(setSliderStyle(sliderStyle)),
-    [dispatch]
-  );
-  const onSetCarouselStyle = useCallback(
-    (carouselStyle) => dispatch(setCarouselStyle(carouselStyle)),
-    [dispatch]
-  );
-  const onSetDirection = useCallback(
-    (direction) => dispatch(setDirection(direction)),
-    [dispatch]
-  );
-  const onSetActive = useCallback(
-    (active) => {
-      console.log(active);
-      dispatch(setActive(active));
-    },
-    [dispatch]
-  );
+
   //  현재 이동 방향이 오른쪽이냐 왼쪽이냐에 따라 이미지의 순서를 변경한다
   const moveSlide = useCallback(() => {
     if (direction === "right") {
-      // move the first slide to the end
       const firstSlide = imgs.shift();
-      onSetImgs([...imgs, firstSlide]);
-    } else {
-      // move the last slide to the front
+      dispatch(setImgs([...imgs, firstSlide]));
+    } else if (direction === "left") {
       const lastSlide = imgs.pop();
-      onSetImgs([lastSlide, ...imgs]);
+      dispatch(setImgs([lastSlide, ...imgs]));
     }
-    onSetSliderStyle({
-      transition: "none",
-      transform: "translate(0)",
-    });
-  }, [direction, imgs, onSetSliderStyle, onSetImgs]);
+    dispatch(
+      setSliderStyle({
+        transition: "none",
+        transform: "translate(0)",
+      })
+    );
+  }, [direction, imgs, dispatch]);
   //  오른쪽 버튼 클릭
   const nextClicked = useCallback(() => {
     if (direction === "left") {
       moveSlide();
     }
-    onSetDirection("right");
-    onSetCarouselStyle({
-      justifyContent: `flex-start`,
-    });
-    onSetSliderStyle({
-      transform: `translate(-33.3%)`,
-    });
-    if (active + 1 === imgs.length) {
-      onSetActive(0);
-    } else {
-      onSetActive(active + 1);
-    }
-  }, [
-    active,
-    direction,
-    moveSlide,
-    imgs.length,
-    onSetActive,
-    onSetCarouselStyle,
-    onSetSliderStyle,
-    onSetDirection,
-  ]);
+    dispatch(setDirection("right"));
+    dispatch(
+      setCarouselStyle({
+        justifyContent: `flex-start`,
+      })
+    );
+    dispatch(
+      setSliderStyle({
+        transform: `translate(-${slideWidth}%)`,
+      })
+    );
+    dispatch(setActive((active + 1) % imgLength));
+  }, [active, direction, moveSlide, imgLength, slideWidth, dispatch]);
   //  왼쪽 버튼 클릭
   const prevClicked = useCallback(() => {
     if (direction === "right") {
       moveSlide();
     }
     if (active === 0) {
-      onSetActive(imgs.length - 1);
+      dispatch(setActive(imgLength - 1));
     } else {
-      onSetActive(active - 1);
+      dispatch(setActive(active - 1));
     }
 
-    onSetDirection("left");
+    dispatch(setDirection("left"));
 
-    onSetCarouselStyle({
-      justifyContent: `flex-end`,
-    });
+    dispatch(
+      setCarouselStyle({
+        justifyContent: `flex-end`,
+      })
+    );
 
-    onSetSliderStyle({
-      transform: `translate(33.3%)`,
-    });
-  }, [
-    direction,
-    moveSlide,
-    imgs.length,
-    active,
-    onSetDirection,
-    onSetActive,
-    onSetCarouselStyle,
-    onSetSliderStyle,
-  ]);
+    dispatch(
+      setSliderStyle({
+        transform: `translate(${slideWidth}%)`,
+      })
+    );
+  }, [direction, moveSlide, imgLength, active, slideWidth, dispatch]);
 
   return (
     <SlideList

@@ -49,7 +49,7 @@ const initialState = {
   imgs: [],
   sliderStyle: {}, //슬라이더 스타일 상태
   carouselStyle: {},
-  direction: RIGHT, //슬라이드 방향
+  direction: null, //슬라이드 방향
   active: 0, // 현재 보이는 이미지
   loading: {
     GET_IMGS: false,

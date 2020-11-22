@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { DotSingle } from "@styled-icons/entypo/DotSingle";
 
 const ActiveDot = styled(DotSingle)`
-  color: #fff;
+  color: ${(props) => props.theme.color.lightBlue};
   width: 25px;
   height: 25px;
 `;
