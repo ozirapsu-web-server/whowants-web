@@ -76,7 +76,7 @@ const Notice = styled.div`
   width: 100%;
   display: flex;
   line-height: 19px;
-  padding: 15px;
+  padding: 15px 9px;
   background: ${(props) => props.theme.color.blue};
   font-size: 13px;
   border-radius: 6px;
@@ -92,9 +92,6 @@ const Notice = styled.div`
   }
 `;
 
-const Point = styled.p`
-  font-weight: bold;
-`;
 // 후원 금액 컴포넌트
 const Donation = React.memo(({ amount, target, percent }) => {
   let rocketPercent;
@@ -130,8 +127,8 @@ const Donation = React.memo(({ amount, target, percent }) => {
         <div style={{ marginRight: "3px" }}>💡</div>
         <div>
           <p>
-            후원츠는 목표 금액 달성과 관계 없이 모인 금액을 실제 사연의
-            주인공에게 직접 전달합니다.
+            후원츠는 목표 금액 달성과 관계 없이
+            <br /> 모인 금액을 실제 사연의 주인공에게 직접 전달합니다.
           </p>
         </div>
       </Notice>

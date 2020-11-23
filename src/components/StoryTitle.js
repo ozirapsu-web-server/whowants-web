@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   width: 100%;
   min-height: 100px;
   padding: 20px;
+  padding-bottom: 0;
   background: #fff;
 `;
 
@@ -12,7 +13,6 @@ const Header = styled.header`
   font-size: 24px;
   font-weight: bold;
   width: 100%;
-  margin-bottom: 10px;
   letter-spacing: -0.03em;
   line-height: 36px;
 `;
