@@ -94,14 +94,7 @@ const Notice = styled.div`
 
 // 후원 금액 컴포넌트
 const Donation = React.memo(({ amount, target, percent }) => {
-  let rocketPercent;
-  if (percent >= 100) {
-    rocketPercent = 85;
-  } else if (percent > 10) {
-    rocketPercent = percent - 10;
-  } else {
-    rocketPercent = percent - 5;
-  }
+  const actualPercent = amount / target;
   return (
     <DonationWrapper>
       <Container>
@@ -111,7 +104,8 @@ const Donation = React.memo(({ amount, target, percent }) => {
         </Percent>
         <ProgressWrapper>
           <Bar />
-          <ProgressBar onprogress={rocketPercent + 10}></ProgressBar>
+          {/* actualPercent를 넣으면 되나 화면에 보여주기 위해 임시 데이터 넣음 */}
+          <ProgressBar onprogress={5}></ProgressBar>
         </ProgressWrapper>
         <AmountWrapper>
           <div>모인 금액</div>
