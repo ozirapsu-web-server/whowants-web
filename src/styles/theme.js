@@ -5,6 +5,8 @@ const theme = {
     mint: "#ACEAF1",
     lightBlue: "#E5F2FF",
     notActive: "rgba(255, 255, 255, 0.4)",
+    gray: "#C4C4C4",
+    black: "#202020",
   },
   size: {
     sm: "11px",

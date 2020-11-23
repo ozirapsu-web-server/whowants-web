@@ -12,30 +12,7 @@ const Container = styled.div`
   padding: 18px;
   border: 1px solid #c6c6c6;
   border-radius: 6px;
-`;
-
-const Header = styled.header`
-  font-size: ${(props) => props.theme.size.md};
   margin-bottom: 20px;
-  display: flex;
-
-  & p {
-    color: ${(props) => props.theme.color.blue};
-    font-size: ${(props) => props.theme.size.lg};
-    font-weight: bold;
-  }
-`;
-
-const ProgressWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  height: 5px;
-  margin-bottom: 20px;
-  position: relative;
-
-  & div {
-    border-radius: 5px;
-  }
 `;
 
 const Percent = styled.div`
@@ -57,14 +34,25 @@ const Percent = styled.div`
   }
 `;
 
+const ProgressWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 5px;
+  margin-bottom: 30px;
+  position: relative;
+
+  & div {
+    border-radius: 5px;
+  }
+`;
+
 const Bar = styled.div`
   width: 100%;
   height: 18px;
-  background: ${(props) => props.theme.color.mint};
+  background: ${(props) => props.theme.color.gray};
   position: absolute;
   left: 0;
   top: 0;
-  margin-bottom: 20px;
 `;
 
 const ProgressBar = styled(Bar)`
@@ -73,36 +61,28 @@ const ProgressBar = styled(Bar)`
   height: 18px;
 `;
 
-const Status = styled.div`
-  width: 100%;
+const AmountWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 20px;
-`;
-
-const Target = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: ${(props) => props.theme.size.smd};
-  display: flex;
-  font-weight: bold;
-  margin-top: -10px;
-  & p:nth-child(1) {
-    margin-right: 3px;
+  font-size: 13px;
+  line-height: 20px;
+  color: ${(props) => props.theme.color.black};
+  & > div:nth-child(2) {
+    font-weight: bold;
   }
 `;
 
 const Notice = styled.div`
   width: 100%;
   display: flex;
-  line-height: 1.5em;
+  line-height: 19px;
   padding: 15px;
-  background: ${(props) => props.theme.color.mint};
-  font-size: ${(props) => props.theme.size.sm};
-  border-radius: 10px;
+  background: ${(props) => props.theme.color.blue};
+  font-size: 13px;
+  border-radius: 6px;
+  color: #fff;
 
-  & > div:nth-child(2) {
+  & p {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -133,27 +113,26 @@ const Donation = React.memo(({ amount, target, percent }) => {
           <p>% 진행중</p>
         </Percent>
         <ProgressWrapper>
-          <Bar></Bar>
+          <Bar />
           <ProgressBar onprogress={rocketPercent + 10}></ProgressBar>
         </ProgressWrapper>
-        <Header>
-          <p>{numberWithCommas(amount)}</p>원이 모였어요!
-        </Header>
-
-        <Status>
-          <Target>
-            <p>목표금액</p>
-            <p>{numberWithCommas(target)} 원</p>
-          </Target>
-        </Status>
+        <AmountWrapper>
+          <div>모인 금액</div>
+          <div>{numberWithCommas(amount)}원</div>
+        </AmountWrapper>
+        <AmountWrapper>
+          <div>목표 금액</div>
+          <div>{numberWithCommas(target)}원</div>
+        </AmountWrapper>
       </Container>
 
       <Notice>
         <div style={{ marginRight: "3px" }}>💡</div>
         <div>
-          <p>후원츠는</p> <Point>목표 금액 달성과 관계 없이</Point>
-          <br /> <p>모인 금액을 실제 사연의</p>
-          <Point>주인공에게 직접 전달합니다.</Point>
+          <p>
+            후원츠는 목표 금액 달성과 관계 없이 모인 금액을 실제 사연의
+            주인공에게 직접 전달합니다.
+          </p>
         </div>
       </Notice>
     </DonationWrapper>
