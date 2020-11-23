@@ -13,7 +13,7 @@ const StoryWrapper = styled.section`
   width: 100%;
   height: 100%;
   margin-bottom: 125px;
-  margin-top: 61.03px;
+  margin-top: 55.43px;
 `;
 //  사연 페이지
 const Story = React.memo(() => {
