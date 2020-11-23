@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ArrowRightCircle } from "@styled-icons/feather/ArrowRightCircle";
+import { ArrowIosForwardOutline } from "@styled-icons/evaicons-outline/ArrowIosForwardOutline";
 import DotList from "components/DotList";
 import Slide from "components/Slide";
 const Carousel = styled.div`
@@ -20,12 +20,13 @@ const Sliders = styled.div`
   transition: all 0.5s;
 `;
 
-const Button = styled(ArrowRightCircle)`
+const Button = styled(ArrowIosForwardOutline)`
   position: absolute;
   top: 50%;
   width: 40px;
   height: 40px;
-  color: ${(props) => props.theme.color.mint};
+  color: black;
+  // color: ${(props) => props.theme.color.mint};
 
   &:active {
     color: ${(props) => props.theme.color.blue};

@@ -1,10 +1,12 @@
 const theme = {
   color: {
-    blue: "#334FF0",
+    blue: "#2069F6",
     middleBlue: "#79DFF4",
     mint: "#ACEAF1",
     lightBlue: "#E5F2FF",
     notActive: "rgba(255, 255, 255, 0.4)",
+    gray: "#C4C4C4",
+    black: "#202020",
   },
   size: {
     sm: "11px",
