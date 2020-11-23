@@ -9,23 +9,41 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.header`
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   width: 100%;
   margin-bottom: 10px;
-  line-height: 1.5em;
+  letter-spacing: -0.03em;
+  line-height: 36px;
+`;
+const TagWrapper = styled.div`
+  display: flex;
+  margin-bottom: 10px;
+`;
+const Tag = styled.div`
+  border-radius: 13.5px;
+  color: #4277ee;
+  border: 1px solid #4277ee;
+  font-size: 14px;
+  font-weight: bold;
+  width: 78px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 7px;
 `;
 
-const SummaryContent = styled.div`
-  font-size: ${(props) => props.theme.size.smd};
-  line-height: 1.5em;
-`;
 //  사연 요약 정보 컴포넌트
-const Summary = React.memo(({ title, summary }) => {
+const Summary = React.memo(({ title }) => {
   return (
     <Wrapper>
+      <TagWrapper>
+        <Tag>#고등학생</Tag>
+        <Tag>#전신마비</Tag>
+        <Tag>#수술비</Tag>
+      </TagWrapper>
       <Header>{title}</Header>
-      <SummaryContent>{summary}</SummaryContent>
     </Wrapper>
   );
 });
