@@ -1,18 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import rocket from "images/rocket.png";
 import { numberWithCommas } from "utils/util";
 
 const DonationWrapper = styled.section`
   width: 100%;
   min-height: 100px;
-  background: ${(props) => props.theme.color.lightBlue};
   padding: 20px;
+`;
+
+const Container = styled.div`
+  padding: 18px;
+  border: 1px solid #c6c6c6;
+  border-radius: 6px;
 `;
 
 const Header = styled.header`
   font-size: ${(props) => props.theme.size.md};
-
   margin-bottom: 20px;
   display: flex;
 
@@ -27,30 +30,47 @@ const ProgressWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 5px;
-  background: pink;
   margin-bottom: 20px;
   position: relative;
+
+  & div {
+    border-radius: 5px;
+  }
+`;
+
+const Percent = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 7px;
+  & p:nth-child(1) {
+    margin-right: 3px;
+  }
+  & p:nth-child(1) {
+    font-size: 24px;
+    color: ${(props) => props.theme.color.blue};
+  }
+
+  & p:nth-child(2) {
+    font-weight: bold;
+    font-size: 14px;
+  }
 `;
 
 const Bar = styled.div`
   width: 100%;
-  height: 5px;
+  height: 18px;
   background: ${(props) => props.theme.color.mint};
   position: absolute;
   left: 0;
   top: 0;
+  margin-bottom: 20px;
 `;
 
 const ProgressBar = styled(Bar)`
   width: ${(props) => props.onprogress}%;
   background: ${(props) => props.theme.color.blue};
-`;
-
-const Rocket = styled.img`
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  left: ${(props) => props.onprogress}%;
+  height: 18px;
 `;
 
 const Status = styled.div`
@@ -59,8 +79,6 @@ const Status = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 20px;
-  margin-bottom: 20px;
-  margin-top: -8px;
 `;
 
 const Target = styled.div`
@@ -72,17 +90,6 @@ const Target = styled.div`
   margin-top: -10px;
   & p:nth-child(1) {
     margin-right: 3px;
-  }
-`;
-
-const Percent = styled(Target)`
-  & p:nth-child(1) {
-    font-size: ${(props) => props.theme.size.mmd};
-    color: ${(props) => props.theme.color.blue};
-  }
-
-  & p:nth-child(2) {
-    font-weight: bold;
   }
 `;
 
@@ -120,24 +127,27 @@ const Donation = React.memo(({ amount, target, percent }) => {
   }
   return (
     <DonationWrapper>
-      <Header>
-        <p>{numberWithCommas(amount)}</p>원이 모였어요!
-      </Header>
-      <ProgressWrapper>
-        <Bar></Bar>
-        <ProgressBar onprogress={rocketPercent + 10}></ProgressBar>
-        <Rocket onprogress={rocketPercent} src={rocket} />
-      </ProgressWrapper>
-      <Status>
-        <Target>
-          <p>목표금액</p>
-          <p>{numberWithCommas(target)} 원</p>
-        </Target>
+      <Container>
         <Percent>
           <p>{percent}</p>
           <p>% 진행중</p>
         </Percent>
-      </Status>
+        <ProgressWrapper>
+          <Bar></Bar>
+          <ProgressBar onprogress={rocketPercent + 10}></ProgressBar>
+        </ProgressWrapper>
+        <Header>
+          <p>{numberWithCommas(amount)}</p>원이 모였어요!
+        </Header>
+
+        <Status>
+          <Target>
+            <p>목표금액</p>
+            <p>{numberWithCommas(target)} 원</p>
+          </Target>
+        </Status>
+      </Container>
+
       <Notice>
         <div style={{ marginRight: "3px" }}>💡</div>
         <div>
