@@ -35,7 +35,7 @@ const Tag = styled.div`
 `;
 
 //  사연 요약 정보 컴포넌트
-const Summary = React.memo(({ title }) => {
+const StoryTitle = React.memo(({ title }) => {
   return (
     <Wrapper>
       <TagWrapper>
@@ -48,4 +48,4 @@ const Summary = React.memo(({ title }) => {
   );
 });
 
-export default Summary;
+export default StoryTitle;

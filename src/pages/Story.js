@@ -1,7 +1,7 @@
 import React from "react";
 import LogoContainer from "containers/LogoContainer";
 import SlideContainer from "containers/SlideContainer";
-import SummaryContainer from "containers/SummaryContainer";
+import StoryTitleContainer from "containers/StoryTitleContainer";
 import DonationContainer from "containers/DonationContainer";
 import TabsContainer from "containers/TabsContainer";
 import OrganizerContainer from "containers/OrganizerContainer";
@@ -21,7 +21,7 @@ const Story = React.memo(() => {
     <StoryWrapper>
       <LogoContainer />
       <SlideContainer />
-      <SummaryContainer />
+      <StoryTitleContainer />
       <DonationContainer />
       <TabsContainer />
       <OrganizerContainer />

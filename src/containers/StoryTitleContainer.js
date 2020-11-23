@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Summary from "components/Summary";
+import StoryTitle from "components/StoryTitle";
 import { useSelector, useDispatch } from "react-redux";
 import { getStoryInfo } from "modules/story";
 
 //  사연 요약 정보 컴포넌트
-const SummaryContainer = React.memo(() => {
+const StoryTitleContainer = React.memo(() => {
   const { title, summary } = useSelector((state) => ({
     title: state.story.title,
     summary: state.story.summary,
@@ -13,7 +13,7 @@ const SummaryContainer = React.memo(() => {
   useEffect(() => {
     dispatch(getStoryInfo(1));
   }, [dispatch]);
-  return <Summary title={title} summary={summary}></Summary>;
+  return <StoryTitle title={title} summary={summary}></StoryTitle>;
 });
 
-export default SummaryContainer;
+export default StoryTitleContainer;
