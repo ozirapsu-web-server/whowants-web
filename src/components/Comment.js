@@ -38,7 +38,7 @@ const CommentSection = styled.div`
 const Comment = React.memo(({ name, amount, comment }) => {
   return (
     <CommentItem>
-      <Name>{name}님이 응원합니다.</Name>
+      <Name>{name} 님이 응원합니다.</Name>
       {/* {parseInt(amount) !== 0 && (
         <AmountContainer>
           <div>{numberWithCommas(amount)}</div>

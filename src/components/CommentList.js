@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import Comment from "components/Comment";
+import { ArrowIosDownwardOutline } from "@styled-icons/evaicons-outline/ArrowIosDownwardOutline";
+import { ArrowIosUpwardOutline } from "@styled-icons/evaicons-outline/ArrowIosUpwardOutline";
 
 const CommentWrapper = styled.section`
   width: 100%;
@@ -21,20 +23,32 @@ const NumberOfSupporter = styled.div`
   font-weight: 800;
   font-size: 15px;
 `;
+const DownArrow = styled(ArrowIosDownwardOutline)`
+  width: ${(props) => props.theme.size.mmd};
+  height: ${(props) => props.theme.size.mmd};
+`;
+const UpArrow = styled(ArrowIosUpwardOutline)`
+  width: ${(props) => props.theme.size.mmd};
+  height: ${(props) => props.theme.size.mmd};
+`;
 
 const SeeAllBtn = styled.button`
   width: 100%;
   height: 45px;
-  background: ${(props) => props.theme.color.blue};
-  color: #fff;
-  font-size: ${(props) => props.theme.size.smd};
+  color: ${(props) => props.theme.color.blue};
+  border: none;
+  & > div {
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid ${(props) => props.theme.color.blue};
+  }
+  font-size: ${(props) => props.theme.size.mmd};
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  border-radius: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 //  댓글 리스트 컴포넌트
 const CommentList = React.memo(
@@ -79,10 +93,20 @@ const CommentList = React.memo(
           })}
         <div ref={myComment}></div>
         {!seeAllComments && lenOfComments !== 0 && (
-          <SeeAllBtn onClick={onToggleComments}>응원 모두 보기</SeeAllBtn>
+          <SeeAllBtn onClick={onToggleComments}>
+            <div>
+              응원 모두보기
+              <DownArrow />
+            </div>
+          </SeeAllBtn>
         )}
         {seeAllComments && lenOfComments !== 0 && (
-          <SeeAllBtn onClick={onToggleComments}>응원 모두 보기 접기</SeeAllBtn>
+          <SeeAllBtn onClick={onToggleComments}>
+            <div>
+              응원 모두보기 접기
+              <UpArrow />
+            </div>
+          </SeeAllBtn>
         )}
       </CommentWrapper>
     );
