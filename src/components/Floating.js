@@ -1,4 +1,3 @@
-import react from "react";
 import styled from "styled-components";
 import { Heart } from "@styled-icons/boxicons-regular/Heart";
 import { Link } from "react-router-dom";
@@ -7,33 +6,33 @@ import KakaoShareButton from "button/KakaoSharedButton";
 const FloatWrapper = styled.section`
   border: none;
   width: 100%;
-  height: 125px;
+  padding: 20px;
   background: #fff;
   position: fixed;
   left: 0;
   bottom: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 
-  & * {
-    border: none;
-    font-size: ${(props) => props.theme.size.smd};
-    font-weight: bold;
-    width: 100%;
+  & > * {
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${(props) => props.theme.size.mmd};
+    font-weight: 700;
+    width: 49%;
+    margin: 0 5px;
+    border: 1px solid black;
+    border-radius: 6px;
   }
 `;
 
 const Participate = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  height: 45px;
   background: ${(props) => props.theme.color.blue};
   color: #fff;
-  border-radius: 10px;
+  border: none;
 `;
 
 const ExtraWrapper = styled.div`
@@ -67,16 +66,15 @@ const Floating = () => {
   return (
     <>
       <FloatWrapper>
-        <Participate>
-          <Link to="/participate">응원 참여하기</Link>
-        </Participate>
-
-        <ExtraWrapper>
+        {/* <ExtraWrapper>
           <div>
             <UnLiked />
           </div>
-          <KakaoShareButton />
-        </ExtraWrapper>
+        </ExtraWrapper> */}
+        <KakaoShareButton />
+        <Participate>
+          <Link to="/participate">사연 후원하기</Link>
+        </Participate>
       </FloatWrapper>
     </>
   );
