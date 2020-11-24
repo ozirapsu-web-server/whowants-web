@@ -14,29 +14,31 @@ const CommentItem = styled.div`
 `;
 
 const Name = styled.div`
-  font-weight: bold;
-  font-size: ${(props) => props.theme.size.mmd};
+  font-weight: 800;
+  font-size: 12px;
 `;
 
 const AmountContainer = styled.div`
-  font-weight: bold;
-  font-size: ${(props) => props.theme.size.smd};
   & div:nth-child(1) {
+    font-weight: 700;
+    font-size: 14px;
     color: ${(props) => props.theme.color.blue};
   }
+  font-size: 12px;
   display: flex;
   margin-top: 5px;
 `;
 
 const CommentSection = styled.div`
   font-size: ${(props) => props.theme.size.smd};
+  line-height: 20px;
   margin-top: 5px;
 `;
 //  하나의 댓글
 const Comment = React.memo(({ name, amount, comment }) => {
   return (
     <CommentItem>
-      <Name>{name}</Name>
+      <Name>{name}님이 응원합니다.</Name>
       {/* {parseInt(amount) !== 0 && (
         <AmountContainer>
           <div>{numberWithCommas(amount)}</div>

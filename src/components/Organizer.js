@@ -11,7 +11,7 @@ const OrganizerWrapper = styled.div`
   flex-direction: column;
   border: 1px solid ${(props) => props.theme.color.gray};
   border-radius: 6px;
-  margin: 0 20px;
+  margin: 26px;
 `;
 
 const Header = styled.div`

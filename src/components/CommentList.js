@@ -5,23 +5,21 @@ import Comment from "components/Comment";
 const CommentWrapper = styled.section`
   width: 100%;
   padding: 20px;
+  background: #f0f0f0;
 `;
 
 const Notice = styled.div`
   height: 60px;
-  padding: 10px 5px;
   width: 100%;
-  background: ${(props) => props.theme.color.mint};
-  border-radius: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+  font-weight: 400;
+  padding-left: 5px;
 `;
 
 const NumberOfSupporter = styled.div`
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 800;
+  font-size: 15px;
 `;
 
 const SeeAllBtn = styled.button`
