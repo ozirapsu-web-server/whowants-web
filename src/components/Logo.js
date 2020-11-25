@@ -4,7 +4,7 @@ import logo from "images/logo.png";
 
 const Header = styled.header`
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 4fr 1fr;
   align-items: center;
   justify-items: center;
   position: fixed;
