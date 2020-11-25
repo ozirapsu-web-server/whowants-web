@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "images/logo.png";
-import hamburgerBar from "images/hamburgerBar.png";
+
 const Header = styled.header`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -17,17 +17,16 @@ const Header = styled.header`
   & img {
     width: auto;
     height: auto;
-    margin: auto;
   }
   & img:nth-child(2) {
     height: auto;
   }
 `;
 //  후원츠 로고
-const Logo = React.memo(() => {
+const Logo = React.memo(({ bar }) => {
   return (
     <Header>
-      <img src={hamburgerBar} />
+      <img src={bar} alt="메뉴바" />
       <img src={logo} alt="로고" />
     </Header>
   );
