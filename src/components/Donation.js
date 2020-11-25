@@ -1,25 +1,36 @@
 import React from "react";
 import styled from "styled-components";
-import rocket from "images/rocket.png";
 import { numberWithCommas } from "utils/util";
 
 const DonationWrapper = styled.section`
   width: 100%;
   min-height: 100px;
-  background: ${(props) => props.theme.color.lightBlue};
   padding: 20px;
 `;
 
-const Header = styled.header`
-  font-size: ${(props) => props.theme.size.md};
-
+const Container = styled.div`
+  padding: 18px;
+  border: 1px solid #c6c6c6;
+  border-radius: 6px;
   margin-bottom: 20px;
-  display: flex;
+`;
 
-  & p {
+const Percent = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 7px;
+  & p:nth-child(1) {
+    margin-right: 3px;
+  }
+  & p:nth-child(1) {
+    font-size: 24px;
     color: ${(props) => props.theme.color.blue};
-    font-size: ${(props) => props.theme.size.lg};
+  }
+
+  & p:nth-child(2) {
     font-weight: bold;
+    font-size: 14px;
   }
 `;
 
@@ -27,15 +38,18 @@ const ProgressWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 5px;
-  background: pink;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   position: relative;
+
+  & div {
+    border-radius: 5px;
+  }
 `;
 
 const Bar = styled.div`
   width: 100%;
-  height: 5px;
-  background: ${(props) => props.theme.color.mint};
+  height: 18px;
+  background: ${(props) => props.theme.color.gray};
   position: absolute;
   left: 0;
   top: 0;
@@ -44,44 +58,16 @@ const Bar = styled.div`
 const ProgressBar = styled(Bar)`
   width: ${(props) => props.onprogress}%;
   background: ${(props) => props.theme.color.blue};
+  height: 18px;
 `;
 
-const Rocket = styled.img`
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  left: ${(props) => props.onprogress}%;
-`;
-
-const Status = styled.div`
-  width: 100%;
+const AmountWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 20px;
-  margin-bottom: 20px;
-  margin-top: -8px;
-`;
-
-const Target = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: ${(props) => props.theme.size.smd};
-  display: flex;
-  font-weight: bold;
-  margin-top: -10px;
-  & p:nth-child(1) {
-    margin-right: 3px;
-  }
-`;
-
-const Percent = styled(Target)`
-  & p:nth-child(1) {
-    font-size: ${(props) => props.theme.size.mmd};
-    color: ${(props) => props.theme.color.blue};
-  }
-
-  & p:nth-child(2) {
+  font-size: 13px;
+  line-height: 20px;
+  color: ${(props) => props.theme.color.black};
+  & > div:nth-child(2) {
     font-weight: bold;
   }
 `;
@@ -89,13 +75,14 @@ const Percent = styled(Target)`
 const Notice = styled.div`
   width: 100%;
   display: flex;
-  line-height: 1.5em;
-  padding: 15px;
-  background: ${(props) => props.theme.color.mint};
-  font-size: ${(props) => props.theme.size.sm};
-  border-radius: 10px;
+  line-height: 19px;
+  padding: 15px 9px;
+  background: ${(props) => props.theme.color.blue};
+  font-size: 13px;
+  border-radius: 6px;
+  color: #fff;
 
-  & > div:nth-child(2) {
+  & p {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -105,45 +92,38 @@ const Notice = styled.div`
   }
 `;
 
-const Point = styled.p`
-  font-weight: bold;
-`;
 // 후원 금액 컴포넌트
 const Donation = React.memo(({ amount, target, percent }) => {
-  let rocketPercent;
-  if (percent >= 100) {
-    rocketPercent = 85;
-  } else if (percent > 10) {
-    rocketPercent = percent - 10;
-  } else {
-    rocketPercent = percent - 5;
-  }
+  const actualPercent = amount / target;
   return (
     <DonationWrapper>
-      <Header>
-        <p>{numberWithCommas(amount)}</p>원이 모였어요!
-      </Header>
-      <ProgressWrapper>
-        <Bar></Bar>
-        <ProgressBar onprogress={rocketPercent + 10}></ProgressBar>
-        <Rocket onprogress={rocketPercent} src={rocket} />
-      </ProgressWrapper>
-      <Status>
-        <Target>
-          <p>목표금액</p>
-          <p>{numberWithCommas(target)} 원</p>
-        </Target>
+      <Container>
         <Percent>
           <p>{percent}</p>
           <p>% 진행중</p>
         </Percent>
-      </Status>
+        <ProgressWrapper>
+          <Bar />
+          {/* actualPercent를 넣으면 되나 화면에 보여주기 위해 임시 데이터 넣음 */}
+          <ProgressBar onprogress={5}></ProgressBar>
+        </ProgressWrapper>
+        <AmountWrapper>
+          <div>모인 금액</div>
+          <div>{numberWithCommas(amount)}원</div>
+        </AmountWrapper>
+        <AmountWrapper>
+          <div>목표 금액</div>
+          <div>{numberWithCommas(target)}원</div>
+        </AmountWrapper>
+      </Container>
+
       <Notice>
         <div style={{ marginRight: "3px" }}>💡</div>
         <div>
-          <p>후원츠는</p> <Point>목표 금액 달성과 관계 없이</Point>
-          <br /> <p>모인 금액을 실제 사연의</p>
-          <Point>주인공에게 직접 전달합니다.</Point>
+          <p>
+            후원츠는 목표 금액 달성과 관계 없이
+            <br /> 모인 금액을 실제 사연의 주인공에게 직접 전달합니다.
+          </p>
         </div>
       </Notice>
     </DonationWrapper>
