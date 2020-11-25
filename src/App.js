@@ -3,8 +3,9 @@ import reset from "styled-reset";
 import { Route } from "react-router-dom";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "styles/theme";
-import Story from "pages/Story";
-import Participate from "pages/Participate";
+import StoryPage from "pages/StoryPage";
+import ParticipatePage from "pages/ParticipatePage";
+import BarPage from "pages/Barpage";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -66,9 +67,10 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Route path="/" component={Story} exact={true} />
-      <Route path="/story" component={Story} exact={true} />
-      <Route path="/participate" component={Participate} exact={true} />
+      <Route path="/" component={StoryPage} exact={true} />
+      <Route path="/story" component={StoryPage} exact={true} />
+      <Route path="/participate" component={ParticipatePage} exact={true} />
+      <Route path="/bar" component={BarPage} exact={true} />
       <Route path="/" exact={true}>
         NOT FOUND
       </Route>
