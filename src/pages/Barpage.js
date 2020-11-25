@@ -1,10 +1,10 @@
 import React from "react";
 import LogoContainer from "containers/LogoContainer";
-import close from "images/close.png";
+import BarContainer from "containers/BarContainer";
 const Barpage = () => {
   return (
     <div>
-      <LogoContainer bar={close} />
+      <BarContainer />
     </div>
   );
 };
