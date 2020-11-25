@@ -13,7 +13,7 @@ const StoryWrapper = styled.section`
   width: 100%;
   height: 100%;
   margin-bottom: 125px;
-  margin-top: 55.43px;
+  margin-top: 55px;
   background: #fff;
 `;
 //  사연 페이지

@@ -1,21 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "images/logo.png";
-
+import hamburgerBar from "images/hamburgerBar.png";
 const Header = styled.header`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
+  justify-items: center;
   position: fixed;
   top: 0;
   left: 0;
   background: #fff;
   width: 100%;
+  height: 55px;
   z-index: 10;
-
   & img {
-    margin: 20px 0;
-    width: 30%;
+    width: auto;
+    height: auto;
+    margin: auto;
+  }
+  & img:nth-child(2) {
     height: auto;
   }
 `;
@@ -23,6 +27,7 @@ const Header = styled.header`
 const Logo = React.memo(() => {
   return (
     <Header>
+      <img src={hamburgerBar} />
       <img src={logo} alt="로고" />
     </Header>
   );

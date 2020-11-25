@@ -26,7 +26,6 @@ const Button = styled(ArrowIosForwardOutline)`
   width: 40px;
   height: 40px;
   color: ${(props) => props.theme.color.gray};
-  // color: ${(props) => props.theme.color.mint};
 
   &:active {
     color: ${(props) => props.theme.color.black};

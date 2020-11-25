@@ -53,6 +53,6 @@ const KakaoShareButton = () => {
       });
     }
   };
-  return <div id="kakao-link-btn">공유하기</div>;
+  return <div id="kakao-link-btn">카카오톡으로 공유하기</div>;
 };
 export default KakaoShareButton;
