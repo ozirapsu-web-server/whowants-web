@@ -5,6 +5,7 @@ import { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "styles/theme";
 import StoryPage from "pages/StoryPage";
 import ParticipatePage from "pages/ParticipatePage";
+import LandingPage from "pages/LandingPage";
 import LinkPage from "pages/LinkPage";
 
 const GlobalStyle = createGlobalStyle`
@@ -67,7 +68,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Route path="/" component={StoryPage} exact={true} />
+      <Route path="/" component={LandingPage} exact={true} />
       <Route path="/storyPage" component={StoryPage} exact={true} />
       <Route path="/participate" component={ParticipatePage} exact={true} />
       <Route path="/linkPage" component={LinkPage} exact={true} />
