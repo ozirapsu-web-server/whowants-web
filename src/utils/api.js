@@ -1,8 +1,9 @@
 import axios from "axios";
+//  api 모음
+
+export const getRecentStory = () => axios.get(`/story/recent`);
 
 export const getStory = (idx) => axios.get(`/story/${idx}`);
-
-//  api 모음
 
 export const getImgs = (idx) => axios.get(`/story/${idx}/image`);
 
