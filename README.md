@@ -2,6 +2,7 @@
 
 - SOPT 동아리에서 사이드 프로젝트를 진행하고 있는 후원츠 팀입니다.
 - 기부 플랫폼을 개발하고 있습니다.
+- 최대한 UI 라이브러리 없이 UI를 개발하고 있습니다. 
 
 - containers 폴더
 
@@ -26,7 +27,7 @@
 
 ## 배포 v1
 
-- 서버에서 cors 설정 필요한 상태 (진행 중)
+- github Action으로 CI/CD를 구축했습니다. 
 - [후원츠 웹 버전 배포 v1](http://whowants2.s3-website.ap-northeast-2.amazonaws.com/)
 
 ### [실행]
