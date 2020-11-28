@@ -28,6 +28,8 @@
 ## 배포 v1
 
 - github Action으로 CI/CD를 구축했습니다. 
+- 현재 모바일 웹 디자인으로만 제공하고 있습니다. 모바일 웹에서 확인해주세요.
+- 웹 화면 디자인은 현재 진행중입니다.
 - [후원츠 웹 버전 배포 v1](http://whowants2.s3-website.ap-northeast-2.amazonaws.com/)
 
 ### [실행]
