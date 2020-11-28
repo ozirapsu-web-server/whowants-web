@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { withRouter } from "react-router-dom";
 
 const ListWrapper = styled.section`
   padding: 20px;
@@ -10,6 +11,7 @@ const ListWrapper = styled.section`
   & > * {
     line-height: 1.5em;
     margin-bottom: 0.5em;
+    font-weight: 700;
   }
 `;
 
@@ -21,7 +23,6 @@ const Title = styled.h1`
 
 const Section = styled.div`
   font-size: 28px;
-  font-weight: 700;
 `;
 
 const LinkList = () => {
@@ -36,4 +37,4 @@ const LinkList = () => {
   );
 };
 
-export default LinkList;
+export default withRouter(LinkList);
