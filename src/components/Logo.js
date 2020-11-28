@@ -23,10 +23,10 @@ const Header = styled.header`
   }
 `;
 //  후원츠 로고
-const Logo = React.memo(({ bar }) => {
+const Logo = React.memo(({ left }) => {
   return (
     <Header>
-      <img src={bar} alt="메뉴바" />
+      <img src={left} alt="메뉴바" />
       <img src={logo} alt="로고" />
     </Header>
   );

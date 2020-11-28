@@ -7,6 +7,7 @@ const theme = {
     notActive: "rgba(255, 255, 255, 0.4)",
     gray: "#C4C4C4",
     black: "#202020",
+    grayB2: "#B2B2B2",
   },
   size: {
     sm: "11px",
