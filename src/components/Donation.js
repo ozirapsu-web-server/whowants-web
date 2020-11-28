@@ -94,7 +94,7 @@ const Notice = styled.div`
 
 // 후원 금액 컴포넌트
 const Donation = React.memo(({ amount, target, percent }) => {
-  const actualPercent = amount / target;
+  const actualPercent = (amount / target) * 100;
   return (
     <DonationWrapper>
       <Container>
@@ -105,8 +105,9 @@ const Donation = React.memo(({ amount, target, percent }) => {
         <ProgressWrapper>
           <Bar />
           {/* actualPercent를 넣으면 되나 화면에 보여주기 위해 임시 데이터 넣음 */}
-          <ProgressBar onprogress={5}></ProgressBar>
+          <ProgressBar onprogress={actualPercent}></ProgressBar>
         </ProgressWrapper>
+
         <AmountWrapper>
           <div>모인 금액</div>
           <div>{numberWithCommas(amount)}원</div>

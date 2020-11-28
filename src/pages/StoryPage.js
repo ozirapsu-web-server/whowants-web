@@ -20,7 +20,7 @@ const StoryWrapper = styled.section`
 const Story = React.memo(() => {
   return (
     <StoryWrapper>
-      <LogoContainer bar={hamburgerBar} />
+      <LogoContainer left={hamburgerBar} />
       <SlideContainer />
       <StoryTitleContainer />
       <DonationContainer />

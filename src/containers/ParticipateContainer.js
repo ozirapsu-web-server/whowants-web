@@ -32,7 +32,6 @@ const ParticipateContainer = React.memo(({ history }) => {
     // 사연 페이지로 이동
     history.push("/");
   };
-
   const goBack = () => {
     history.goBack();
   };
