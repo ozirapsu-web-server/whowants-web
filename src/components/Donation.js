@@ -107,6 +107,7 @@ const Donation = React.memo(({ amount, target, percent }) => {
           {/* actualPercent를 넣으면 되나 화면에 보여주기 위해 임시 데이터 넣음 */}
           <ProgressBar onprogress={actualPercent}></ProgressBar>
         </ProgressWrapper>
+
         <AmountWrapper>
           <div>모인 금액</div>
           <div>{numberWithCommas(amount)}원</div>
