@@ -16,9 +16,6 @@ const App = () => {
       <Route path="/storyPage" component={StoryPage} exact={true} />
       <Route path="/participate" component={ParticipatePage} exact={true} />
       <Route path="/linkPage" component={LinkPage} exact={true} />
-      <Route path="/" exact={true}>
-        NOT FOUND
-      </Route>
     </ThemeProvider>
   );
 };

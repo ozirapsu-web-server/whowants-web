@@ -4,7 +4,8 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   width: 100%;
   min-height: 100px;
-  padding: 20px;
+  padding-top: ${(props) => props.padding}px;
+  padding: ${(props) => props.story}px;
   padding-bottom: 0;
   background: #fff;
 `;
@@ -24,9 +25,9 @@ const Tag = styled.div`
   border-radius: 13.5px;
   color: #4277ee;
   border: 1px solid #4277ee;
-  font-size: 14px;
+  font-size: ${(props) => props.size}px;
   font-weight: bold;
-  width: 78px;
+  width: ${(props) => props.width}px;
   height: 28px;
   display: flex;
   justify-content: center;
@@ -35,17 +36,23 @@ const Tag = styled.div`
 `;
 
 //  사연 요약 정보 컴포넌트
-const StoryTitle = React.memo(({ title }) => {
-  return (
-    <Wrapper>
-      <TagWrapper>
-        <Tag>#고등학생</Tag>
-        <Tag>#전신마비</Tag>
-        <Tag>#수술비</Tag>
-      </TagWrapper>
-      <Header>{title}</Header>
-    </Wrapper>
-  );
-});
+const StoryTitle = React.memo(
+  ({ tags, title, padding, width, size, story }) => {
+    return (
+      <Wrapper padding={padding || 0} story={story}>
+        <TagWrapper>
+          {tags.map((item, idx) => (
+            <div key={`${title}-${item}`}>
+              <Tag width={width || 78} size={size || 14}>
+                #{item}
+              </Tag>
+            </div>
+          ))}
+        </TagWrapper>
+        <Header>{title}</Header>
+      </Wrapper>
+    );
+  }
+);
 
 export default StoryTitle;
