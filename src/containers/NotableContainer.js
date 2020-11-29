@@ -7,11 +7,11 @@ const NotableContainer = () => {
     stories: state.story.recentStories,
   }));
   const dispatch = useDispatch();
-  console.log(stories);
+  const title = "주목할만한 사연";
   useEffect(() => {
     dispatch(getRecentStory());
   }, [dispatch]);
-  return <NotableStoryList data={stories}></NotableStoryList>;
+  return <NotableStoryList data={stories} title={title}></NotableStoryList>;
 };
 
 export default NotableContainer;
