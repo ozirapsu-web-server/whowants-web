@@ -4,6 +4,7 @@ import * as api from "utils/api";
 //  사연 액션
 const GET_STORY_INFO = "story/GET_STORY_INFO";
 const GET_RECENT_STORY = "story/GET_RECENT_STORY";
+const SET_STORY_IDX = "story/SET_STORY_IDX";
 
 // 액션 생성함수
 export const getStoryInfo = (idx) => async (dispatch) => {
@@ -17,15 +18,18 @@ export const getStoryInfo = (idx) => async (dispatch) => {
 //  방금 시작된 사연
 export const getRecentStory = () => async (dispatch) => {
   const response = await api.getRecentStory();
-  console.log(response.data.data);
   try {
     dispatch({ type: GET_RECENT_STORY, payload: response.data.data });
   } catch (e) {
     throw e;
   }
 };
+
+export const setStoryIdx = createAction(SET_STORY_IDX, (idx) => idx);
+
 //  초기상태
 const initialState = {
+  idx: 1,
   recentStories: [],
   summary: "",
   title: "",
@@ -47,6 +51,10 @@ const story = handleActions(
     [GET_RECENT_STORY]: (state, action) => ({
       ...state,
       recentStories: action.payload,
+    }),
+    [SET_STORY_IDX]: (state, { payload: idx }) => ({
+      ...state,
+      idx,
     }),
   },
   initialState

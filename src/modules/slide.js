@@ -11,7 +11,6 @@ const SET_SLIDER_STYLE = "SET_SLIDER_STYLE";
 const SET_CAROUSEL_STYLE = "SET_CAROUSEL_STLYE";
 const SET_DIRECTION = "SET_DIRECTION";
 const SET_ACTIVE = "SET_ACTIVE";
-const RIGHT = "right";
 
 // 액션 생성함수
 export const getImgs = (idx) => async (dispatch) => {

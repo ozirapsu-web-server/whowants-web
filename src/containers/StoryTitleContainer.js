@@ -5,15 +5,15 @@ import { getStoryInfo } from "modules/story";
 
 //  사연 요약 정보 컴포넌트 -> 태그로 변경
 const StoryTitleContainer = React.memo(() => {
-  const { title, summary, tags } = useSelector((state) => ({
+  const { title, tags, idx } = useSelector((state) => ({
     title: state.story.title,
-    summary: state.story.summary,
     tags: state.story.tags,
+    idx: state.story.idx,
   }));
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getStoryInfo(1));
-  }, [dispatch]);
+    dispatch(getStoryInfo(idx));
+  }, [dispatch, idx]);
   return <StoryTitle title={title} tags={tags} story={20}></StoryTitle>;
 });
 
