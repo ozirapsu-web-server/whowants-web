@@ -74,7 +74,7 @@ const Modal = React.memo(({ visible, onAddComment, amount }) => {
               ? "기부 기능이 오픈되면 가장 먼저 연락 메세지를 드리겠습니다."
               : "응원해주셔서 감사합니다"}
           </div>
-          <ModalBtn onClick={() => onAddComment(1)}>확인</ModalBtn>
+          <ModalBtn onClick={onAddComment}>확인</ModalBtn>
         </ModalContent>
       </ModalOverlay>
     </ModalWrapper>

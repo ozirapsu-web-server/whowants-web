@@ -11,24 +11,30 @@ import {
 import SlideList from "components/SlideList";
 // 이미지 슬라이드 컨테이너 컴포넌트
 const SlideContainer = React.memo(() => {
-  const { imgs, sliderStyle, carouselStyle, direction, active } = useSelector(
-    (state) => ({
-      imgs: state.slide.imgs,
-      loading: state.slide.loading.GET_IMGS,
-      sliderStyle: state.slide.sliderStyle, //슬라이드 스타일
-      direction: state.slide.direction, //슬라이드 이동 방향
-      active: state.slide.active, //현재 보이는 이미지
-      carouselStyle: state.slide.carouselStyle, //carousel컴포넌트 스타일
-    })
-  );
+  const {
+    imgs,
+    sliderStyle,
+    carouselStyle,
+    direction,
+    active,
+    idx,
+  } = useSelector((state) => ({
+    imgs: state.slide.imgs,
+    loading: state.slide.loading.GET_IMGS,
+    sliderStyle: state.slide.sliderStyle, //슬라이드 스타일
+    direction: state.slide.direction, //슬라이드 이동 방향
+    active: state.slide.active, //현재 보이는 이미지
+    carouselStyle: state.slide.carouselStyle, //carousel컴포넌트 스타일
+    idx: state.story.idx,
+  }));
 
   const imgLength = imgs.length;
   const slideWidth = 100 / imgLength;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getImgs(1));
-  }, [dispatch]);
+    dispatch(getImgs(idx));
+  }, [dispatch, idx]);
 
   //  현재 이동 방향이 오른쪽이냐 왼쪽이냐에 따라 이미지의 순서를 변경한다
   const moveSlide = useCallback(() => {

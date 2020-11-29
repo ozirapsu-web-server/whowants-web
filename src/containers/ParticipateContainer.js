@@ -2,7 +2,7 @@ import React from "react";
 import Participate from "components/Participate";
 import Modal from "components/Modal";
 import useInputs from "customHooks/useInputs";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addComment } from "modules/comment";
 import { withRouter } from "react-router-dom";
 
@@ -14,11 +14,14 @@ const ParticipateContainer = React.memo(({ history }) => {
     comment: "응원합니다",
     amount: 0,
   });
+  const { idx } = useSelector((state) => ({
+    idx: state.story.idx,
+  }));
   //  모달 보여주기 상태 visible
 
   const dispatch = useDispatch();
   //  댓글 추가 기능
-  const onAddComment = (idx) => {
+  const onAddComment = () => {
     // 댓글 추가 api와 연동하여 댓글을 추가한다
     dispatch(
       addComment(idx, {
@@ -30,7 +33,7 @@ const ParticipateContainer = React.memo(({ history }) => {
     );
     reset();
     // 사연 페이지로 이동
-    history.push("/");
+    history.push("/storyPage");
   };
   const goBack = () => {
     history.goBack();

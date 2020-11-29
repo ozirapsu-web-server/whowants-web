@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 import StoryTitle from "components/StoryTitle";
 import {
@@ -43,14 +43,17 @@ const Img = styled.img`
   border-radius: 6px;
 `;
 
-const NotableStoryList = ({ title, data }) => {
+const StoryList = ({ title, data, onSetStoryIdx }) => {
   return (
     <Container>
       <h1>{title}</h1>
       <Wrapper>
         {data.map((item, idx) => {
           return (
-            <Story key={`story-${item.image}`}>
+            <Story
+              key={`story-${item.image}`}
+              onClick={() => onSetStoryIdx(item.idx)}
+            >
               <Img src={item.image}></Img>
               <StoryTitle
                 title={item.title}
@@ -72,9 +75,8 @@ const NotableStoryList = ({ title, data }) => {
         })}
         <div
           style={{
-            width: "20px;",
+            width: "20px",
             height: "100%",
-            background: "pink",
             visibility: "hidden",
           }}
         >
@@ -85,4 +87,4 @@ const NotableStoryList = ({ title, data }) => {
   );
 };
 
-export default NotableStoryList;
+export default StoryList;

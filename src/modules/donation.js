@@ -1,4 +1,4 @@
-import { createAction, handleActions } from "redux-actions";
+import { handleActions } from "redux-actions";
 import * as api from "utils/api";
 //  액션
 const GET_AMOUNT = "donation/GET_AMOUNT";
