@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { numberWithCommas } from "utils/util";
+import {
+  Percent,
+  ProgressWrapper,
+  Bar,
+  ProgressBar,
+} from "components/sharedComponents";
 
 const DonationWrapper = styled.section`
   width: 100%;
@@ -13,52 +19,6 @@ const Container = styled.div`
   border: 1px solid #c6c6c6;
   border-radius: 6px;
   margin-bottom: 20px;
-`;
-
-const Percent = styled.div`
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  margin-bottom: 7px;
-  & p:nth-child(1) {
-    margin-right: 3px;
-  }
-  & p:nth-child(1) {
-    font-size: 24px;
-    color: ${(props) => props.theme.color.blue};
-  }
-
-  & p:nth-child(2) {
-    font-weight: bold;
-    font-size: 14px;
-  }
-`;
-
-const ProgressWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  height: 5px;
-  margin-bottom: 30px;
-  position: relative;
-
-  & div {
-    border-radius: 5px;
-  }
-`;
-
-const Bar = styled.div`
-  width: 100%;
-  height: 18px;
-  background: ${(props) => props.theme.color.gray};
-  position: absolute;
-  left: 0;
-  top: 0;
-`;
-
-const ProgressBar = styled(Bar)`
-  width: ${(props) => props.onprogress}%;
-  background: ${(props) => props.theme.color.blue};
-  height: 18px;
 `;
 
 const AmountWrapper = styled.div`

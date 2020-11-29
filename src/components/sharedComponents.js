@@ -23,4 +23,50 @@ const SubmitBtn = styled.div`
   font-size: ${(props) => props.theme.size.mmd};
 `;
 
-export { StyledClose, SubmitBtn };
+const Percent = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 7px;
+  & p:nth-child(1) {
+    margin-right: 3px;
+  }
+  & p:nth-child(1) {
+    font-size: 24px;
+    color: ${(props) => props.theme.color.blue};
+  }
+
+  & p:nth-child(2) {
+    font-weight: bold;
+    font-size: 14px;
+  }
+`;
+
+const ProgressWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 5px;
+  margin-bottom: 30px;
+  position: relative;
+
+  & div {
+    border-radius: 5px;
+  }
+`;
+
+const Bar = styled.div`
+  width: 100%;
+  height: 18px;
+  background: ${(props) => props.theme.color.gray};
+  position: absolute;
+  left: 0;
+  top: 0;
+`;
+
+const ProgressBar = styled(Bar)`
+  width: ${(props) => props.onprogress}%;
+  background: ${(props) => props.theme.color.blue};
+  height: 18px;
+`;
+
+export { StyledClose, SubmitBtn, Percent, ProgressWrapper, Bar, ProgressBar };

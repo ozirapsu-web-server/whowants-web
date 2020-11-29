@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import NotableStoryList from "components/NotableStoryList";
-
 import { useSelector, useDispatch } from "react-redux";
 import { getRecentStory } from "modules/story";
 const NotableContainer = () => {
@@ -12,7 +11,7 @@ const NotableContainer = () => {
   useEffect(() => {
     dispatch(getRecentStory());
   }, [dispatch]);
-  return <NotableStoryList></NotableStoryList>;
+  return <NotableStoryList data={stories}></NotableStoryList>;
 };
 
 export default NotableContainer;
