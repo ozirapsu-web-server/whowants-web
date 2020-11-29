@@ -25,8 +25,8 @@ const Wrapper = styled.div`
   width: 100%;
   min-height: 200px;
   display: flex;
-  // margin: 0 20px;
   overflow: auto;
+  padding-bottom: 20px;
 `;
 
 const Story = styled.div`
@@ -44,7 +44,6 @@ const Img = styled.img`
 `;
 
 const NotableStoryList = ({ title, data }) => {
-  console.log(data);
   return (
     <Container>
       <h1>{title}</h1>

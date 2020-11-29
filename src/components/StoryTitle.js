@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   width: 100%;
   min-height: 100px;
   padding-top: ${(props) => props.padding}px;
+  padding: ${(props) => props.story}px;
   padding-bottom: 0;
   background: #fff;
 `;
@@ -35,21 +36,23 @@ const Tag = styled.div`
 `;
 
 //  사연 요약 정보 컴포넌트
-const StoryTitle = React.memo(({ tags, title, padding, width, size }) => {
-  return (
-    <Wrapper padding={padding || 0}>
-      <TagWrapper>
-        {tags.map((item, idx) => (
-          <div key={`${title}-${item}`}>
-            <Tag width={width || 78} size={size || 14}>
-              #{item}
-            </Tag>
-          </div>
-        ))}
-      </TagWrapper>
-      <Header>{title}</Header>
-    </Wrapper>
-  );
-});
+const StoryTitle = React.memo(
+  ({ tags, title, padding, width, size, story }) => {
+    return (
+      <Wrapper padding={padding || 0} story={story}>
+        <TagWrapper>
+          {tags.map((item, idx) => (
+            <div key={`${title}-${item}`}>
+              <Tag width={width || 78} size={size || 14}>
+                #{item}
+              </Tag>
+            </div>
+          ))}
+        </TagWrapper>
+        <Header>{title}</Header>
+      </Wrapper>
+    );
+  }
+);
 
 export default StoryTitle;

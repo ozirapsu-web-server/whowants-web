@@ -31,6 +31,7 @@ const initialState = {
   title: "",
   content: "",
   organizer: "",
+  tags: [],
 };
 //  사연 리듀서
 const story = handleActions(
@@ -41,6 +42,7 @@ const story = handleActions(
       title: action.payload.title,
       summary: action.payload.summary,
       organizer: action.payload.host_name,
+      tags: action.payload.tags,
     }),
     [GET_RECENT_STORY]: (state, action) => ({
       ...state,
