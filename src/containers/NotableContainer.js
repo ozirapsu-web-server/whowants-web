@@ -25,11 +25,13 @@ const NotableContainer = () => {
   },[]);
   return (
     <>
+    {/* 주목할만한 사연 */}
       <StoryList
         data={recentStories}
         title={title}
         onClick={onSetStoryIdx}
       ></StoryList>
+      {/* 방금 시작된 사연 */}
       <StoryList
         data={recentStories}
         title={title2}
