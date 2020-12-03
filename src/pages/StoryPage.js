@@ -1,4 +1,5 @@
 import React from "react";
+import { Route } from 'react-router-dom';
 import LogoContainer from "containers/LogoContainer";
 import SlideContainer from "containers/SlideContainer";
 import StoryTitleContainer from "containers/StoryTitleContainer";
@@ -17,16 +18,19 @@ const StoryWrapper = styled.section`
   background: #fff;
 `;
 //  사연 페이지
-const Story = React.memo(() => {
+const Story = React.memo(({match}) => {
+  console.log(match.params);
+  const {pageIdx}=match.params;
+  console.log(pageIdx)
   return (
     <StoryWrapper>
       <LogoContainer left={hamburgerBar} />
-      <SlideContainer />
-      <StoryTitleContainer />
-      <DonationContainer />
-      <TabsContainer />
-      <OrganizerContainer />
-      <CommentContainer />
+      <SlideContainer pageIdx={pageIdx}/>
+      <StoryTitleContainer pageIdx={pageIdx}/>
+      <DonationContainer pageIdx={pageIdx}/>
+      <TabsContainer pageIdx={pageIdx}/>
+      <OrganizerContainer pageIdx={pageIdx}/>
+      <CommentContainer pageIdx={pageIdx}/>
       <FloatingContainer />
     </StoryWrapper>
   );

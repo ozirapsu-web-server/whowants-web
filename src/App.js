@@ -13,7 +13,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Route path="/" component={LandingPage} exact={true} />
-      <Route path="/storyPage" component={StoryPage} exact={true} />
+      <Route path="/storyPage/:pageIdx" component={StoryPage} exact={true} />
       <Route path="/participate" component={ParticipatePage} exact={true} />
       <Route path="/linkPage" component={LinkPage} exact={true} />
     </ThemeProvider>
