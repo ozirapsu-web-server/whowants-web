@@ -37,10 +37,15 @@ const Logo = React.memo(({ left, history }) => {
       history.push("/linkPage");
     }
   }, [history, location]);
+
+  const home=useCallback(()=>{
+    history.push('/');
+  })
+
   return (
     <Header>
       <img src={left} alt="메뉴바" onClick={moveTo} />
-      <img src={logo} alt="로고" />
+      <img src={logo} alt="로고" onClick={home}/>
     </Header>
   );
 });
