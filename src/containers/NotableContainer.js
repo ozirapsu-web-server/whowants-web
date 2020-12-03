@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useCallback } from "react";
 import StoryList from "components/StoryList";
 import { useSelector, useDispatch } from "react-redux";
 import { getRecentStory, setStoryIdx } from "modules/story";
@@ -22,11 +22,11 @@ const NotableContainer = () => {
   console.log(recentStories);
   console.log(hotStories);
   console.log(idx);
-  const onSetStoryIdx = (s_idx) => {
-    console.log(s_idx);
-    dispatch(setStoryIdx(s_idx));
-    history.push("/storyPage");
-  };
+  const onSetStoryIdx = useCallback((pageIdx) => {
+    console.log(pageIdx);
+    dispatch(setStoryIdx(pageIdx));
+    history.push(`/storyPage/${pageIdx}`);
+  },[]);
   return (
     <>
       <StoryList
