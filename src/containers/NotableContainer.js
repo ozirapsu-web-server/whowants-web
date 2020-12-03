@@ -26,7 +26,7 @@ const NotableContainer = () => {
   return (
     <>
       <StoryList
-        data={hotStories}
+        data={recentStories}
         title={title}
         onClick={onSetStoryIdx}
       ></StoryList>
