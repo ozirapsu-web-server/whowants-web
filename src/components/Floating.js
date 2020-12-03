@@ -62,7 +62,7 @@ const UnLiked = styled(Heart)`
   width: 20px;
 `;
 //  웹 모바일 화면 밑에 떠다니며 참여하기, 공유하기, 좋아요 기능이 있는 FLOATING 컴포넌트
-const Floating = () => {
+const Floating = ({pageIdx}) => {
   return (
     <>
       <FloatWrapper>
@@ -73,7 +73,7 @@ const Floating = () => {
         </ExtraWrapper> */}
         <KakaoShareButton />
         <Participate>
-          <Link to="/participate">사연 후원하기</Link>
+          <Link to={`/participate/${pageIdx}`}>사연 후원하기</Link>
         </Participate>
       </FloatWrapper>
     </>

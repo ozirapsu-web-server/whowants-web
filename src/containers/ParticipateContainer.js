@@ -7,16 +7,14 @@ import { addComment } from "modules/comment";
 import { withRouter } from "react-router-dom";
 
 // 후원하는 자의 작성 컴포넌트
-const ParticipateContainer = React.memo(({ history }) => {
+const ParticipateContainer = React.memo(({ history,match }) => {
+  const {pageIdx}=match.params;
   const [form, onChange, alert, onToggleModal, visible, reset] = useInputs({
     nickname: "",
     phoneNumber: "",
     comment: "응원합니다",
     amount: 0,
   });
-  const { idx } = useSelector((state) => ({
-    idx: state.story.idx,
-  }));
   //  모달 보여주기 상태 visible
 
   const dispatch = useDispatch();
@@ -24,7 +22,7 @@ const ParticipateContainer = React.memo(({ history }) => {
   const onAddComment = () => {
     // 댓글 추가 api와 연동하여 댓글을 추가한다
     dispatch(
-      addComment(idx, {
+      addComment(pageIdx, {
         support_nickname: form.nickname,
         support_comment: form.comment,
         support_amount: form.amount,
@@ -33,7 +31,7 @@ const ParticipateContainer = React.memo(({ history }) => {
     );
     reset();
     // 사연 페이지로 이동
-    history.push("/storyPage");
+    history.push(`/storyPage/${pageIdx}`);
   };
   const goBack = () => {
     history.goBack();

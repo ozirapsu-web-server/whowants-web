@@ -31,7 +31,7 @@ const Story = React.memo(({match}) => {
       <TabsContainer pageIdx={pageIdx}/>
       <OrganizerContainer pageIdx={pageIdx}/>
       <CommentContainer pageIdx={pageIdx}/>
-      <FloatingContainer />
+      <FloatingContainer pageIdx={pageIdx}/>
     </StoryWrapper>
   );
 });
