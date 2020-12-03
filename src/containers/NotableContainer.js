@@ -2,9 +2,15 @@ import React, { useEffect } from "react";
 import StoryList from "components/StoryList";
 import { useSelector, useDispatch } from "react-redux";
 import { getRecentStory, setStoryIdx } from "modules/story";
+import { useHistory } from "react-router-dom";
+
+
 const NotableContainer = () => {
-  const { stories, idx } = useSelector((state) => ({
-    stories: state.story.recentStories,
+
+  const history = useHistory();
+  const { recentStories,hotStories, idx } = useSelector((state) => ({
+    recentStories: state.story.recentStories,
+    hotStories:state.story.hotStories,
     idx: state.story.idx,
   }));
   const dispatch = useDispatch();
@@ -13,23 +19,26 @@ const NotableContainer = () => {
   useEffect(() => {
     dispatch(getRecentStory());
   }, [dispatch]);
-  console.log(stories);
+  console.log(recentStories);
+  console.log(hotStories);
   console.log(idx);
   const onSetStoryIdx = (s_idx) => {
     console.log(s_idx);
     dispatch(setStoryIdx(s_idx));
+    history.push("/storyPage");
   };
   return (
     <>
       <StoryList
-        data={stories}
+        data={hotStories}
         title={title}
-        onSetStoryIdx={onSetStoryIdx}
+        onClick={onSetStoryIdx}
       ></StoryList>
       <StoryList
-        data={stories}
+        data={recentStories}
         title={title2}
-        onSetStoryIdx={onSetStoryIdx}
+        onClick={onSetStoryIdx}
+
       ></StoryList>
     </>
   );

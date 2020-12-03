@@ -44,6 +44,7 @@ export const setStoryIdx = createAction(SET_STORY_IDX, (idx) => idx);
 const initialState = {
   idx: 1,
   recentStories: [],
+  hotStories:[],
   summary: "",
   title: "",
   content: "",
@@ -64,6 +65,10 @@ const story = handleActions(
     [GET_RECENT_STORY]: (state, action) => ({
       ...state,
       recentStories: action.payload,
+    }),
+    [GET_HOT_STORY]:(state,action)=>({
+      ...state,
+      hotStories:action.payload
     }),
     [SET_STORY_IDX]: (state, { payload: idx }) => ({
       ...state,
