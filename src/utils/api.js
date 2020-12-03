@@ -3,6 +3,8 @@ import axios from "axios";
 
 export const getRecentStory = () => axios.get(`/story/recent`);
 
+export const getHotStory=()=>axios.get(`/story/hot`);
+
 export const getStory = (idx) => axios.get(`/story/info/${idx}`);
 
 export const getImgs = (idx) => axios.get(`/story/info/${idx}/image`);
