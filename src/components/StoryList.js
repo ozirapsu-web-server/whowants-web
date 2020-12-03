@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import styled from "styled-components";
 import StoryTitle from "components/StoryTitle";
 import {
@@ -43,7 +43,7 @@ const Img = styled.img`
   border-radius: 6px;
 `;
 
-const StoryList = ({ title, data, onSetStoryIdx }) => {
+const StoryList = ({ title, data, onClick }) => {
   return (
     <Container>
       <h1>{title}</h1>
@@ -52,7 +52,7 @@ const StoryList = ({ title, data, onSetStoryIdx }) => {
           return (
             <Story
               key={`story-${item.image}`}
-              onClick={() => onSetStoryIdx(item.idx)}
+              onClick={() => onClick(item.idx)}
             >
               <Img src={item.image}></Img>
               <StoryTitle
