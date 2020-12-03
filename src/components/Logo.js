@@ -30,10 +30,7 @@ const Logo = React.memo(({ left, history }) => {
   const moveTo = useCallback(() => {
     if (location.pathname === "/linkPage") {
       history.goBack();
-    } else if (
-      location.pathname === "/storyPage" ||
-      location.pathname === "/"
-    ) {
+    } else  {
       history.push("/linkPage");
     }
   }, [history, location]);

@@ -1,6 +1,6 @@
-import React from "react";
+import React,{useCallback} from "react";
 import styled from "styled-components";
-import { withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const ListWrapper = styled.section`
   padding: 20px;
@@ -26,15 +26,21 @@ const Section = styled.div`
 `;
 
 const LinkList = () => {
+  const history=useHistory();
+
+  const home=useCallback(()=>{
+    history.push('/');
+  },[])
+
   return (
     <ListWrapper>
       <Title>내 모금함 만들기</Title>
       <Section>사연 신청하기</Section>
       <Title>프로젝트 둘러보기</Title>
-      <Section>주목할 만한 사연</Section>
-      <Section>방금 시작된 모금</Section>
+      <Section onClick={home}>주목할 만한 사연</Section>
+      <Section onClick={home}>방금 시작된 모금</Section>
     </ListWrapper>
   );
 };
 
-export default withRouter(LinkList);
+export default LinkList;
