@@ -19,9 +19,8 @@ const StoryWrapper = styled.section`
 `;
 //  사연 페이지
 const Story = React.memo(({match}) => {
-  console.log(match.params);
   const {pageIdx}=match.params;
-  console.log(pageIdx)
+
   return (
     <StoryWrapper>
       <LogoContainer left={hamburgerBar} />

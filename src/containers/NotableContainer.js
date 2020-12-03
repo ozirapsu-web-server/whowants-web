@@ -19,11 +19,7 @@ const NotableContainer = () => {
   useEffect(() => {
     dispatch(getRecentStory());
   }, [dispatch]);
-  console.log(recentStories);
-  console.log(hotStories);
-  console.log(idx);
   const onSetStoryIdx = useCallback((pageIdx) => {
-    console.log(pageIdx);
     dispatch(setStoryIdx(pageIdx));
     history.push(`/storyPage/${pageIdx}`);
   },[]);
