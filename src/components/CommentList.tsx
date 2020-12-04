@@ -50,6 +50,22 @@ const SeeAllBtn = styled.button`
   justify-content: center;
   margin-top: 10px;
 `;
+
+interface Comment{
+  support_nickname:string,
+  support_amount:string,
+  support_comment:string
+}
+
+interface CommentList{
+  comments:Comment[],
+  lenOfComments:number,
+  onToggleComments:()=>void,
+  seeAllComments:boolean,
+  added:boolean,
+  onToggleAdded:()=>void
+}
+
 //  댓글 리스트 컴포넌트
 const CommentList = React.memo(
   ({
@@ -59,10 +75,10 @@ const CommentList = React.memo(
     seeAllComments,
     added,
     onToggleAdded,
-  }) => {
-    const myComment = useRef();
+  }:CommentList) => {
+    const myComment = useRef<HTMLDivElement>(null);
     useEffect(() => {
-      if (added) {
+      if (added && myComment.current) {
         window.scrollTo({
           behavior: "smooth",
           top: myComment.current.offsetTop,

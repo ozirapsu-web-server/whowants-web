@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { numberWithCommas } from "utils/util";
+import CommentProps from 'interfaces/Comment.interface';
 const CommentItem = styled.div`
   width: 100%;
   min-height: 60px;
@@ -35,7 +36,7 @@ const CommentSection = styled.div`
   margin-top: 5px;
 `;
 //  하나의 댓글
-const Comment = React.memo(({ name, amount, comment }) => {
+const Comment = React.memo(({ name, amount, comment }:CommentProps) => {
   return (
     <CommentItem>
       <Name>{name} 님이 응원합니다.</Name>

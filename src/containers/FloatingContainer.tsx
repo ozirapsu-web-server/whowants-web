@@ -1,12 +1,10 @@
 import React from "react";
 import Floating from "components/Floating";
+import PageProps from 'interfaces/Page.interface';
 //  플로팅 버튼 컨테이너
 
-interface Props{
-  pageIdx:number
-}
 
-const FloatingContainer = ({pageIdx}:Props) => {
+const FloatingContainer = ({pageIdx}:PageProps) => {
   return <Floating pageIdx={pageIdx}></Floating>;
 };
 
