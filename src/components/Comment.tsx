@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { numberWithCommas } from "utils/util";
-import CommentProps from 'interfaces/Comment.interface';
+import {CommentProps} from 'interfaces/Comment.interface';
 const CommentItem = styled.div`
   width: 100%;
   min-height: 60px;
@@ -36,17 +36,17 @@ const CommentSection = styled.div`
   margin-top: 5px;
 `;
 //  하나의 댓글
-const Comment = React.memo(({ name, amount, comment }:CommentProps) => {
+const Comment = React.memo(({ support_nickname, support_amount, support_comment }:CommentProps) => {
   return (
     <CommentItem>
-      <Name>{name} 님이 응원합니다.</Name>
-      {/* {parseInt(amount) !== 0 && (
+      <Name>{support_nickname} 님이 응원합니다.</Name>
+      {/* {parseInt(support_amount) !== 0 && (
         <AmountContainer>
-          <div>{numberWithCommas(amount)}</div>
+          <div>{numberWithCommas(support_amount)}</div>
           <div>원 후원</div>
         </AmountContainer>
       )} */}
-      <CommentSection>{!comment ? "응원합니다" : comment}</CommentSection>
+      <CommentSection>{!support_comment ? "응원합니다" : support_comment}</CommentSection>
     </CommentItem>
   );
 });

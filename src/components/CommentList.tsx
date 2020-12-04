@@ -89,9 +89,9 @@ const CommentList = React.memo(
             return (
               <Comment
                 key={`top3-comment-${idx}`}
-                name={comment.support_nickname}
-                amount={comment.support_amount}
-                comment={comment.support_comment}
+                support_nickname={comment.support_nickname}
+                support_amount={comment.support_amount}
+                support_comment={comment.support_comment}
               />
             );
           })}
