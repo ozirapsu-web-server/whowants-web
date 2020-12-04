@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Comment from "components/Comment";
 import { ArrowIosDownwardOutline } from "@styled-icons/evaicons-outline/ArrowIosDownwardOutline";
 import { ArrowIosUpwardOutline } from "@styled-icons/evaicons-outline/ArrowIosUpwardOutline";
+import {CommentListProps,CommentProps} from 'interfaces/Comment.interface';
 
 const CommentWrapper = styled.section`
   width: 100%;
@@ -51,20 +52,7 @@ const SeeAllBtn = styled.button`
   margin-top: 10px;
 `;
 
-interface Comment{
-  support_nickname:string,
-  support_amount:string,
-  support_comment:string
-}
 
-interface CommentList{
-  comments:Comment[],
-  lenOfComments:number,
-  onToggleComments:()=>void,
-  seeAllComments:boolean,
-  added:boolean,
-  onToggleAdded:()=>void
-}
 
 //  댓글 리스트 컴포넌트
 const CommentList = React.memo(
@@ -75,7 +63,7 @@ const CommentList = React.memo(
     seeAllComments,
     added,
     onToggleAdded,
-  }:CommentList) => {
+  }:CommentListProps) => {
     const myComment = useRef<HTMLDivElement>(null);
     useEffect(() => {
       if (added && myComment.current) {
