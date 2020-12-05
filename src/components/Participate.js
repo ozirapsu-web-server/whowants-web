@@ -4,17 +4,26 @@ import { withRouter } from "react-router-dom";
 import { StyledClose, SubmitBtn } from "components/sharedComponents";
 const Wrapper = styled.section`
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #f0f0f0;
+  background: #fff;
   padding: 20px;
+  &:nth-of-type(1){
+    margin-top: 55px;
+  }
+  margin-bottom:  7px;
 `;
 
-const LabelWrapper = styled.div`
+const WrapperTitle=styled.div`
+  font-size:16px;
+  font-weight:700;
+`;
+
+const ContentWrapper = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  align-items:center;
+  justify-content:space-between;
   margin: 15px 0;
   & > label {
     padding: 0 3px;
@@ -23,14 +32,24 @@ const LabelWrapper = styled.div`
 
   & > input {
     height: 40px;
-    background: #fff;
+    width:75%;
+    background: ${props=>props.theme.color.grayB2};
   }
   & > * {
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 6px;
     margin: 5px 0;
     border: none;
   }
+`;
+
+const Title=styled.div`
+  font-weight:bold;
+  font-size:15px;
+`;
+
+const Text=styled.div`
+font-size:14px;
 `;
 
 const Alert = styled.div`
@@ -42,11 +61,20 @@ const Alert = styled.div`
 
 // 후원 참석자 폼 컴포넌트
 const Participate = React.memo(
-  ({ form, onChange, alert, goBack, onToggleModal }) => {
+  ({ form, onChange, alert, goBack, onToggleModal,title }) => {
     return (
       <>
+      <Wrapper>
+      <WrapperTitle>1. 후원 여부</WrapperTitle>
+      <ContentWrapper>
+      
+
+      </ContentWrapper>
+
+      </Wrapper>
         <Wrapper>
-          <LabelWrapper>
+        <WrapperTitle>2. 후원자 정보</WrapperTitle>
+          <ContentWrapper>
             <label htmlFor="nickname">닉네임</label>
 
             <input
@@ -60,8 +88,8 @@ const Participate = React.memo(
             {alert.nickname && (
               <Alert alert={alert.nickname}>{alert.nickname}</Alert>
             )}
-          </LabelWrapper>
-          <LabelWrapper>
+          </ContentWrapper>
+          <ContentWrapper>
             <label htmlFor="phoneNumber">전화번호</label>
             <input
               type="text"
@@ -74,8 +102,12 @@ const Participate = React.memo(
             {alert.phoneNumber && (
               <Alert alert={alert.phoneNumber}>{alert.phoneNumber}</Alert>
             )}
-          </LabelWrapper>
-          <LabelWrapper>
+          </ContentWrapper>
+          
+          </Wrapper>
+          <Wrapper>
+          <WrapperTitle>3. 응원 한 마디</WrapperTitle>
+          <ContentWrapper>
             <label htmlFor="comment">응원의 한마디</label>
             <textarea
               name="comment"
@@ -87,8 +119,10 @@ const Participate = React.memo(
               value={form.comment}
               placeholder="응원합니다"
             ></textarea>
-          </LabelWrapper>
-          <LabelWrapper>
+          </ContentWrapper>
+          </Wrapper>
+          <Wrapper>
+          <ContentWrapper>
             <label htmlFor="donation">기부금액 (선택가능) </label>
             <select
               name="amount"
@@ -101,7 +135,7 @@ const Participate = React.memo(
               <option value="10000">10000</option>
               <option value="50000">50000</option>
             </select>
-          </LabelWrapper>
+          </ContentWrapper>
           <SubmitBtn onClick={onToggleModal}>응원 참여하기</SubmitBtn>
           <StyledClose onClick={goBack} />
         </Wrapper>

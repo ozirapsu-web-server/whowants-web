@@ -9,6 +9,9 @@ import { withRouter } from "react-router-dom";
 // 후원하는 자의 작성 컴포넌트
 const ParticipateContainer = React.memo(({ history,match }) => {
   const {pageIdx}=match.params;
+  const { title} = useSelector((state) => ({
+    title: state.story.title,
+  }));
   const [form, onChange, alert, onToggleModal, visible, reset] = useInputs({
     nickname: "",
     phoneNumber: "",
@@ -45,6 +48,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
         alert={alert}
         goBack={goBack}
         onToggleModal={onToggleModal}
+        title={title}
       ></Participate>
       <Modal
         amount={form.amount}
