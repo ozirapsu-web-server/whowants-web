@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Comment from "components/Comment";
 import { ArrowIosDownwardOutline } from "@styled-icons/evaicons-outline/ArrowIosDownwardOutline";
 import { ArrowIosUpwardOutline } from "@styled-icons/evaicons-outline/ArrowIosUpwardOutline";
+import {CommentListProps,CommentProps} from 'interfaces/Comment.interface';
 
 const CommentWrapper = styled.section`
   width: 100%;
@@ -50,6 +51,9 @@ const SeeAllBtn = styled.button`
   justify-content: center;
   margin-top: 10px;
 `;
+
+
+
 //  댓글 리스트 컴포넌트
 const CommentList = React.memo(
   ({
@@ -59,10 +63,10 @@ const CommentList = React.memo(
     seeAllComments,
     added,
     onToggleAdded,
-  }) => {
-    const myComment = useRef();
+  }:CommentListProps) => {
+    const myComment = useRef<HTMLDivElement>(null);
     useEffect(() => {
-      if (added) {
+      if (added && myComment.current) {
         window.scrollTo({
           behavior: "smooth",
           top: myComment.current.offsetTop,
@@ -85,9 +89,9 @@ const CommentList = React.memo(
             return (
               <Comment
                 key={`top3-comment-${idx}`}
-                name={comment.support_nickname}
-                amount={comment.support_amount}
-                comment={comment.support_comment}
+                support_nickname={comment.support_nickname}
+                support_amount={comment.support_amount}
+                support_comment={comment.support_comment}
               />
             );
           })}
