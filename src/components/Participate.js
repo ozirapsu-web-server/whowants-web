@@ -7,7 +7,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   background: #fff;
-  padding: 20px;
+  padding: 0 20px;
   &:nth-of-type(1){
     margin-top: 55px;
   }
@@ -17,6 +17,7 @@ const Wrapper = styled.section`
 const WrapperTitle=styled.div`
   font-size:16px;
   font-weight:700;
+  margin:20px 0;
 `;
 
 const ContentWrapper = styled.div`
@@ -24,7 +25,7 @@ const ContentWrapper = styled.div`
   display: flex;
   align-items:center;
   justify-content:space-between;
-  margin: 15px 0;
+  margin-bottom:10px;
   & > label {
     padding: 0 3px;
     font-weight: bold;
@@ -32,24 +33,27 @@ const ContentWrapper = styled.div`
 
   & > input {
     height: 40px;
-    width:75%;
+    width:70%;
     background: ${props=>props.theme.color.grayB2};
   }
   & > * {
-    padding: 10px;
+    padding: 0 10px;
     border-radius: 6px;
-    margin: 5px 0;
+    margin: 10px 0; 
     border: none;
   }
 `;
 
 const Title=styled.div`
-  font-weight:bold;
+  font-weight:500;
   font-size:15px;
+  padding:0;
 `;
 
 const Text=styled.div`
 font-size:14px;
+width:70%;
+line-height:18px;
 `;
 
 const Alert = styled.div`
@@ -67,8 +71,13 @@ const Participate = React.memo(
       <Wrapper>
       <WrapperTitle>1. 후원 여부</WrapperTitle>
       <ContentWrapper>
-      
+        <Title>후원 사연</Title>
+    <Text>{title}</Text>
+      </ContentWrapper>
+      <ContentWrapper>
 
+      <Title>후원 금액</Title>
+    <Text>{title}</Text>
       </ContentWrapper>
 
       </Wrapper>
