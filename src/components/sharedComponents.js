@@ -10,7 +10,7 @@ const StyledClose = styled(Close)`
   color: black;
 `;
 
-const SubmitBtn = styled.div`
+const Btn = styled.div`
   width: 100%;
   background: ${(props) => props.theme.color.blue};
   height: 50px;
@@ -69,4 +69,4 @@ const ProgressBar = styled(Bar)`
   height: 18px;
 `;
 
-export { StyledClose, SubmitBtn, Percent, ProgressWrapper, Bar, ProgressBar };
+export { StyledClose, Btn, Percent, ProgressWrapper, Bar, ProgressBar };

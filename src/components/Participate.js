@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
-import { StyledClose, SubmitBtn } from "components/sharedComponents";
+import { StyledClose, Btn } from "components/sharedComponents";
 const Wrapper = styled.section`
   width: 100%;
   display: flex;
@@ -145,7 +145,7 @@ const Participate = React.memo(
               <option value="50000">50000</option>
             </select>
           </ContentWrapper>
-          <SubmitBtn onClick={onToggleModal}>응원 참여하기</SubmitBtn>
+          <Btn onClick={onToggleModal}>응원 참여하기</Btn>
           <StyledClose onClick={goBack} />
         </Wrapper>
       </>
