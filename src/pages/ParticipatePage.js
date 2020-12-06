@@ -13,10 +13,10 @@ const PageWrapper = styled.section`
 //  후원 작성란 페이지
 const Participate = React.memo(() => {
   return (
-  <PageWrapper>
+  <>
     <LogoContainer left={hamburgerBar} background='gray' ></LogoContainer>
     <ParticipateContainer/>
-    </PageWrapper>
+    </>
     );
 });
 
