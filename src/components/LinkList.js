@@ -18,7 +18,8 @@ const ListWrapper = styled.section`
 const Title = styled.h1`
   width: 100%;
   font-size: ${(props) => props.theme.size.mmd};
-  color: ${(props) => props.theme.color.grayB2};
+  color: #B3B3B3;
+  font-weight:700;
 `;
 
 const Section = styled.div`

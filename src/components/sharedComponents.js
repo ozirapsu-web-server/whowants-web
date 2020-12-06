@@ -10,17 +10,18 @@ const StyledClose = styled(Close)`
   color: black;
 `;
 
-const SubmitBtn = styled.div`
+const Btn = styled.button`
   width: 100%;
   background: ${(props) => props.theme.color.blue};
-  height: 50px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   color: #fff;
+  border:none;
   border-radius: 10px;
-  font-size: ${(props) => props.theme.size.mmd};
+  font-size: ${(props) => props.theme.size.mmd}; 
 `;
 
 const Percent = styled.div`
@@ -69,4 +70,4 @@ const ProgressBar = styled(Bar)`
   height: 18px;
 `;
 
-export { StyledClose, SubmitBtn, Percent, ProgressWrapper, Bar, ProgressBar };
+export { StyledClose, Btn, Percent, ProgressWrapper, Bar, ProgressBar };
