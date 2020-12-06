@@ -14,7 +14,7 @@ const PageWrapper = styled.section`
 const Participate = React.memo(() => {
   return (
   <>
-    <LogoContainer left={hamburgerBar} background='gray' ></LogoContainer>
+    {/* <LogoContainer left={hamburgerBar} background='gray' ></LogoContainer> */}
     <ParticipateContainer/>
     </>
     );

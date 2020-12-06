@@ -12,11 +12,11 @@ const PageWrapper = styled.section`
 
 const LandingPage = () => {
   return (
-    <>
+    <PageWrapper>
       <LogoContainer left={hamburgerBar}></LogoContainer>
       <LandingContainer />
       <NotableContainer />
-    </>
+    </PageWrapper>
   );
 };
 
