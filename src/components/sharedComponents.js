@@ -16,7 +16,7 @@ const Btn = styled.button`
   height: 40px;
   display: flex;
   justify-content: center;
-  // align-items: center;
+  align-items: center;
   font-weight: bold;
   color: #fff;
   border:none;
