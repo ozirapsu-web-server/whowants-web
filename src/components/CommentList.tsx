@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Comment from "components/Comment";
 import { ArrowIosDownwardOutline } from "@styled-icons/evaicons-outline/ArrowIosDownwardOutline";
 import { ArrowIosUpwardOutline } from "@styled-icons/evaicons-outline/ArrowIosUpwardOutline";
-import {CommentListProps,CommentProps} from 'interfaces/Comment.interface';
+import {CommentListProps} from 'interfaces/Comment.interface';
 
 const CommentWrapper = styled.section`
   width: 100%;

@@ -6,7 +6,7 @@ import KakaoShareButton from "button/KakaoSharedButton";
 
 const FloatWrapper = styled.section`
   border: none;
-  width: 100%;
+  width: 100vw;
   padding: 20px;
   background: #fff;
   position: fixed;
