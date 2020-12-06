@@ -1,5 +1,4 @@
 import React from "react";
-import { Route } from 'react-router-dom';
 import LogoContainer from "containers/LogoContainer";
 import SlideContainer from "containers/SlideContainer";
 import StoryTitleContainer from "containers/StoryTitleContainer";
