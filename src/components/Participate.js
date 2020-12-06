@@ -52,6 +52,19 @@ const ContentWrapper = styled(TitleWrapper)`
 
 `;
 
+const CommentWrapper=styled(TitleWrapper)`
+  flex-direction:column;
+  align-items:flex-start;
+  &>*{
+    width:100%;
+    padding:0;
+    margin-bottom:10px;
+  } 
+  &>textarea{
+    height:72px;
+  }
+`;
+
 const Title=styled.div`
   font-weight:bold;
   font-size:15px;
@@ -154,8 +167,8 @@ const Participate = React.memo(
           </Wrapper>
           <Wrapper>
           <WrapperTitle>3. 응원 한 마디</WrapperTitle>
-          <ContentWrapper>
-            <label htmlFor="comment">응원의 한마디</label>
+          <CommentWrapper>
+            <label htmlFor="comment">응원 한 마디</label>
             <textarea
               name="comment"
               id="comment-textarea"
@@ -166,7 +179,7 @@ const Participate = React.memo(
               value={form.comment}
               placeholder="응원합니다"
             ></textarea>
-          </ContentWrapper>
+          </CommentWrapper>
           </Wrapper>
           <Wrapper>
           <ContentWrapper>
