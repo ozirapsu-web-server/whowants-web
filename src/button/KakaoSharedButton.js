@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-// import kakao from "images/kakao.png";
-
+ 
 const KakaoShareButton = () => {
   useEffect(() => {
     createKakaoButton();
