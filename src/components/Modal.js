@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SubmitBtn } from "components/sharedComponents";
+import { Btn } from "components/sharedComponents";
 
 const ModalWrapper = styled.section`
   position: fixed;
@@ -53,7 +53,7 @@ const ModalHeader = styled.div`
   font-weight: bold;
 `;
 
-const ModalBtn = styled(SubmitBtn)`
+const ModalBtn = styled(Btn)`
   width: 40%;
   margin-left: auto;
   height: 35px;

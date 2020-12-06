@@ -37,10 +37,11 @@ const Notice = styled.div`
   display: flex;
   line-height: 19px;
   padding: 15px 9px;
-  background: ${(props) => props.theme.color.blue};
+  background: ${(props) => props.theme.color.grayB2};
   font-size: 13px;
   border-radius: 6px;
-  color: #fff;
+  color: ${props=>props.theme.color.black};
+  font-weight:bold;
 
   & p {
     width: 100%;

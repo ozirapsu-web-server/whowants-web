@@ -4,8 +4,10 @@ import reset from "styled-reset";
 const GlobalStyle = createGlobalStyle`
     ${reset}
     *{
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
       @font-face {
- font-family: 'NanumBarunGothic';
+ font-family: 'Roboto','NanumBarunGothic';
  font-style: normal;
  font-weight: 400;
  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
@@ -29,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 }
         box-sizing:border-box;
         outline:none;
-      font-family: 'NanumSquare', sans-serif !important;
+      font-family: 'Roboto','NanumSquare', sans-serif !important;
 
     }
     body{

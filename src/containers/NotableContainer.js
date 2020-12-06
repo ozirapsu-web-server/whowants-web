@@ -1,7 +1,7 @@
 import React, { useEffect,useCallback } from "react";
 import StoryList from "components/StoryList";
 import { useSelector, useDispatch } from "react-redux";
-import { getRecentStory, setStoryIdx } from "modules/story";
+import { getRecentStory,getHotStory, setStoryIdx } from "modules/story";
 import { useHistory } from "react-router-dom";
 
 
@@ -18,6 +18,7 @@ const NotableContainer = () => {
   const title2 = "방금 시작된 모금";
   useEffect(() => {
     dispatch(getRecentStory());
+    dispatch(getHotStory());
   }, [dispatch]);
   const onSetStoryIdx = useCallback((pageIdx) => {
     dispatch(setStoryIdx(pageIdx));
@@ -27,7 +28,7 @@ const NotableContainer = () => {
     <>
     {/* 주목할만한 사연 */}
       <StoryList
-        data={recentStories}
+        data={hotStories}
         title={title}
         onClick={onSetStoryIdx}
       ></StoryList>
