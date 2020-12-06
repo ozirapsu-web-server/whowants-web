@@ -40,7 +40,7 @@ const Logo = React.memo(({ left, history,background }) => {
   },[history])
 
   return (
-    <Header background={background || null}>
+    <Header background={background}>
       <img src={left} alt="메뉴바" onClick={moveTo} />
       <img src={logo} alt="로고" onClick={home}/>
     </Header>

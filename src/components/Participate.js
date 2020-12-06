@@ -7,7 +7,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   background: ${props=>props.theme.color.grayB2};
-  padding: 0 20px;
+  padding: 20px;
   &:nth-of-type(1){
     margin-top: 55px;
   }
@@ -23,7 +23,7 @@ const WrapperTitle=styled.div`
 const ContentWrapper = styled.div`
   width: 100%;
   display: flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:space-between;
   margin-bottom:10px;
   & > label {
@@ -39,7 +39,6 @@ const ContentWrapper = styled.div`
   & > * {
     padding: 0 10px;
     border-radius: 6px;
-    margin: 10px 0; 
     border: none;
   }
 `;
@@ -47,14 +46,27 @@ const ContentWrapper = styled.div`
 const Title=styled.div`
   font-weight:500;
   font-size:15px;
-  padding:0;
+  padding:10px 0;
 `;
 
 const Text=styled.div`
 font-size:14px;
 width:70%;
 line-height:18px;
+padding:10px 0;
 `;
+
+const AmountWrapper=styled.div`
+width:70%;  
+display:flex;
+align-items:flex-start;
+flex-wrap:wrap;
+
+& > button{
+  width:48%;
+  margin:1%;
+}
+`
 
 const Alert = styled.div`
   font-size: ${(props) => props.theme.size.smd};
@@ -77,7 +89,11 @@ const Participate = React.memo(
       <ContentWrapper>
 
       <Title>후원 금액</Title>
-    <Text>{title}</Text>
+    <AmountWrapper>
+      <Btn>10000</Btn>
+      <Btn>20000</Btn>
+      <Btn>30000</Btn>
+    </AmountWrapper>
       </ContentWrapper>
 
       </Wrapper>
