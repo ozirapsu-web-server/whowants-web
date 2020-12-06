@@ -13,7 +13,7 @@ function useInputs(initialForm) {
     console.log(name,value);
     setForm((form) => ({ ...form, [name]: value }));
   }, []);
-
+  // 확인 메세지 모달 
   const onToggleModal = () => {
     const [newAlert, valid] = validInputs(form);
     setAlert(newAlert);
