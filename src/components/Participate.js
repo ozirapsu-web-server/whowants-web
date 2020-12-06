@@ -138,10 +138,10 @@ const Participate = React.memo(
       <ContentWrapper>
 
       <Title>후원 금액</Title>
-    <AmountWrapper name="amount">
-      <Btn onClick={onChange} value="10000">{numberWithCommas(10000)}원</Btn>
-      <Btn onClick={onChange} value="20000">{numberWithCommas(20000)}원</Btn>
-      <Btn onClick={onChange} value="30000">{numberWithCommas(30000)}원</Btn>
+    <AmountWrapper >
+      <Btn name="amount" onClick={onChange} value="10000">{numberWithCommas(10000)}원</Btn>
+      <Btn name="amount" onClick={onChange} value="20000">{numberWithCommas(20000)}원</Btn>
+      <Btn name="amount" onClick={onChange} value="30000">{numberWithCommas(30000)}원</Btn>
     </AmountWrapper>
       </ContentWrapper>
       </Wrapper>

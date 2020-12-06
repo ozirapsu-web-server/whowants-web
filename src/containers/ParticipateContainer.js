@@ -22,6 +22,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
   const [form, onChange, alert, onToggleModal, visible, reset] = useInputs({
     nickname: "",
     phoneNumber: "",
+    email:"",
     comment: "응원합니다",
     amount: 0,
   });
