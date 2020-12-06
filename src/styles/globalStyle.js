@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
 
     }
     body{
-        width:100%;
+        width:100vw;
         font-size:14px;
         height:100%;
         background:#F0F0F0;
