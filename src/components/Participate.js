@@ -67,6 +67,17 @@ const CommentWrapper=styled(TitleWrapper)`
     height:72px;
     padding:10px;
   }
+  &>div{
+    height:127px;
+    font-size:10px;
+    padding:10px;
+    font-weight:400;
+    line-height:18px;
+    color:${props=>props.theme.color.black};
+    overflow-y:auto;
+    background:#fff;
+    border:1px solid #BDBDBD;
+  }
 `;
 
 const Title=styled.div`
@@ -186,6 +197,14 @@ const Participate = React.memo(
           </CommentWrapper>
           </Wrapper>
           <Wrapper>
+              <CommentWrapper>
+              <label htmlFor="marketing-terms">5. 마케팅 정보 동의</label>
+              <div>
+              회원의 개인정보는 당사의 개인정보 취급방침에 따라 안전하게 보호됩니다. '회사'는 이용자들의 개인정보를 개인정보 취급방침의 '제 2조 수집하는 개인정보의 항목, 수집방법 및 이용목적'에서 고지한 범위 내에서 사용하며, 이용자의 사전 동의 없이는 동 범위를 초과하여 이용하거나 원칙적으로 이용자의 개인정보를 외부에 공개하지 않습니다.
+              </div>
+              </CommentWrapper>
+          </Wrapper>
+          <Wrapper>
           {/* <ContentWrapper>
             <label htmlFor="donation">기부금액 (선택가능) </label>
             <select
@@ -200,7 +219,7 @@ const Participate = React.memo(
               <option value="50000">50000</option>
             </select>
           </ContentWrapper> */}
-          <Btn onClick={onToggleModal}>응원 참여하기</Btn>
+          <Btn onClick={onToggleModal}>후원 참여하기</Btn>
           <StyledClose onClick={goBack} />
         </Wrapper>
       </>
