@@ -6,7 +6,7 @@ const Wrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: ${props=>props.theme.color.grayB2};
   padding: 0 20px;
   &:nth-of-type(1){
     margin-top: 55px;

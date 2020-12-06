@@ -7,14 +7,14 @@ import styled from 'styled-components';
 const PageWrapper = styled.section`
   width: 100%;
   height: 100vh;
-  background: ${props=>props.theme.color.grayB2};
+  background: #fff;;
 `;
 
 //  후원 작성란 페이지
 const Participate = React.memo(() => {
   return (
   <PageWrapper>
-    <LogoContainer left={hamburgerBar}></LogoContainer>
+    <LogoContainer left={hamburgerBar} background='gray' ></LogoContainer>
     <ParticipateContainer/>
     </PageWrapper>
     );

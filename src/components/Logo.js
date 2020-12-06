@@ -11,7 +11,7 @@ const Header = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  background: #fff;
+  background: ${props=>props.background==='gray'?props.theme.color.grayB2:'#fff'};
   width: 100%;
   height: 55px;
   z-index: 10;
@@ -24,7 +24,7 @@ const Header = styled.header`
   }
 `;
 //  후원츠 로고
-const Logo = React.memo(({ left, history }) => {
+const Logo = React.memo(({ left, history,background }) => {
   const location = useLocation();
   // 현재 위치에 따라 이동하는 위치
   const moveTo = useCallback(() => {
@@ -37,10 +37,10 @@ const Logo = React.memo(({ left, history }) => {
 
   const home=useCallback(()=>{
     history.push('/');
-  })
+  },[history])
 
   return (
-    <Header>
+    <Header background={background || null}>
       <img src={left} alt="메뉴바" onClick={moveTo} />
       <img src={logo} alt="로고" onClick={home}/>
     </Header>
