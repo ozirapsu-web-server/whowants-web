@@ -23,10 +23,20 @@ const WrapperTitle=styled.div`
   margin:20px 0;
 `;
 
-const ContentWrapper = styled.div`
-  width: 100%;
+const TitleWrapper=styled.div`
+width: 100%;
   display: flex;
-  align-items:flex-start;
+  align-items:center;
+  justify-content:space-between;
+  & > * {
+    padding: 0 10px;
+    border-radius: 6px;
+    border: none;
+  }
+`;
+
+const ContentWrapper = styled(TitleWrapper)`
+  align-items:center;
   justify-content:space-between;
   margin-bottom:10px;
   & > label {
@@ -35,15 +45,11 @@ const ContentWrapper = styled.div`
   }
 
   & > input {
-    height: 40px;
+    height: 36px;
     width:70%;
-    background: ${props=>props.theme.color.grayB2};
+    background:#fff;
   }
-  & > * {
-    padding: 0 10px;
-    border-radius: 6px;
-    border: none;
-  }
+
 `;
 
 const Title=styled.div`
@@ -54,13 +60,13 @@ const Title=styled.div`
 
 const Text=styled.div`
 font-size:14px;
-width:75%;
+width:70%;
 line-height:18px;
 padding:10px 0;
 `;
 
 const AmountWrapper=styled.div`
-width:75%;  
+width:70%;  
 display:flex;
 align-items:flex-start;
 flex-wrap:wrap;
@@ -85,10 +91,10 @@ const Participate = React.memo(
       <>
       <Wrapper>
       <WrapperTitle>1. 후원 여부</WrapperTitle>
-      <ContentWrapper>
+      <TitleWrapper>
         <Title>후원 사연</Title>
     <Text>{title}</Text>
-      </ContentWrapper>
+      </TitleWrapper>
       <ContentWrapper>
 
       <Title>후원 금액</Title>
@@ -103,15 +109,14 @@ const Participate = React.memo(
         <Wrapper>
         <WrapperTitle>2. 후원자 정보</WrapperTitle>
           <ContentWrapper>
-            <label htmlFor="nickname">닉네임</label>
-
+            <label htmlFor="nickname">이름</label>
             <input
               type="text"
               name="nickname"
               id="nickname-input"
               onChange={onChange}
               value={form.nickname}
-              placeholder="닉네임"
+              placeholder="이름"
             />
             {alert.nickname && (
               <Alert alert={alert.nickname}>{alert.nickname}</Alert>
