@@ -5,7 +5,6 @@ const GlobalStyle = createGlobalStyle`
     ${reset}
     *{
 
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
       @font-face {
  font-family: 'Roboto','NanumBarunGothic';
  font-style: normal;
@@ -31,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 }
         box-sizing:border-box;
         outline:none;
-      font-family: 'Roboto','NanumSquare', sans-serif !important;
+      font-family: 'NanumSquare', sans-serif !important;
 
     }
     body{
