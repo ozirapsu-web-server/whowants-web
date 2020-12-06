@@ -28,12 +28,18 @@ const FloatWrapper = styled.section`
     border:none;
     border-radius: 6px;
   }
+  & >div{
+    border:1px solid #4F4F4F;
+  }
 `;
 
 const Participate = styled.button`
   background: ${(props) => props.theme.color.blue};
   color: #fff;
   border: none;
+  & a{
+    width:100%;
+  }
 `;
 
 const ExtraWrapper = styled.div`
