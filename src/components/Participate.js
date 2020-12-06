@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import { StyledClose, Btn } from "components/sharedComponents";
+import { numberWithCommas } from "utils/util";
+
+
 const Wrapper = styled.section`
   width: 100%;
   display: flex;
@@ -44,24 +47,24 @@ const ContentWrapper = styled.div`
 `;
 
 const Title=styled.div`
-  font-weight:500;
+  font-weight:bold;
   font-size:15px;
   padding:10px 0;
 `;
 
 const Text=styled.div`
 font-size:14px;
-width:70%;
+width:75%;
 line-height:18px;
 padding:10px 0;
 `;
 
 const AmountWrapper=styled.div`
-width:70%;  
+width:75%;  
 display:flex;
 align-items:flex-start;
 flex-wrap:wrap;
-
+padding:0;
 & > button{
   width:48%;
   margin:1%;
@@ -90,9 +93,9 @@ const Participate = React.memo(
 
       <Title>후원 금액</Title>
     <AmountWrapper>
-      <Btn>10000</Btn>
-      <Btn>20000</Btn>
-      <Btn>30000</Btn>
+      <Btn>{numberWithCommas(10000)}원</Btn>
+      <Btn>{numberWithCommas(20000)}원</Btn>
+      <Btn>{numberWithCommas(30000)}원</Btn>
     </AmountWrapper>
       </ContentWrapper>
 
