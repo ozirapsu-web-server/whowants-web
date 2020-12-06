@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import {Btn} from 'components/sharedComponents';
-// import kakao from "images/kakao.png";
-
+ 
 const KakaoShareButton = () => {
   useEffect(() => {
     createKakaoButton();
@@ -54,6 +52,6 @@ const KakaoShareButton = () => {
       });
     }
   };
-  return <Btn id="kakao-link-btn">카카오톡으로 공유하기</Btn>;
+  return <div id="kakao-link-btn">카카오톡으로 공유하기</div>;
 };
 export default KakaoShareButton;

@@ -33,9 +33,8 @@ const ParticipateContainer = React.memo(({ history,match }) => {
   //  댓글 추가 기능
   const onAddComment = () => {
     // 댓글 추가 api와 연동하여 댓글을 추가한다
-    console.log(form.nickname,form.comment,form.amount,form.phoneNumberFirst,form.phoneNumberMid,form.phoneNumberLast);
     const phoneNumber=form.phoneNumberFirst+'-'+form.phoneNumberMid+'-'+form.phoneNumberLast;
-    console.log(phoneNumber);
+
     dispatch(
       addComment(pageIdx, {
         support_nickname: form.nickname,

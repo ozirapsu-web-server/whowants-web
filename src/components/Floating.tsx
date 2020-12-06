@@ -16,7 +16,7 @@ const FloatWrapper = styled.section`
   align-items: center;
   justify-content: center;
 
-  & > * {
+  &  * {
     height: 44px;
     display: flex;
     justify-content: center;
@@ -25,7 +25,7 @@ const FloatWrapper = styled.section`
     font-weight: 700;
     width: 49%;
     margin: 0 5px;
-    border: 1px solid black;
+    border:none;
     border-radius: 6px;
   }
 `;
