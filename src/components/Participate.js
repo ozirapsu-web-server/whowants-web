@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import { StyledClose, Btn } from "components/sharedComponents";
 import { numberWithCommas } from "utils/util";
+import { Input } from "@material-ui/core";
 
 
 const Wrapper = styled.section`
@@ -28,7 +29,7 @@ width: 100%;
   display: flex;
   align-items:center;
   justify-content:space-between;
-  & > * {
+  &  * {
     padding: 0 10px;
     border-radius: 6px;
     border: none;
@@ -43,13 +44,21 @@ const ContentWrapper = styled(TitleWrapper)`
     padding: 0 3px;
     font-weight: bold;
   }
+`;
 
-  & > input {
+const InputWrapper=styled.div`
+  width:70%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  &  input {
     height: 36px;
-    width:70%;
+    width:100%;
     background:#fff;
   }
-
+  & div{
+    padding:0 10px;
+  }
 `;
 
 const CommentWrapper=styled(TitleWrapper)`
@@ -111,6 +120,8 @@ const Alert = styled.div`
   color: red;
   width: 100%;
   height: 20px;
+  margin:5px 0;
+
 `;
 
 // 후원 참석자 폼 컴포넌트
@@ -133,12 +144,13 @@ const Participate = React.memo(
       <Btn onClick={onChange} value="30000">{numberWithCommas(30000)}원</Btn>
     </AmountWrapper>
       </ContentWrapper>
-
       </Wrapper>
+
         <Wrapper>
         <WrapperTitle>2. 후원자 정보</WrapperTitle>
           <ContentWrapper>
             <label htmlFor="nickname">이름</label>
+            <InputWrapper>
             <input
               type="text"
               name="nickname"
@@ -147,12 +159,16 @@ const Participate = React.memo(
               value={form.nickname}
               placeholder="이름"
             />
-            {alert.nickname && (
+             {alert.nickname && (
               <Alert alert={alert.nickname}>{alert.nickname}</Alert>
             )}
+            </InputWrapper>
           </ContentWrapper>
+         
           <ContentWrapper>
             <label htmlFor="phoneNumber">전화번호</label>
+            
+            <InputWrapper>
             <input
               type="text"
               name="phoneNumber"
@@ -164,9 +180,12 @@ const Participate = React.memo(
             {alert.phoneNumber && (
               <Alert alert={alert.phoneNumber}>{alert.phoneNumber}</Alert>
             )}
+            </InputWrapper>
           </ContentWrapper>
+          
           <ContentWrapper>
             <label htmlFor="email">이메일</label>
+            <InputWrapper>
             <input
               type="text"
               name="email"
@@ -178,6 +197,7 @@ const Participate = React.memo(
             {alert.email && (
               <Alert alert={alert.email}>{alert.email}</Alert>
             )}
+            </InputWrapper>
           </ContentWrapper>
           
           </Wrapper>
