@@ -66,6 +66,7 @@ const CommentWrapper=styled(TitleWrapper)`
   &>textarea{
     height:72px;
     padding:10px;
+    resize:none;
   }
   &>div{
     height:127px;
@@ -193,6 +194,7 @@ const Participate = React.memo(
               onChange={onChange}
               value={form.comment}
               placeholder="응원합니다"
+      
             ></textarea>
           </CommentWrapper>
           </Wrapper>
