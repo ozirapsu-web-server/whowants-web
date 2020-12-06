@@ -136,6 +136,20 @@ const Participate = React.memo(
               <Alert alert={alert.phoneNumber}>{alert.phoneNumber}</Alert>
             )}
           </ContentWrapper>
+          <ContentWrapper>
+            <label htmlFor="email">이메일</label>
+            <input
+              type="text"
+              name="email"
+              id="email-input"
+              onChange={onChange}
+              value={form.email}
+              placeholder="example@domain"
+            />
+            {alert.email && (
+              <Alert alert={alert.email}>{alert.email}</Alert>
+            )}
+          </ContentWrapper>
           
           </Wrapper>
           <Wrapper>
