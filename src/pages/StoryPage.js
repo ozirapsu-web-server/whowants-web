@@ -22,7 +22,7 @@ const Story = React.memo(({match}) => {
   const {pageIdx}=match.params;
 
   return (
-    <>
+    <StoryWrapper>
       <LogoContainer left={hamburgerBar} />
       <SlideContainer pageIdx={pageIdx}/>
       <StoryTitleContainer pageIdx={pageIdx}/>
@@ -31,7 +31,7 @@ const Story = React.memo(({match}) => {
       <OrganizerContainer pageIdx={pageIdx}/>
       <CommentContainer pageIdx={pageIdx}/>
       <FloatingContainer pageIdx={pageIdx}/>
-    </>
+    </StoryWrapper>
   );
 });
 
