@@ -22,7 +22,6 @@ const Btn = styled.button`
   border:none;
   border-radius: 10px;
   font-size: ${(props) => props.theme.size.mmd}; 
-  padding:10px 20px;
 `;
 
 const Percent = styled.div`

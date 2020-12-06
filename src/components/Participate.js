@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import { StyledClose, Btn } from "components/sharedComponents";
 import { numberWithCommas } from "utils/util";
-import { Input } from "@material-ui/core";
 
 
 const Wrapper = styled.section`
@@ -30,7 +29,6 @@ width: 100%;
   align-items:center;
   justify-content:space-between;
   &  * {
-    padding: 0 10px;
     border-radius: 6px;
     border: none;
   }
@@ -51,13 +49,30 @@ const InputWrapper=styled.div`
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
+  padding:0;
   &  input {
     height: 36px;
     width:100%;
     background:#fff;
   }
-  & div{
-    padding:0 10px;
+`;
+
+const PhoneWrapper=styled.div`
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0;
+  & > *{
+    height:36px;
+    width:20%;
+  }
+
+  & input{
+    width:31%;
+  }
+  & select{
+    width:31%;
   }
 `;
 
@@ -169,14 +184,25 @@ const Participate = React.memo(
             <label htmlFor="phoneNumber">전화번호</label>
             
             <InputWrapper>
+            <PhoneWrapper>
+            <select
+              name="phoneNumberFirst"
+              id="phone-select"
+              onChange={onChange}
+              value={form.phoneNumberFirst}
+            >
+              <option value="010">010</option>
+              </select>
             <input
               type="text"
-              name="phoneNumber"
+              name="phoneNumberMid"
               id="phoneNumber-input"
               onChange={onChange}
-              value={form.phoneNumber}
-              placeholder="010-0000-0000"
+              value={form.phoneNumberMid}
+              placeholder="0000"
             />
+            <input type="text" name="phoneNumberLast" onChange={onChange} value={form.phoneNumberLast}/>
+            </PhoneWrapper>
             {alert.phoneNumber && (
               <Alert alert={alert.phoneNumber}>{alert.phoneNumber}</Alert>
             )}

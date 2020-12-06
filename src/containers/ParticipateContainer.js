@@ -21,7 +21,9 @@ const ParticipateContainer = React.memo(({ history,match }) => {
   console.log(title);
   const [form, onChange, alert, onToggleModal, visible, reset] = useInputs({
     nickname: "",
-    phoneNumber: "",
+    phoneNumberFirst: "010",
+    phoneNumberMid: "",
+    phoneNumberLast: "",
     email:"",
     comment: "응원합니다",
     amount: 0,
@@ -31,15 +33,15 @@ const ParticipateContainer = React.memo(({ history,match }) => {
   //  댓글 추가 기능
   const onAddComment = () => {
     // 댓글 추가 api와 연동하여 댓글을 추가한다
-    console.log(form.nickname,form.comment,form.amount,form.phoneNumber)
-    dispatch(
-      addComment(pageIdx, {
-        support_nickname: form.nickname,
-        support_comment: form.comment,
-        support_amount: form.amount,
-        support_phone_number: form.phoneNumber,
-      })
-    );
+    console.log(form.nickname,form.comment,form.amount,form.phoneNumberFirst,form.phoneNumberMid,form.phoneNumberLast);
+    // dispatch(
+    //   addComment(pageIdx, {
+    //     support_nickname: form.nickname,
+    //     support_comment: form.comment,
+    //     support_amount: form.amount,
+    //     support_phone_number: form.phoneNumber,
+    //   })
+    // );
     reset();
     // 사연 페이지로 이동
     history.push(`/storyPage/${pageIdx}`);
