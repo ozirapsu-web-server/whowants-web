@@ -9,9 +9,9 @@ const LinkPageWrapper = styled.section`
 `;
 const LinkPage = () => {
   return (
-    <>
+    <LinkPageWrapper>
       <LinkContainer />
-    </>
+    </LinkPageWrapper>
   );
 };
 
