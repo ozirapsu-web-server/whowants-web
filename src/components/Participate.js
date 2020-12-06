@@ -55,6 +55,9 @@ const ContentWrapper = styled(TitleWrapper)`
 const CommentWrapper=styled(TitleWrapper)`
   flex-direction:column;
   align-items:flex-start;
+  &>label{
+    font-weight:bold;
+  }
   &>*{
     width:100%;
     padding:0;
@@ -62,6 +65,7 @@ const CommentWrapper=styled(TitleWrapper)`
   } 
   &>textarea{
     height:72px;
+    padding:10px;
   }
 `;
 
@@ -111,10 +115,10 @@ const Participate = React.memo(
       <ContentWrapper>
 
       <Title>후원 금액</Title>
-    <AmountWrapper>
-      <Btn>{numberWithCommas(10000)}원</Btn>
-      <Btn>{numberWithCommas(20000)}원</Btn>
-      <Btn>{numberWithCommas(30000)}원</Btn>
+    <AmountWrapper name="amount">
+      <Btn onClick={onChange} value="10000">{numberWithCommas(10000)}원</Btn>
+      <Btn onClick={onChange} value="20000">{numberWithCommas(20000)}원</Btn>
+      <Btn onClick={onChange} value="30000">{numberWithCommas(30000)}원</Btn>
     </AmountWrapper>
       </ContentWrapper>
 
@@ -182,7 +186,7 @@ const Participate = React.memo(
           </CommentWrapper>
           </Wrapper>
           <Wrapper>
-          <ContentWrapper>
+          {/* <ContentWrapper>
             <label htmlFor="donation">기부금액 (선택가능) </label>
             <select
               name="amount"
@@ -195,7 +199,7 @@ const Participate = React.memo(
               <option value="10000">10000</option>
               <option value="50000">50000</option>
             </select>
-          </ContentWrapper>
+          </ContentWrapper> */}
           <Btn onClick={onToggleModal}>응원 참여하기</Btn>
           <StyledClose onClick={goBack} />
         </Wrapper>
