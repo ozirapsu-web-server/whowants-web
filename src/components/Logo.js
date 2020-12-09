@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { withRouter, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import logo from "images/logo.png";
+import logo from "images/logo.svg";
 
 const Header = styled.header`
   display: grid;
@@ -23,6 +23,11 @@ const Header = styled.header`
     height: auto;
   }
 `;
+//  로고 크기 줄이기 위한 사이즈 
+const Img=styled.img`
+  max-height:18.23px;
+`;
+
 //  후원츠 로고
 const Logo = React.memo(({ left, history,background }) => {
   const location = useLocation();
@@ -41,8 +46,8 @@ const Logo = React.memo(({ left, history,background }) => {
 
   return (
     <Header background={background}>
-      <img src={left} alt="메뉴바" onClick={moveTo} />
-      <img src={logo} alt="로고" onClick={home}/>
+      <Img src={left} alt="메뉴바" onClick={moveTo} />
+      <Img src={logo} alt="로고" onClick={home}/>
     </Header>
   );
 });

@@ -38,7 +38,7 @@ const Notice = styled.div`
   line-height: 19px;
   padding: 15px 9px;
   background: ${(props) => props.theme.color.grayB2};
-  font-size: 13px;
+  font-size: 12px;
   border-radius: 6px;
   color: ${props=>props.theme.color.black};
   font-weight:bold;

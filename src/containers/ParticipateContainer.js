@@ -29,7 +29,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
     amount: 0,
   });
   //  모달 보여주기 상태 visible
-
+  console.log(form)
   //  댓글 추가 기능
   const onAddComment = () => {
     // 댓글 추가 api와 연동하여 댓글을 추가한다
