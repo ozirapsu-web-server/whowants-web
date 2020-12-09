@@ -6,7 +6,7 @@
 
 ### 모바일 웹에서 확인해주세요. (PC디자인은 진행중입니다.)
 
-- [후원츠 웹 버전 배포 v1](http://whowants2.s3-website.ap-northeast-2.amazonaws.com/)
+- [후원츠 모바일 웹 버전 배포 v1](http://whowants.ga/)
 
 
 ### 프로젝트
