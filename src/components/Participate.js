@@ -76,6 +76,7 @@ const PhoneWrapper=styled.div`
   }
   & select{
     width:31%;
+    padding:10px;
   }
 `;
 
@@ -130,8 +131,15 @@ padding:0;
 & > button{
   width:48%;
   margin:1%;
+ 
 }
-`
+`;
+
+const StyledBtn=styled(Btn)`
+background:${props=>props.cur?props.theme.color.blue:'#fff'};
+color:${props=>props.cur?'#fff':'#4F4F4F'};
+`;
+
 
 const Alert = styled.div`
   font-size: ${(props) => props.theme.size.smd};
@@ -144,7 +152,8 @@ const Alert = styled.div`
 
 // 후원 참석자 폼 컴포넌트
 const Participate = React.memo(
-  ({ form, onChange, alert, goBack, onToggleModal,title }) => {
+  ({ form, onChange, alert, goBack, onToggleModal,title,clickedAmount }) => {
+
     return (
       <>
       <Wrapper>
@@ -157,9 +166,10 @@ const Participate = React.memo(
 
       <Title>후원 금액</Title>
     <AmountWrapper >
-      <Btn name="amount" onClick={onChange} value="10000">{numberWithCommas(10000)}원</Btn>
-      <Btn name="amount" onClick={onChange} value="20000">{numberWithCommas(20000)}원</Btn>
-      <Btn name="amount" onClick={onChange} value="30000">{numberWithCommas(30000)}원</Btn>
+      <StyledBtn name="amount" onClick={onChange} value="0" cur={clickedAmount.amount==='0'}>후원은 나중에</StyledBtn>
+      <StyledBtn name="amount" onClick={onChange} value="10000" cur={clickedAmount.amount==='10000'}>{numberWithCommas(10000)}원</StyledBtn>
+      <StyledBtn name="amount" onClick={onChange} value="20000" cur={clickedAmount.amount==='20000'}>{numberWithCommas(20000)}원</StyledBtn>
+      <StyledBtn name="amount" onClick={onChange} value="30000" cur={clickedAmount.amount==='30000'}>{numberWithCommas(30000)}원</StyledBtn>
     </AmountWrapper>
       </ContentWrapper>
       </Wrapper>

@@ -19,7 +19,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
     dispatch(getStoryInfo(pageIdx));
   }, [dispatch, pageIdx]);
   console.log(title);
-  const [form, onChange, alert, onToggleModal, visible, reset] = useInputs({
+  const [form, onChange, alert, onToggleModal, visible, reset,clickedAmount] = useInputs({
     nickname: "",
     phoneNumberFirst: "010",
     phoneNumberMid: "",
@@ -60,6 +60,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
         goBack={goBack}
         onToggleModal={onToggleModal}
         title={title}
+        clickedAmount={clickedAmount}
       ></Participate>
       <Modal
         amount={form.amount}
