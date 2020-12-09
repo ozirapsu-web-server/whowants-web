@@ -150,6 +150,45 @@ const Alert = styled.div`
 
 `;
 
+const TermsWrapper=styled.div`
+  diplay:flex;
+  margin-left:auto;
+  & input[type="checkbox"] + label {
+    display: block;
+    cursor: pointer;
+    font-size: ${(props) => props.theme.size.smd};
+    padding: 0.1em;
+    font-weight:bold;
+  }
+
+  & input[type="checkbox"] {
+    display: none;
+  }
+
+  & input[type="checkbox"] + label:before {
+    content: "\\2714";
+    border: 0.1em solid ${props=>props.theme.color.blue};
+    display: inline-block;
+    width: ${(props) => props.theme.size.smd};
+    height: ${(props) => props.theme.size.smd};
+    margin-right: 0.3em;
+    vertical-align: center;
+    color: transparent;
+    transition: 0.05s;
+    font-size: ${(props) => props.theme.size.mmd};
+    padding: 0.1em;
+  }
+  & input[type="checkbox"] + label:active:before {
+    transform: scale(0.95);
+    border: 1px solid ${props=>props.theme.color.blue};
+  }
+  & input[type="checkbox"]:checked + label:before {
+    background: ${props=>props.theme.color.blue};
+    color: #fff;
+  }
+`;
+
+
 // 후원 참석자 폼 컴포넌트
 const Participate = React.memo(
   ({ form, onChange, alert, goBack, onToggleModal,title }) => {
@@ -264,22 +303,12 @@ const Participate = React.memo(
               회원의 개인정보는 당사의 개인정보 취급방침에 따라 안전하게 보호됩니다. '회사'는 이용자들의 개인정보를 개인정보 취급방침의 '제 2조 수집하는 개인정보의 항목, 수집방법 및 이용목적'에서 고지한 범위 내에서 사용하며, 이용자의 사전 동의 없이는 동 범위를 초과하여 이용하거나 원칙적으로 이용자의 개인정보를 외부에 공개하지 않습니다.
               </div>
               </CommentWrapper>
+              <TermsWrapper>
+              <input type="checkbox" name="marketing-agree" id="marketing-agree"/>
+              <label htmlFor="marketing-agree">동의합니다</label>
+              </TermsWrapper>
           </Wrapper>
           <Wrapper>
-          {/* <ContentWrapper>
-            <label htmlFor="donation">기부금액 (선택가능) </label>
-            <select
-              name="amount"
-              id="amount-select"
-              onChange={onChange}
-              value={form.amount}
-            >
-              <option value="0">0</option>
-              <option value="5000">5000</option>
-              <option value="10000">10000</option>
-              <option value="50000">50000</option>
-            </select>
-          </ContentWrapper> */}
           <Btn onClick={onToggleModal}>후원 참여하기</Btn>
           <StyledClose onClick={goBack} />
         </Wrapper>

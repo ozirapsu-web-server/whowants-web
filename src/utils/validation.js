@@ -15,6 +15,7 @@ const validInputs = (form) => {
     alert.email='이메일을 입력해주세요';
     isAlertExisted=false;
   }
+
   return [alert, isAlertExisted];
 };
 
