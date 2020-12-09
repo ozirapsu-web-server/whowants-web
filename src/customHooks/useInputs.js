@@ -10,18 +10,16 @@ function useInputs(initialForm) {
   const onChange = useCallback((e) => {
     setAlert(false);
     const { name, value,checked } = e.target;
-    console.log(name,value,checked);
+    // console.log(name,value,checked);
     if(name==='amount'){
       setForm((form) => ({ ...form, [name]: +value }));
     }else if(name==='checked'){ //마케팅 정보 동의
-      console.log('마케팅')
       setForm((form) => ({ ...form, [name]: checked }));
     }else{
     setForm((form) => ({ ...form, [name]: value }));
     }
-    console.log(form)
 
-  }, [form]);
+  }, []);
   // 확인 메세지 모달 
   const onToggleModal = () => {
     const [newAlert, valid] = validInputs(form);
