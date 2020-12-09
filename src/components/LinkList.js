@@ -31,7 +31,7 @@ const LinkList = () => {
 
   const home=useCallback(()=>{
     history.push('/');
-  },[])
+  },[history])
 
   return (
     <ListWrapper>
