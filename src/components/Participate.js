@@ -42,6 +42,9 @@ const ContentWrapper = styled(TitleWrapper)`
     padding: 0 3px;
     font-weight: bold;
   }
+  & input{
+    padding:10px;
+  }
 `;
 
 const InputWrapper=styled.div`
@@ -199,9 +202,9 @@ const Participate = React.memo(
               id="phoneNumber-input"
               onChange={onChange}
               value={form.phoneNumberMid}
-              placeholder="0000"
+              placeholder="****"
             />
-            <input type="text" name="phoneNumberLast" onChange={onChange} value={form.phoneNumberLast}/>
+            <input type="text" name="phoneNumberLast" onChange={onChange} value={form.phoneNumberLast} placeholder="****"/>
             </PhoneWrapper>
             {alert.phoneNumber && (
               <Alert alert={alert.phoneNumber}>{alert.phoneNumber}</Alert>

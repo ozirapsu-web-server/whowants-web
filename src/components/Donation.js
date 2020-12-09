@@ -41,7 +41,7 @@ const Notice = styled.div`
   font-size: 12px;
   border-radius: 6px;
   color: ${props=>props.theme.color.black};
-  font-weight:400;
+  font-weight:bold;
 
   & p {
     width: 100%;
