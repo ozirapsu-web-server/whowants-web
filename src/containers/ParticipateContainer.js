@@ -42,6 +42,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
         support_comment: form.comment,
         support_amount: form.amount,
         support_phone_number: phoneNumber,
+        support_email:form.email
       })
     );
     reset();
