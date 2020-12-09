@@ -27,12 +27,13 @@ const Tag = styled.div`
   border: 1px solid #4277ee;
   font-size: ${(props) => props.size}px;
   font-weight: bold;
-  width: ${(props) => props.width}px;
+  min-width: ${(props) => props.width+5}px;
   height: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 7px;
+  // padding:0.1%;
 `;
 
 //  사연 요약 정보 컴포넌트
