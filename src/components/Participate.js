@@ -304,7 +304,7 @@ const Participate = React.memo(
               </div>
               </CommentWrapper>
               <TermsWrapper>
-              <input type="checkbox" name="marketing-agree" id="marketing-agree"/>
+              <input type="checkbox" name="marketing-agree" id="marketing-agree" onChange={onChange} value={form.checked}/>
               <label htmlFor="marketing-agree">동의합니다</label>
               </TermsWrapper>
           </Wrapper>

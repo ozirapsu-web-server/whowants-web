@@ -27,6 +27,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
     email:"",
     comment: "응원합니다",
     amount: 0,
+    checked:false
   });
   //  모달 보여주기 상태 visible
   console.log(form)
