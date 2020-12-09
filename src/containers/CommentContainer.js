@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAllComments, toggleComments, toggleAdded } from "modules/comment";
 
 const CommentContainer = React.memo(({pageIdx}) => {
-  let { comments, seeAllComments, supportCount, added, idx } = useSelector(
+  let { comments, seeAllComments, supportCount, added } = useSelector(
     (state) => ({
       comments: state.comment.comments,
       seeAllComments: state.comment.see_all_comments,

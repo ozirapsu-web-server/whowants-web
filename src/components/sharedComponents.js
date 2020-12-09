@@ -70,4 +70,25 @@ const ProgressBar = styled(Bar)`
   height: 18px;
 `;
 
-export { StyledClose, Btn, Percent, ProgressWrapper, Bar, ProgressBar };
+const CommentWrapper = styled.section`
+  width: 100%;
+  padding: 20px;
+  background: #f0f0f0;
+`;
+
+const Notice = styled.div`
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  padding-left: 5px;
+`;
+
+const NumberOfSupporter = styled.div`
+  font-weight: 800;
+  font-size: 15px;
+`;
+
+
+export { StyledClose, Btn, Percent, ProgressWrapper, Bar, ProgressBar,CommentWrapper,Notice,NumberOfSupporter };

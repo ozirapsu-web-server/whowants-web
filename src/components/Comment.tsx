@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { numberWithCommas } from "utils/util";
+// import { numberWithCommas } from "utils/util";
 import {CommentProps} from 'interfaces/Comment.interface';
 const CommentItem = styled.div`
   width: 100%;
@@ -19,16 +19,16 @@ const Name = styled.div`
   font-size: 12px;
 `;
 
-const AmountContainer = styled.div`
-  & div:nth-child(1) {
-    font-weight: 700;
-    font-size: 14px;
-    color: ${(props) => props.theme.color.blue};
-  }
-  font-size: 12px;
-  display: flex;
-  margin-top: 5px;
-`;
+// const AmountContainer = styled.div`
+//   & div:nth-child(1) {
+//     font-weight: 700;
+//     font-size: 14px;
+//     color: ${(props) => props.theme.color.blue};
+//   }
+//   font-size: 12px;
+//   display: flex;
+//   margin-top: 5px;
+// `;
 
 const CommentSection = styled.div`
   font-size: ${(props) => props.theme.size.smd};

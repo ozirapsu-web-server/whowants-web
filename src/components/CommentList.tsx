@@ -4,26 +4,8 @@ import Comment from "components/Comment";
 import { ArrowIosDownwardOutline } from "@styled-icons/evaicons-outline/ArrowIosDownwardOutline";
 import { ArrowIosUpwardOutline } from "@styled-icons/evaicons-outline/ArrowIosUpwardOutline";
 import {CommentListProps} from 'interfaces/Comment.interface';
+import {CommentWrapper,Notice,NumberOfSupporter} from 'components/sharedComponents';
 
-const CommentWrapper = styled.section`
-  width: 100%;
-  padding: 20px;
-  background: #f0f0f0;
-`;
-
-const Notice = styled.div`
-  height: 60px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  font-weight: 400;
-  padding-left: 5px;
-`;
-
-const NumberOfSupporter = styled.div`
-  font-weight: 800;
-  font-size: 15px;
-`;
 const DownArrow = styled(ArrowIosDownwardOutline)`
   width: ${(props) => props.theme.size.mmd};
   height: ${(props) => props.theme.size.mmd};
