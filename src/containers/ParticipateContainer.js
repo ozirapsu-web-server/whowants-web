@@ -18,7 +18,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
   useEffect(() => {
     dispatch(getStoryInfo(pageIdx));
   }, [dispatch, pageIdx]);
-  console.log(title);
+ 
   const [form, onChange, alert, onToggleModal, visible, reset] = useInputs({
     nickname: "",
     phoneNumberFirst: "010",
@@ -27,9 +27,9 @@ const ParticipateContainer = React.memo(({ history,match }) => {
     email:"",
     comment: "응원합니다",
     amount: 0,
+    checked:false
   });
   //  모달 보여주기 상태 visible
-  console.log(form)
   //  댓글 추가 기능
   const onAddComment = () => {
     // 댓글 추가 api와 연동하여 댓글을 추가한다
@@ -41,6 +41,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
         support_comment: form.comment,
         support_amount: form.amount,
         support_phone_number: phoneNumber,
+        support_email:form.email
       })
     );
     reset();

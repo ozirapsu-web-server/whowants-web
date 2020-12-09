@@ -48,7 +48,7 @@ const ModalContent = styled.div`
   }
 `;
 
-const ModalHeader = styled.div`
+const ModalHeader = styled.header`
   font-size: ${(props) => props.theme.size.mmd};
   font-weight: bold;
 `;
@@ -62,18 +62,17 @@ const ModalBtn = styled(Btn)`
 `;
 
 const Modal = React.memo(({ visible, onAddComment, amount }) => {
+
   return (
     <ModalWrapper visible={visible}>
       <ModalOverlay>
-        <ModalContent>
-          {amount !== 0 && (
-            <ModalHeader>아직 구현되지 않은 기능입니다.</ModalHeader>
-          )}
-          <div>
+        <ModalContent>   
+            <ModalHeader>응원 댓글이 달렸습니다.</ModalHeader>
+          
             {amount
-              ? "기부 기능이 오픈되면 가장 먼저 연락 메세지를 드리겠습니다."
-              : "응원해주셔서 감사합니다"}
-          </div>
+              ? <div>응원해주셔서 감사합니다. <br/>기부 기능은 아직 오픈되지 않아 기부는<br/> 불가합니다. 개인 기부를 원하시면 아래 전화번호로 연락을 부탁드립니다.<br/><br/>
+              010-4450-6344</div>
+              : <div>응원해주셔서 감사합니다</div>}
           <ModalBtn onClick={onAddComment}>확인</ModalBtn>
         </ModalContent>
       </ModalOverlay>
