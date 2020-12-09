@@ -23,7 +23,7 @@ const Header = styled.header`
     height: auto;
   }
 `;
-
+//  로고 크기 줄이기 위한 사이즈 
 const Img=styled.img`
   max-height:18.23px;
 `;
