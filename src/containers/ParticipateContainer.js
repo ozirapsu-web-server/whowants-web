@@ -18,7 +18,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
   useEffect(() => {
     dispatch(getStoryInfo(pageIdx));
   }, [dispatch, pageIdx]);
-  console.log(title);
+ 
   const [form, onChange, alert, onToggleModal, visible, reset] = useInputs({
     nickname: "",
     phoneNumberFirst: "010",
@@ -30,7 +30,6 @@ const ParticipateContainer = React.memo(({ history,match }) => {
     checked:false
   });
   //  모달 보여주기 상태 visible
-  console.log(form)
   //  댓글 추가 기능
   const onAddComment = () => {
     // 댓글 추가 api와 연동하여 댓글을 추가한다
