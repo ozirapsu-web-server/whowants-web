@@ -12,12 +12,14 @@ function useInputs(initialForm) {
     setAlert(false);
     const { name, value } = e.target;
     console.log(name,value);
+    if(name==='amount'){
+      setForm((form) => ({ ...form, [name]: +value }));
+    }else{
     setForm((form) => ({ ...form, [name]: value }));
-    // 해당 이름으로 들어가게 하는 방법
-    const newObject={[name]:value};
-    setClickedAmount(newObject);
-    console.log(newObject);
-  }, []);
+    }
+    console.log(form)
+
+  }, [form]);
   // 확인 메세지 모달 
   const onToggleModal = () => {
     const [newAlert, valid] = validInputs(form);
@@ -35,7 +37,7 @@ function useInputs(initialForm) {
     setForm(initialForm);
   }, [initialForm]);
 
-  return [form, onChange, alert, onToggleModal, visible, reset,clickedAmount];
+  return [form, onChange, alert, onToggleModal, visible, reset];
 }
 
 export default useInputs;

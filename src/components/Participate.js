@@ -152,7 +152,7 @@ const Alert = styled.div`
 
 // 후원 참석자 폼 컴포넌트
 const Participate = React.memo(
-  ({ form, onChange, alert, goBack, onToggleModal,title,clickedAmount }) => {
+  ({ form, onChange, alert, goBack, onToggleModal,title }) => {
 
     return (
       <>
@@ -166,10 +166,10 @@ const Participate = React.memo(
 
       <Title>후원 금액</Title>
     <AmountWrapper >
-      <StyledBtn name="amount" onClick={onChange} value="0" cur={clickedAmount.amount==='0'}>후원은 나중에</StyledBtn>
-      <StyledBtn name="amount" onClick={onChange} value="10000" cur={clickedAmount.amount==='10000'}>{numberWithCommas(10000)}원</StyledBtn>
-      <StyledBtn name="amount" onClick={onChange} value="20000" cur={clickedAmount.amount==='20000'}>{numberWithCommas(20000)}원</StyledBtn>
-      <StyledBtn name="amount" onClick={onChange} value="30000" cur={clickedAmount.amount==='30000'}>{numberWithCommas(30000)}원</StyledBtn>
+      <StyledBtn name="amount" onClick={onChange} value="0" cur={form.amount===0}>후원은 나중에</StyledBtn>
+      <StyledBtn name="amount" onClick={onChange} value="10000" cur={form.amount===10000}>{numberWithCommas(10000)}원</StyledBtn>
+      <StyledBtn name="amount" onClick={onChange} value="20000" cur={form.amount===20000}>{numberWithCommas(20000)}원</StyledBtn>
+      <StyledBtn name="amount" onClick={onChange} value="30000" cur={form.amount===30000}>{numberWithCommas(30000)}원</StyledBtn>
     </AmountWrapper>
       </ContentWrapper>
       </Wrapper>
