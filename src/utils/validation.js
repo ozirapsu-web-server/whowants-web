@@ -16,6 +16,11 @@ const validInputs = (form) => {
     isAlertExisted=false;
   }
 
+  if(form.checked===false){
+    isAlertExisted=false;
+    alert.checked='마케팅 정보 동의는 필수입니다';
+  }
+
   return [alert, isAlertExisted];
 };
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import { StyledClose, Btn } from "components/sharedComponents";
 import { numberWithCommas } from "utils/util";
+import { RSA_PSS_SALTLEN_AUTO } from "constants";
 
 
 const Wrapper = styled.section`
@@ -153,6 +154,9 @@ const Alert = styled.div`
 const TermsWrapper=styled.div`
   diplay:flex;
   margin-left:auto;
+  & div{
+    font-size:${props=>props.theme.size.smd};
+  }
   & input[type="checkbox"] + label {
     display: block;
     cursor: pointer;
@@ -297,16 +301,24 @@ const Participate = React.memo(
           </CommentWrapper>
           </Wrapper>
           <Wrapper>
+            
               <CommentWrapper>
               <label htmlFor="marketing-terms">5. 마케팅 정보 동의</label>
+              
               <div>
               회원의 개인정보는 당사의 개인정보 취급방침에 따라 안전하게 보호됩니다. '회사'는 이용자들의 개인정보를 개인정보 취급방침의 '제 2조 수집하는 개인정보의 항목, 수집방법 및 이용목적'에서 고지한 범위 내에서 사용하며, 이용자의 사전 동의 없이는 동 범위를 초과하여 이용하거나 원칙적으로 이용자의 개인정보를 외부에 공개하지 않습니다.
               </div>
+              
               </CommentWrapper>
+              {alert.checked && (
+              <Alert alert={alert.checked} style={{textAlign:'right'}}>{alert.checked}</Alert>
+            )}
               <TermsWrapper>
-              <input type="checkbox" name="marketing-agree" id="marketing-agree" onChange={onChange} value={form.checked}/>
-              <label htmlFor="marketing-agree">동의합니다</label>
+              <input type="checkbox" name="checked" id="checked" onChange={onChange} value={form.checked}/>
+              <label htmlFor="checked">동의합니다</label>
               </TermsWrapper>
+              
+             
           </Wrapper>
           <Wrapper>
           <Btn onClick={onToggleModal}>후원 참여하기</Btn>

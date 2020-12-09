@@ -14,6 +14,7 @@ function useInputs(initialForm) {
     if(name==='amount'){
       setForm((form) => ({ ...form, [name]: +value }));
     }else if(name==='checked'){ //마케팅 정보 동의
+      console.log('마케팅')
       setForm((form) => ({ ...form, [name]: checked }));
     }else{
     setForm((form) => ({ ...form, [name]: value }));
