@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
 
         box-sizing:border-box;
         outline:none;
-        font-family: 'Roboto', sans-serif !important;
+        font-family: 'Noto Sans KR' , sans-serif !important;
 
     }
 
@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
         font-size:14px;
         height:100%;
         background:#F0F0F0;
-        
     }
     a{
         text-decoration:none;
