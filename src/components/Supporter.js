@@ -3,6 +3,10 @@ import Comment from "components/Comment";
 import styled from "styled-components";
 import {CommentWrapper,Notice,NumberOfSupporter} from 'components/sharedComponents';
 
+const Wrapper=styled(CommentWrapper)`
+    padding:10px 0;
+`;
+
 
 const Supporter = ({comments,lenOfComments}) => {
     return (

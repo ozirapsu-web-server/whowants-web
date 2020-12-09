@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     color: "#000",
   },
   box: {
-    padding: "20px",
+    padding: "0px",
   },
 });
 // 탭 컴포넌트 (스토리(구현), 새소식, 서포터 컴포넌트로 구성 (진행))
