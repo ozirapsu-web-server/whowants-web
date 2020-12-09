@@ -6,6 +6,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Tab1 from "components/Tab1";
+import Supporter from 'components/Supporter';
 
 const useStyles = makeStyles({
   root: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
     color: "#000",
   },
   box: {
-    padding: "20px",
+    padding: "0px",
   },
 });
 // 탭 컴포넌트 (스토리(구현), 새소식, 서포터 컴포넌트로 구성 (진행))
@@ -47,14 +48,8 @@ const TabPanel = React.memo((props) => {
   );
 });
 
-function a11yProps(index) {
-  return {
-    id: `scrollable-auto-tab-${index}`,
-    "aria-controls": `scrollable-auto-tabpanel-${index}`,
-  };
-}
 
-const TabList = React.memo(({ content }) => {
+const TabList = React.memo(({ content,comments,supportCount }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -73,10 +68,8 @@ const TabList = React.memo(({ content }) => {
         centered
       >
         <Tab label="스토리" className={classes.tab} />
-        <Tab disabled></Tab>
-        <Tab disabled></Tab>
-        {/* <Tab label="새소식" className={classes.tab} disabled />
-        <Tab label="서포터" className={classes.tab} disabled /> */}
+        <Tab label="새소식" className={classes.tab}  />
+        <Tab label="서포터" className={classes.tab}  />
       </Tabs>
       <TabPanel value={value} index={0}>
         <Tab1 content={content} />
@@ -85,7 +78,7 @@ const TabList = React.memo(({ content }) => {
         Item Two
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+     <Supporter comments={comments} lenOfComments={supportCount}/>
       </TabPanel>
     </Paper>
   );
