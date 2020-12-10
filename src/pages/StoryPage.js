@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LogoContainer from "containers/LogoContainer";
 import SlideContainer from "containers/SlideContainer";
 import StoryTitleContainer from "containers/StoryTitleContainer";
 import DonationContainer from "containers/DonationContainer";
 import TabsContainer from "containers/TabsContainer";
-import OrganizerContainer from "containers/OrganizerContainer";
 import FloatingContainer from "containers/FloatingContainer";
-import CommentContainer from "containers/CommentContainer";
 import styled from "styled-components";
 import hamburgerBar from "images/hamburgerBar.png";
 const StoryWrapper = styled.section`
@@ -17,19 +15,19 @@ const StoryWrapper = styled.section`
   background: #fff;
 `;
 //  사연 페이지
-const Story = React.memo(({match}) => {
-  const {pageIdx}=match.params;
-
+const Story = React.memo(({ match }) => {
+  const { pageIdx } = match.params;
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <StoryWrapper>
       <LogoContainer left={hamburgerBar} />
-      <SlideContainer pageIdx={pageIdx}/>
-      <StoryTitleContainer pageIdx={pageIdx}/>
-      <DonationContainer pageIdx={pageIdx}/>
-      <TabsContainer pageIdx={pageIdx}/>
-      <OrganizerContainer pageIdx={pageIdx}/>
-      <CommentContainer pageIdx={pageIdx}/>
-      <FloatingContainer pageIdx={pageIdx}/>
+      <SlideContainer pageIdx={pageIdx} />
+      <StoryTitleContainer pageIdx={pageIdx} />
+      <DonationContainer pageIdx={pageIdx} />
+      <TabsContainer pageIdx={pageIdx} />
+      <FloatingContainer pageIdx={pageIdx} />
     </StoryWrapper>
   );
 });

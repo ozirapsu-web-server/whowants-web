@@ -6,7 +6,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Tab1 from "components/Tab1";
-import Supporter from 'components/Supporter';
+import Tab3 from "components/Tab3";
 
 const useStyles = makeStyles({
   root: {
@@ -48,8 +48,7 @@ const TabPanel = React.memo((props) => {
   );
 });
 
-
-const TabList = React.memo(({ content,comments,supportCount }) => {
+const TabList = React.memo(({ content, comments, supportCount, pageIdx }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -68,17 +67,21 @@ const TabList = React.memo(({ content,comments,supportCount }) => {
         centered
       >
         <Tab label="스토리" className={classes.tab} />
-        <Tab label="새소식" className={classes.tab}  />
-        <Tab label="서포터" className={classes.tab}  />
+        <Tab label="새소식" className={classes.tab} />
+        <Tab label="서포터" className={classes.tab} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Tab1 content={content} />
+        <Tab1 content={content} pageIdx={pageIdx} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
       </TabPanel>
       <TabPanel value={value} index={2}>
-     <Supporter comments={comments} lenOfComments={supportCount}/>
+        <Tab3
+          comments={comments}
+          lenOfComments={supportCount}
+          pageIdx={pageIdx}
+        />
       </TabPanel>
     </Paper>
   );

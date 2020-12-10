@@ -3,6 +3,7 @@ import ApplyStory from "components/ApplyStory";
 const LandingContainer = () => {
   return (
     <>
+      <div id="#notable"></div>
       <ApplyStory />
     </>
   );

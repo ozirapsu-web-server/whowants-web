@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import landingImage from "images/landingImage.png";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -52,7 +53,17 @@ const ApplyStory = () => {
         <br /> 후원츠
       </Title>
       <div>세상을 움직이는 일, 함께 할래?</div>
-      <Button>사연 신청하기</Button>
+      <Button>
+        <Link
+          to={{
+            pathname:
+              "https://docs.google.com/forms/d/e/1FAIpQLScz-WmG5gMTZUfPIjOC4GMsge8DjmMj8mFkgVfJcqI70PwtZw/viewform",
+          }}
+          target="_blank"
+        >
+          사연 신청하기
+        </Link>
+      </Button>
     </Wrapper>
   );
 };
