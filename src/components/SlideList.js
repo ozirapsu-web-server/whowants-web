@@ -6,7 +6,6 @@ import Slide from "components/Slide";
 import { MOBILE_MAX, PC_MIN, TABLET_MIN } from "utils/media";
 const Carousel = styled.div`
   width: 100%;
-  // height: 295px;
   display: flex;
   justify-content: flex-start;
   overflow: hidden;
@@ -19,6 +18,7 @@ const Carousel = styled.div`
   }
   @media only screen and (min-width: ${PC_MIN}px) {
     height: 343px;
+    width: 581.46px;
   }
 `;
 

@@ -3,5 +3,13 @@ const TABLET_MIN = 768;
 const TABLET_MAX = 767;
 const PC_MIN = 1024;
 const PC_MAX = 1280;
+const PC_CONTAINER_WIDTH = 581.46;
 
-export { MOBILE_MAX, TABLET_MIN, TABLET_MAX, PC_MIN, PC_MAX };
+export {
+  MOBILE_MAX,
+  TABLET_MIN,
+  TABLET_MAX,
+  PC_MIN,
+  PC_MAX,
+  PC_CONTAINER_WIDTH,
+};

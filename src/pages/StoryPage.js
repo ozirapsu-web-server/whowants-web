@@ -8,6 +8,7 @@ import FloatingContainer from "containers/FloatingContainer";
 import styled from "styled-components";
 import hamburgerBar from "images/hamburgerBar.png";
 import useMedia from "customHooks/useMedia";
+import { PC_MIN } from "utils/media";
 
 const StoryWrapper = styled.section`
   width: 100%;
@@ -15,6 +16,9 @@ const StoryWrapper = styled.section`
   margin-bottom: 125px;
   margin-top: 55px;
   background: #fff;
+  @media only screen and (min-width: ${PC_MIN}px) {
+    width: 581.46px;
+  }
 `;
 //  사연 페이지
 const Story = React.memo(({ match }) => {
