@@ -25,8 +25,12 @@ const MiddleNotice = styled.div`
   font-size: 12px;
   font-weight: 300;
   line-height: 20px;
-  color: ${(props) => props.theme.color.black};
+  color: #484848;
   margin: 20px 0;
+  & div:nth-child(2) {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
 `;
 
 const Tab3 = ({ comments, lenOfComments, pageIdx }) => {
@@ -57,8 +61,8 @@ const Tab3 = ({ comments, lenOfComments, pageIdx }) => {
               />
               {idx === 4 && (
                 <MiddleNotice key={`mid-notice-${idx}`}>
-                  <div>{lenOfComments}명의 서포터즈와 함께해요.</div>
-                  <div> 모금에 참여해보세요.</div>
+                  <div>{lenOfComments}명의 서포터즈와 함께해요.&nbsp;</div>
+                  <div onClick={onClick}>모금에 참여해보세요.</div>
                 </MiddleNotice>
               )}
             </>
