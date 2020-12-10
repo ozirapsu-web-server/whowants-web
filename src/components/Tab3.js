@@ -1,39 +1,51 @@
-import React from 'react'
+import React from "react";
 import Comment from "components/Comment";
 import styled from "styled-components";
-import {CommentWrapper,Notice,NumberOfSupporter} from 'components/sharedComponents';
+import {
+  CommentWrapper,
+  Notice,
+  NumberOfSupporter,
+  Btn,
+} from "components/sharedComponents";
 
-const Wrapper=styled(CommentWrapper)`
-    padding:10px 0;
+const Wrapper = styled(CommentWrapper)`
+  padding: 10px 0;
 `;
 
+const ParticipateBtn = styled(Btn)`
+  height: 44px;
+  background: #6fcf97;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+`;
 
-const Supporter = ({comments,lenOfComments}) => {
-    return (
-        <CommentWrapper>
-        <Notice>
-          <NumberOfSupporter>
-            {lenOfComments}
-            명의 서포터
-          </NumberOfSupporter>
-          <div>가 이 사연을 응원합니다.</div>
-        </Notice>
+const Supporter = ({ comments, lenOfComments }) => {
+  return (
+    <CommentWrapper>
+      <ParticipateBtn>응원 참여하기</ParticipateBtn>
+      <Notice>
+        <NumberOfSupporter>
+          {lenOfComments}
+          명의 서포터
+        </NumberOfSupporter>
+        <div>가 이 사연을 응원합니다.</div>
+      </Notice>
 
-        {comments &&
-          comments.map((comment, idx) => {
-            return (
-              <Comment
-                key={`supporters-${idx}`}
-                support_nickname={comment.support_nickname}
-                support_amount={comment.support_amount}
-                support_comment={comment.support_comment}
-              />
-            );
-          })}
+      {comments &&
+        comments.map((comment, idx) => {
+          return (
+            <Comment
+              key={`supporters-${idx}`}
+              support_nickname={comment.support_nickname}
+              support_amount={comment.support_amount}
+              support_comment={comment.support_comment}
+            />
+          );
+        })}
+    </CommentWrapper>
+  );
+};
 
-      </CommentWrapper>
-    );
-    
-}
-
-export default Supporter
+export default Supporter;

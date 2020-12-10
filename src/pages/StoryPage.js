@@ -15,17 +15,17 @@ const StoryWrapper = styled.section`
   background: #fff;
 `;
 //  사연 페이지
-const Story = React.memo(({match}) => {
-  const {pageIdx}=match.params;
+const Story = React.memo(({ match }) => {
+  const { pageIdx } = match.params;
 
   return (
     <StoryWrapper>
       <LogoContainer left={hamburgerBar} />
-      <SlideContainer pageIdx={pageIdx}/>
-      <StoryTitleContainer pageIdx={pageIdx}/>
-      <DonationContainer pageIdx={pageIdx}/>
-      <TabsContainer pageIdx={pageIdx}/>
-      <FloatingContainer pageIdx={pageIdx}/>
+      <SlideContainer pageIdx={pageIdx} />
+      <StoryTitleContainer pageIdx={pageIdx} />
+      <DonationContainer pageIdx={pageIdx} />
+      <TabsContainer pageIdx={pageIdx} />
+      <FloatingContainer pageIdx={pageIdx} />
     </StoryWrapper>
   );
 });
