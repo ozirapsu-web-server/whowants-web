@@ -27,8 +27,6 @@ const Story = React.memo(({match}) => {
       <StoryTitleContainer pageIdx={pageIdx}/>
       <DonationContainer pageIdx={pageIdx}/>
       <TabsContainer pageIdx={pageIdx}/>
-      <OrganizerContainer pageIdx={pageIdx}/>
-      <CommentContainer pageIdx={pageIdx}/>
       <FloatingContainer pageIdx={pageIdx}/>
     </StoryWrapper>
   );

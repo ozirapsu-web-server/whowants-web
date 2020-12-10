@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 
 //  탭 정보 컴포넌트
-const TabsContainer = () => {
+const TabsContainer = ({pageIdx}) => {
   const { content,comments,supportCount } = useSelector((state) => ({
     content: state.story.content,
     supportCount:state.comment.supportCount,
@@ -13,7 +13,7 @@ const TabsContainer = () => {
 
   return (
     <>
-      <TabList content={content} comments={comments} supportCount={supportCount}></TabList>
+      <TabList content={content} comments={comments} supportCount={supportCount} pageIdx={pageIdx}></TabList>
     </>
   );
 };
