@@ -18,18 +18,26 @@ const StoryWrapper = styled.section`
   background: #fff;
   @media only screen and (min-width: ${PC_MIN}px) {
     display: flex;
+    // background: yellow;
     justify-content: center;
   }
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 `;
 
 const FlexWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 85%;
+
   // background: pink;
   // border: 5px solid black;
   & > div {
-    margin: 50px 15px;
+    margin: 30px 15px;
   }
 `;
 
@@ -66,17 +74,19 @@ const Story = React.memo(({ match }) => {
       {pc && (
         <StoryWrapper>
           <LogoContainer left={hamburgerBar} />
-          <FlexWrapper>
-            <div style={{ width: "581.46px" }}>
-              <SlideContainer pageIdx={pageIdx} />
-              <StoryTitleContainer pageIdx={pageIdx} />
-              <TabsContainer pageIdx={pageIdx} />
-            </div>
-            <div>
-              <DonationContainer pageIdx={pageIdx} />
-              {/* <FloatingContainer pageIdx={pageIdx} /> */}
-            </div>
-          </FlexWrapper>
+          <Column>
+            <StoryTitleContainer pageIdx={pageIdx} />
+            <FlexWrapper>
+              <div style={{ width: "581.46px" }}>
+                <SlideContainer pageIdx={pageIdx} />
+                <TabsContainer pageIdx={pageIdx} />
+              </div>
+              <div>
+                <DonationContainer pageIdx={pageIdx} />
+                {/* <FloatingContainer pageIdx={pageIdx} /> */}
+              </div>
+            </FlexWrapper>
+          </Column>
         </StoryWrapper>
       )}
     </>
