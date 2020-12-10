@@ -7,6 +7,8 @@ import TabsContainer from "containers/TabsContainer";
 import FloatingContainer from "containers/FloatingContainer";
 import styled from "styled-components";
 import hamburgerBar from "images/hamburgerBar.png";
+import useMedia from "customHooks/useMedia";
+
 const StoryWrapper = styled.section`
   width: 100%;
   height: 100%;
@@ -16,19 +18,36 @@ const StoryWrapper = styled.section`
 `;
 //  사연 페이지
 const Story = React.memo(({ match }) => {
+  const { Mobile, pc, Tablet } = useMedia();
+
   const { pageIdx } = match.params;
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   return (
-    <StoryWrapper>
-      <LogoContainer left={hamburgerBar} />
-      <SlideContainer pageIdx={pageIdx} />
-      <StoryTitleContainer pageIdx={pageIdx} />
-      <DonationContainer pageIdx={pageIdx} />
-      <TabsContainer pageIdx={pageIdx} />
-      <FloatingContainer pageIdx={pageIdx} />
-    </StoryWrapper>
+    <>
+      {
+        <StoryWrapper>
+          <LogoContainer left={hamburgerBar} />
+          <SlideContainer pageIdx={pageIdx} />
+          <StoryTitleContainer pageIdx={pageIdx} />
+          <DonationContainer pageIdx={pageIdx} />
+          <TabsContainer pageIdx={pageIdx} />
+          <FloatingContainer pageIdx={pageIdx} />
+        </StoryWrapper>
+      }
+      {/* {Tablet && (
+        <StoryWrapper>
+          <LogoContainer left={hamburgerBar} />
+          <SlideContainer pageIdx={pageIdx} />
+          <StoryTitleContainer pageIdx={pageIdx} />
+          <DonationContainer pageIdx={pageIdx} />
+          <TabsContainer pageIdx={pageIdx} />
+          <FloatingContainer pageIdx={pageIdx} />
+        </StoryWrapper>
+      )}
+      {pc && <StoryWrapper></StoryWrapper>} */}
+    </>
   );
 });
 

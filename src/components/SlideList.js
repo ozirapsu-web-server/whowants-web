@@ -3,13 +3,23 @@ import styled from "styled-components";
 import { ArrowIosForwardOutline } from "@styled-icons/evaicons-outline/ArrowIosForwardOutline";
 import DotList from "components/DotList";
 import Slide from "components/Slide";
+import { MOBILE_MAX, PC_MIN, TABLET_MIN } from "utils/media";
 const Carousel = styled.div`
   width: 100%;
-  height: 350px;
+  // height: 295px;
   display: flex;
   justify-content: flex-start;
   overflow: hidden;
   position: relative;
+  @media only screen and (max-width: ${MOBILE_MAX}px) {
+    height: 350px;
+  }
+  @media only screen and (min-width: ${TABLET_MIN}px) {
+    height: 500px;
+  }
+  @media only screen and (min-width: ${PC_MIN}px) {
+    height: 343px;
+  }
 `;
 
 const Sliders = styled.div`

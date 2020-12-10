@@ -52,9 +52,8 @@ const Tab3 = ({ comments, lenOfComments, pageIdx }) => {
       {comments &&
         comments.map((comment, idx) => {
           return (
-            <>
+            <div key={`tab3-${idx}`}>
               <Comment
-                key={`supporters-${idx}`}
                 support_nickname={comment.support_nickname}
                 support_amount={comment.support_amount}
                 support_comment={comment.support_comment}
@@ -65,7 +64,7 @@ const Tab3 = ({ comments, lenOfComments, pageIdx }) => {
                   <div onClick={onClick}>모금에 참여해보세요.</div>
                 </MiddleNotice>
               )}
-            </>
+            </div>
           );
         })}
     </CommentWrapper>
