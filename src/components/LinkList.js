@@ -1,4 +1,4 @@
-import React,{useCallback} from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
@@ -18,8 +18,8 @@ const ListWrapper = styled.section`
 const Title = styled.h1`
   width: 100%;
   font-size: ${(props) => props.theme.size.mmd};
-  color: #B3B3B3;
-  font-weight:700;
+  color: #b3b3b3;
+  font-weight: 700;
 `;
 
 const Section = styled.div`
@@ -27,19 +27,22 @@ const Section = styled.div`
 `;
 
 const LinkList = () => {
-  const history=useHistory();
+  const history = useHistory();
 
-  const home=useCallback(()=>{
-    history.push('/');
-  },[history])
+  const home = useCallback(
+    (position) => {
+      history.push(`/${position}`);
+    },
+    [history]
+  );
 
   return (
     <ListWrapper>
       <Title>내 모금함 만들기</Title>
       <Section>사연 신청하기</Section>
       <Title>프로젝트 둘러보기</Title>
-      <Section onClick={home}>주목할 만한 사연</Section>
-      <Section onClick={home}>방금 시작된 모금</Section>
+      <Section onClick={() => home("#notable")}>주목할 만한 사연</Section>
+      <Section onClick={() => home("#recent")}>방금 시작된 모금</Section>
     </ListWrapper>
   );
 };

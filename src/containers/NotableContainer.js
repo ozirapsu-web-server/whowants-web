@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getRecentStory, getHotStory, setStoryIdx } from "modules/story";
 import { useHistory } from "react-router-dom";
 
-const NotableContainer = () => {
+const NotableContainer = ({ location }) => {
   const history = useHistory();
   const { recentStories, hotStories } = useSelector((state) => ({
     recentStories: state.story.recentStories,
@@ -14,6 +14,7 @@ const NotableContainer = () => {
   const dispatch = useDispatch();
   const title = "주목할만한 사연";
   const title2 = "방금 시작된 모금";
+
   useEffect(() => {
     dispatch(getRecentStory());
     dispatch(getHotStory());
@@ -34,6 +35,7 @@ const NotableContainer = () => {
         onClick={onSetStoryIdx}
       ></StoryList>
       {/* 방금 시작된 사연 */}
+      <div id="#recent"></div>
       <StoryList
         data={recentStories}
         title={title2}
