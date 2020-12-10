@@ -4,9 +4,7 @@ import SlideContainer from "containers/SlideContainer";
 import StoryTitleContainer from "containers/StoryTitleContainer";
 import DonationContainer from "containers/DonationContainer";
 import TabsContainer from "containers/TabsContainer";
-import OrganizerContainer from "containers/OrganizerContainer";
 import FloatingContainer from "containers/FloatingContainer";
-import CommentContainer from "containers/CommentContainer";
 import styled from "styled-components";
 import hamburgerBar from "images/hamburgerBar.png";
 const StoryWrapper = styled.section`
