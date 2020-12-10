@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LogoContainer from "containers/LogoContainer";
 import SlideContainer from "containers/SlideContainer";
 import StoryTitleContainer from "containers/StoryTitleContainer";
@@ -17,7 +17,9 @@ const StoryWrapper = styled.section`
 //  사연 페이지
 const Story = React.memo(({ match }) => {
   const { pageIdx } = match.params;
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <StoryWrapper>
       <LogoContainer left={hamburgerBar} />

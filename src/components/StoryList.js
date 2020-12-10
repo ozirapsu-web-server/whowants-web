@@ -9,7 +9,6 @@ import {
 } from "components/sharedComponents";
 
 const Container = styled.section`
-padding:20px;
   width: 100%;
   min-height: 200px;
   background: #fff;
