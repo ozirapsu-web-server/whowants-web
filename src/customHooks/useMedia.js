@@ -2,7 +2,7 @@ import { useMediaQuery } from "react-responsive";
 //  반응형 디자인
 const useMedia = () => {
   const pc = useMediaQuery({
-    query: "(min-width:1024px) and (max-width:1279px)",
+    query: "(min-width:1024px)",
   });
 
   const Tablet = useMediaQuery({

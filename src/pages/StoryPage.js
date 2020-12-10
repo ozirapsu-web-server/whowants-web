@@ -17,9 +17,22 @@ const StoryWrapper = styled.section`
   margin-top: 55px;
   background: #fff;
   @media only screen and (min-width: ${PC_MIN}px) {
-    width: 581.46px;
+    display: flex;
+    justify-content: center;
   }
 `;
+
+const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  // background: pink;
+  // border: 5px solid black;
+  & > div {
+    margin: 50px 15px;
+  }
+`;
+
 //  사연 페이지
 const Story = React.memo(({ match }) => {
   const { Mobile, pc, Tablet } = useMedia();
@@ -30,17 +43,7 @@ const Story = React.memo(({ match }) => {
   }, []);
   return (
     <>
-      {
-        <StoryWrapper>
-          <LogoContainer left={hamburgerBar} />
-          <SlideContainer pageIdx={pageIdx} />
-          <StoryTitleContainer pageIdx={pageIdx} />
-          <DonationContainer pageIdx={pageIdx} />
-          <TabsContainer pageIdx={pageIdx} />
-          <FloatingContainer pageIdx={pageIdx} />
-        </StoryWrapper>
-      }
-      {/* {Tablet && (
+      {Mobile && (
         <StoryWrapper>
           <LogoContainer left={hamburgerBar} />
           <SlideContainer pageIdx={pageIdx} />
@@ -50,7 +53,32 @@ const Story = React.memo(({ match }) => {
           <FloatingContainer pageIdx={pageIdx} />
         </StoryWrapper>
       )}
-      {pc && <StoryWrapper></StoryWrapper>} */}
+      {Tablet && (
+        <StoryWrapper>
+          <LogoContainer left={hamburgerBar} />
+          <SlideContainer pageIdx={pageIdx} />
+          <StoryTitleContainer pageIdx={pageIdx} />
+          <DonationContainer pageIdx={pageIdx} />
+          <TabsContainer pageIdx={pageIdx} />
+          <FloatingContainer pageIdx={pageIdx} />
+        </StoryWrapper>
+      )}
+      {pc && (
+        <StoryWrapper>
+          <LogoContainer left={hamburgerBar} />
+          <FlexWrapper>
+            <div style={{ width: "581.46px" }}>
+              <SlideContainer pageIdx={pageIdx} />
+              <StoryTitleContainer pageIdx={pageIdx} />
+              <TabsContainer pageIdx={pageIdx} />
+            </div>
+            <div>
+              <DonationContainer pageIdx={pageIdx} />
+              {/* <FloatingContainer pageIdx={pageIdx} /> */}
+            </div>
+          </FlexWrapper>
+        </StoryWrapper>
+      )}
     </>
   );
 });
