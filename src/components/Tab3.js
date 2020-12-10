@@ -1,16 +1,13 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Comment from "components/Comment";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 import {
   CommentWrapper,
   Notice,
   NumberOfSupporter,
   Btn,
 } from "components/sharedComponents";
-
-const Wrapper = styled(CommentWrapper)`
-  padding: 10px 0;
-`;
 
 const ParticipateBtn = styled(Btn)`
   height: 44px;
@@ -21,10 +18,14 @@ const ParticipateBtn = styled(Btn)`
   line-height: 20px;
 `;
 
-const Supporter = ({ comments, lenOfComments }) => {
+const Supporter = ({ comments, lenOfComments, pageIdx }) => {
+  const history = useHistory();
+  const onClick = useCallback(() => {
+    history.push(`/participate/${pageIdx}`);
+  }, [history, pageIdx]);
   return (
     <CommentWrapper>
-      <ParticipateBtn>응원 참여하기</ParticipateBtn>
+      <ParticipateBtn onClick={onClick}>응원 참여하기</ParticipateBtn>
       <Notice>
         <NumberOfSupporter>
           {lenOfComments}

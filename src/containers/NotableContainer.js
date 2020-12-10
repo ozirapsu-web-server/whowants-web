@@ -1,16 +1,14 @@
-import React, { useEffect,useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import StoryList from "components/StoryList";
 import { useSelector, useDispatch } from "react-redux";
-import { getRecentStory,getHotStory, setStoryIdx } from "modules/story";
+import { getRecentStory, getHotStory, setStoryIdx } from "modules/story";
 import { useHistory } from "react-router-dom";
 
-
 const NotableContainer = () => {
-
   const history = useHistory();
-  const { recentStories,hotStories, idx } = useSelector((state) => ({
+  const { recentStories, hotStories } = useSelector((state) => ({
     recentStories: state.story.recentStories,
-    hotStories:state.story.hotStories,
+    hotStories: state.story.hotStories,
     idx: state.story.idx,
   }));
   const dispatch = useDispatch();
@@ -20,13 +18,16 @@ const NotableContainer = () => {
     dispatch(getRecentStory());
     dispatch(getHotStory());
   }, [dispatch]);
-  const onSetStoryIdx = useCallback((pageIdx) => {
-    dispatch(setStoryIdx(pageIdx));
-    history.push(`/storyPage/${pageIdx}`);
-  },[]);
+  const onSetStoryIdx = useCallback(
+    (pageIdx) => {
+      dispatch(setStoryIdx(pageIdx));
+      history.push(`/storyPage/${pageIdx}`);
+    },
+    [dispatch, history]
+  );
   return (
     <>
-    {/* 주목할만한 사연 */}
+      {/* 주목할만한 사연 */}
       <StoryList
         data={hotStories}
         title={title}
@@ -37,7 +38,6 @@ const NotableContainer = () => {
         data={recentStories}
         title={title2}
         onClick={onSetStoryIdx}
-
       ></StoryList>
     </>
   );
