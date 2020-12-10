@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Tab1Wrapper = styled.div`
   width: 100%;
+  padding:20px;
   text-align: left;
   font-size: ${(props) => props.theme.size.mmd};
   font-family: "NanumBarunGothic", sans-serif !important;
