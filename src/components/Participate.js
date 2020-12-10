@@ -191,7 +191,7 @@ const TermsWrapper = styled.div`
 const Participate = React.memo(
   ({ form, onChange, alert, goBack, onToggleModal, title }) => {
     useEffect(() => {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
     return (

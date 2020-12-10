@@ -18,7 +18,7 @@ const StoryWrapper = styled.section`
 const Story = React.memo(({ match }) => {
   const { pageIdx } = match.params;
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   return (
     <StoryWrapper>
