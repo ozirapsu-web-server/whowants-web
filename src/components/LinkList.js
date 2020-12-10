@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 const ListWrapper = styled.section`
   padding: 20px;
@@ -39,7 +39,17 @@ const LinkList = () => {
   return (
     <ListWrapper>
       <Title>내 모금함 만들기</Title>
-      <Section>사연 신청하기</Section>
+      <Section>
+        <Link
+          to={{
+            pathname:
+              "https://docs.google.com/forms/d/e/1FAIpQLScz-WmG5gMTZUfPIjOC4GMsge8DjmMj8mFkgVfJcqI70PwtZw/viewform",
+          }}
+          target="_blank"
+        >
+          사연 신청하기
+        </Link>
+      </Section>
       <Title>프로젝트 둘러보기</Title>
       <Section onClick={() => home("#notable")}>주목할 만한 사연</Section>
       <Section onClick={() => home("#recent")}>방금 시작된 모금</Section>
