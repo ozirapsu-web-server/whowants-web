@@ -32,6 +32,9 @@ const FloatWrapper = styled.section`
     margin: 0 5px;
     border: none;
     border-radius: 6px;
+    &:hover {
+      cursor: pointer;
+    }
   }
   & > div {
     border: 1px solid #4f4f4f;

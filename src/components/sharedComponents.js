@@ -23,6 +23,9 @@ const Btn = styled.button`
   border: none;
   border-radius: 10px;
   font-size: ${(props) => props.theme.size.mmd};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Percent = styled.div`

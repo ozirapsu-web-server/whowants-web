@@ -149,6 +149,9 @@ const StyledBtn = styled(Btn)`
   color: ${(props) => (props.cur ? "#fff" : "#4F4F4F")};
   font-size: 14px;
   font-weight: 700;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Alert = styled.div`
