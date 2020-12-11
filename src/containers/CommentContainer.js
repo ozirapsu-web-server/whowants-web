@@ -21,6 +21,7 @@ const CommentContainer = React.memo(({ pageIdx }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // 두 번째 인자: 최근 순 댓글 가져오기
     dispatch(getAllComments(pageIdx, 0));
   }, [dispatch, pageIdx, comments]);
   //  댓글을 전체 보여주기 토글 기능
