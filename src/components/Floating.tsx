@@ -1,17 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import { Heart } from "@styled-icons/boxicons-regular/Heart";
+// import { Heart } from "@styled-icons/boxicons-regular/Heart";
 import { Link } from "react-router-dom";
 import KakaoShareButton from "button/KakaoSharedButton";
+import { PC_MIN, TABLET_MAX } from "utils/media";
 
 const FloatWrapper = styled.section`
   border: none;
-  width: 100vw;
+
   padding: 20px;
   background: #fff;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  @media only screen and (max-width: ${TABLET_MAX}px) {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+  }
+
   display: flex;
   align-items: center;
   justify-content: center;

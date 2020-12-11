@@ -83,7 +83,7 @@ const Story = React.memo(({ match }) => {
               </div>
               <div>
                 <DonationContainer pageIdx={pageIdx} />
-                {/* <FloatingContainer pageIdx={pageIdx} /> */}
+                <FloatingContainer pageIdx={pageIdx} />
               </div>
             </FlexWrapper>
           </Column>
