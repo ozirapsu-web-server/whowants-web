@@ -3,7 +3,7 @@ import Participate from "components/Participate";
 import Modal from "components/Modal";
 import useInputs from "customHooks/useInputs";
 import { useSelector, useDispatch } from "react-redux";
-import { addComment } from "modules/comment";
+import { addComment, getAllComments } from "modules/comment";
 import { withRouter } from "react-router-dom";
 import { getStoryInfo } from "modules/story";
 
@@ -49,6 +49,10 @@ const ParticipateContainer = React.memo(({ history, match }) => {
         support_email: form.email,
       })
     );
+
+    // 두 번째 인자: 최근 순 댓글 가져오기
+    dispatch(getAllComments(pageIdx, 0));
+
     reset();
     // 사연 페이지로 이동
     history.push(`/storyPage/${pageIdx}`);
