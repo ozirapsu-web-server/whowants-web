@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import 'styles/index.css';
+import "styles/index.css";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         font-size:14px;
         height:100%;
-        background:#F0F0F0;
+        background:#fff;
     }
     a{
         text-decoration:none;

@@ -7,11 +7,16 @@ import {
   Bar,
   ProgressBar,
 } from "components/sharedComponents";
+import { PC_MIN } from "utils/media";
 
 const DonationWrapper = styled.section`
   width: 100%;
   min-height: 100px;
   padding: 20px;
+  @media only screen and (min-width: ${PC_MIN}px) {
+    width: 378px;
+    padding: 0 20px;
+  }
 `;
 
 const Container = styled.div`
@@ -40,8 +45,8 @@ const Notice = styled.div`
   background: ${(props) => props.theme.color.grayB2};
   font-size: 12px;
   border-radius: 6px;
-  color: ${props=>props.theme.color.black};
-  font-weight:bold;
+  color: ${(props) => props.theme.color.black};
+  font-weight: bold;
 
   & p {
     width: 100%;
