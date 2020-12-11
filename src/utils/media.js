@@ -1,6 +1,6 @@
 const MOBILE_MAX = 767;
 const TABLET_MIN = 768;
-const TABLET_MAX = 767;
+const TABLET_MAX = 1023;
 const PC_MIN = 1024;
 const PC_MAX = 1280;
 const PC_CONTAINER_WIDTH = 581.46;

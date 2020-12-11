@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Tab1 from "components/Tab1";
 import Tab3 from "components/Tab3";
+import Tab2 from "components/Tab2";
 
 const useStyles = makeStyles({
   root: {
@@ -48,43 +49,45 @@ const TabPanel = React.memo((props) => {
   );
 });
 
-const TabList = React.memo(({ content, comments, supportCount, pageIdx }) => {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+const TabList = React.memo(
+  ({ content, comments, supportCount, pageIdx, organizer }) => {
+    const classes = useStyles();
+    const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
 
-  return (
-    <Paper className={classes.root}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        className={classes.tabs}
-        variant="fullWidth"
-        centered
-      >
-        <Tab label="스토리" className={classes.tab} />
-        <Tab label="새소식" className={classes.tab} />
-        <Tab label="서포터" className={classes.tab} />
-      </Tabs>
-      <TabPanel value={value} index={0}>
-        <Tab1 content={content} pageIdx={pageIdx} />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <Tab3
-          comments={comments}
-          lenOfComments={supportCount}
-          pageIdx={pageIdx}
-        />
-      </TabPanel>
-    </Paper>
-  );
-});
+    return (
+      <Paper className={classes.root}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          className={classes.tabs}
+          variant="fullWidth"
+          centered
+        >
+          <Tab label="스토리" className={classes.tab} />
+          <Tab label="새소식" className={classes.tab} />
+          <Tab label="서포터" className={classes.tab} />
+        </Tabs>
+        <TabPanel value={value} index={0}>
+          <Tab1 content={content} pageIdx={pageIdx} />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <Tab2 organizer={organizer} />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <Tab3
+            comments={comments}
+            lenOfComments={supportCount}
+            pageIdx={pageIdx}
+          />
+        </TabPanel>
+      </Paper>
+    );
+  }
+);
 
 export default TabList;

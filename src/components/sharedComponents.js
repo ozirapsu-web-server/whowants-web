@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Close } from "@styled-icons/evaicons-solid/Close";
+import { PC_MIN } from "utils/media";
 
 const StyledClose = styled(Close)`
   position: absolute;
@@ -19,26 +20,26 @@ const Btn = styled.button`
   align-items: center;
   font-weight: bold;
   color: #fff;
-  border:none;
+  border: none;
   border-radius: 10px;
-  font-size: ${(props) => props.theme.size.mmd}; 
+  font-size: ${(props) => props.theme.size.mmd};
 `;
 
 const Percent = styled.div`
   display: flex;
   align-items: center;
-  font-weight: bold;
+
   margin-bottom: 7px;
+
   & p:nth-child(1) {
-    margin-right: 3px;
-  }
-  & p:nth-child(1) {
-    font-size: 24px;
     color: ${(props) => props.theme.color.blue};
+    font-size: 20.43px;
+    font-weight: 800;
+    margin-right: 3px;
   }
 
   & p:nth-child(2) {
-    font-weight: bold;
+    font-weight: 500;
     font-size: 14px;
   }
 `;
@@ -74,6 +75,9 @@ const CommentWrapper = styled.section`
   width: 100%;
   padding: 20px;
   background: #f0f0f0;
+  @media only screen and (min-width: ${PC_MIN}px) {
+    border-radius: 6px;
+  }
 `;
 
 const Notice = styled.div`
@@ -90,5 +94,41 @@ const NumberOfSupporter = styled.div`
   font-size: 15px;
 `;
 
+const OrganizerProfile = styled.div`
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+`;
 
-export { StyledClose, Btn, Percent, ProgressWrapper, Bar, ProgressBar,CommentWrapper,Notice,NumberOfSupporter };
+const ProfileImg = styled.div`
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #b7b7b7;
+  border-radius: 50%;
+  border: none;
+  margin-right: 1.2em;
+  // 로고 크기만 고려해서 조종함. 추후 실제 프로필이미지 넣을 경우 다른 스타일 넣을지도
+  & > img {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+  }
+`;
+
+export {
+  StyledClose,
+  Btn,
+  Percent,
+  ProgressWrapper,
+  Bar,
+  ProgressBar,
+  CommentWrapper,
+  Notice,
+  NumberOfSupporter,
+  OrganizerProfile,
+  ProfileImg,
+};

@@ -18,7 +18,6 @@ const StoryWrapper = styled.section`
   background: #fff;
   @media only screen and (min-width: ${PC_MIN}px) {
     display: flex;
-    // background: yellow;
     justify-content: center;
   }
 `;
@@ -83,7 +82,7 @@ const Story = React.memo(({ match }) => {
               </div>
               <div>
                 <DonationContainer pageIdx={pageIdx} />
-                {/* <FloatingContainer pageIdx={pageIdx} /> */}
+                <FloatingContainer pageIdx={pageIdx} />
               </div>
             </FlexWrapper>
           </Column>

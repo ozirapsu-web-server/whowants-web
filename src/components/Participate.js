@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import { StyledClose, Btn } from "components/sharedComponents";
 import { numberWithCommas } from "utils/util";
+import { TABLET_MIN } from "utils/media";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -14,6 +15,14 @@ const Wrapper = styled.section`
     margin-top: 55px;
   }
   margin-bottom: 7px;
+  @media only screen and (min-width: ${TABLET_MIN}px) {
+    &:nth-of-type(1) {
+      margin-top: 70px;
+    }
+    width: 500px;
+    margin: auto;
+    margin-bottom: 7px;
+  }
 `;
 
 const WrapperTitle = styled.div`

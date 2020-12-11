@@ -3,8 +3,17 @@ import StoryList from "components/StoryList";
 import { useSelector, useDispatch } from "react-redux";
 import { getRecentStory, getHotStory, setStoryIdx } from "modules/story";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
+import { PC_MIN } from "utils/media";
 
-const NotableContainer = ({ location }) => {
+const MediaWrapper = styled.div`
+  @media only screen and (min-width: ${PC_MIN}px) {
+    width: 65%;
+    margin: auto;
+  }
+`;
+
+const NotableContainer = () => {
   const history = useHistory();
   const { recentStories, hotStories } = useSelector((state) => ({
     recentStories: state.story.recentStories,
@@ -27,7 +36,7 @@ const NotableContainer = ({ location }) => {
     [dispatch, history]
   );
   return (
-    <>
+    <MediaWrapper>
       {/* 주목할만한 사연 */}
       <StoryList
         data={hotStories}
@@ -41,7 +50,7 @@ const NotableContainer = ({ location }) => {
         title={title2}
         onClick={onSetStoryIdx}
       ></StoryList>
-    </>
+    </MediaWrapper>
   );
 };
 

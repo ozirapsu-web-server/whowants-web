@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import landingImage from "images/landingImage.png";
 import { Link } from "react-router-dom";
+import { MOBILE_MAX, PC_MIN, TABLET_MIN } from "utils/media";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -17,6 +18,13 @@ const Wrapper = styled.div`
     font-size: 16px;
     font-weight: 300;
   }
+  @media only screen and (min-width: ${TABLET_MIN}px) {
+    padding: 30px;
+  }
+  @media only screen and (min-width: ${PC_MIN}px) {
+    height: 515px;
+    padding: 50px 200px;
+  }
 `;
 
 const Title = styled.h1`
@@ -29,7 +37,6 @@ const Title = styled.h1`
 
 const Button = styled.button`
   position: absolute;
-  left: 20px;
   bottom: 50px;
   width: 150px;
   height: 38px;
@@ -41,6 +48,18 @@ const Button = styled.button`
   color: #fff;
   &:hover {
     cursor: pointer;
+  }
+  @media only screen and (max-width: ${MOBILE_MAX}px) {
+    left: 20px;
+    bottom: 80px;
+  }
+  @media only screen and (min-width: ${TABLET_MIN}px) {
+    right: 50px;
+    bottom: 160px;
+  }
+  @media only screen and (min-width: ${PC_MIN}px) {
+    left: 200px;
+    bottom: 200px;
   }
 `;
 
