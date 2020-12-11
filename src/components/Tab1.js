@@ -7,24 +7,16 @@ const Tab1Wrapper = styled.div`
   width: 100%;
   padding: 20px;
   text-align: left;
-  font-size: ${(props) => props.theme.size.mmd};
+  font-size: 16px;
   white-space: pre-wrap;
+  font-weight: 400;
+  line-height: 29px;
 `;
 //  탭 첫 번째 컴포넌트 (사연 컨텐츠)
 const Tab1 = React.memo(({ content, pageIdx }) => {
   return (
     <>
-      <Tab1Wrapper>
-        {/* {content.split("\n").map((line, idx) => {
-          return (
-            <span key={`content-${idx}`}>
-              {line}
-              <br />
-            </span>
-          );
-        })} */}
-        {content}
-      </Tab1Wrapper>
+      <Tab1Wrapper>{content}</Tab1Wrapper>
       <OrganizerContainer pageIdx={pageIdx} />
       <CommentContainer pageIdx={pageIdx} />
     </>
