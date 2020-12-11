@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import profileLogo from "images/profileLogo.png";
 import { PC_MIN, TABLET_MAX } from "utils/media";
+import { OrganizerProfile, ProfileImg } from "components/sharedComponents";
 
 const OrganizerWrapper = styled.div`
   min-height: 100px;
@@ -23,31 +24,6 @@ const OrganizerWrapper = styled.div`
 const Header = styled.div`
   font-size: ${(props) => props.theme.size.mmd};
   font-weight: bold;
-`;
-
-const OrganizerProfile = styled.div`
-  width: 100%;
-  display: flex;
-  margin-top: 20px;
-  align-items: center;
-`;
-
-const ProfileImg = styled.div`
-  height: 50px;
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #b7b7b7;
-  border-radius: 50%;
-  border: none;
-  margin-right: 1.2em;
-  // 로고 크기만 고려해서 조종함. 추후 실제 프로필이미지 넣을 경우 다른 스타일 넣을지도
-  & > img {
-    width: 60%;
-    height: auto;
-    object-fit: cover;
-  }
 `;
 
 const Author = styled.div`

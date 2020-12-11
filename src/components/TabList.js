@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Tab1 from "components/Tab1";
 import Tab3 from "components/Tab3";
+import Tab2 from "components/Tab2";
 
 const useStyles = makeStyles({
   root: {
@@ -74,7 +75,7 @@ const TabList = React.memo(({ content, comments, supportCount, pageIdx }) => {
         <Tab1 content={content} pageIdx={pageIdx} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <Tab2 />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Tab3

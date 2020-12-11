@@ -94,6 +94,31 @@ const NumberOfSupporter = styled.div`
   font-size: 15px;
 `;
 
+const OrganizerProfile = styled.div`
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+`;
+
+const ProfileImg = styled.div`
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #b7b7b7;
+  border-radius: 50%;
+  border: none;
+  margin-right: 1.2em;
+  // 로고 크기만 고려해서 조종함. 추후 실제 프로필이미지 넣을 경우 다른 스타일 넣을지도
+  & > img {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+  }
+`;
+
 export {
   StyledClose,
   Btn,
@@ -104,4 +129,6 @@ export {
   CommentWrapper,
   Notice,
   NumberOfSupporter,
+  OrganizerProfile,
+  ProfileImg,
 };
