@@ -3,11 +3,11 @@ import styled from "styled-components";
 // import { Heart } from "@styled-icons/boxicons-regular/Heart";
 import { Link } from "react-router-dom";
 import KakaoShareButton from "button/KakaoSharedButton";
-import { PC_MIN, TABLET_MAX } from "utils/media";
+import { TABLET_MAX } from "utils/media";
 
 const FloatWrapper = styled.section`
   border: none;
-
+  font-size: 15px;
   padding: 20px;
   background: #fff;
   @media only screen and (max-width: ${TABLET_MAX}px) {
@@ -35,12 +35,15 @@ const FloatWrapper = styled.section`
   }
   & > div {
     border: 1px solid #4f4f4f;
+    font-weight: 400;
   }
 `;
 
 const Participate = styled.button`
   background: ${(props) => props.theme.color.blue};
   color: #fff;
+
+  font-weight: 700;
   border: none;
   & a {
     width: 100%;

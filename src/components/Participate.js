@@ -92,7 +92,8 @@ const CommentWrapper = styled(TitleWrapper)`
   flex-direction: column;
   align-items: flex-start;
   & > label {
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 14px;
   }
   & > * {
     width: 100%;
@@ -118,13 +119,14 @@ const CommentWrapper = styled(TitleWrapper)`
 `;
 
 const Title = styled.div`
-  font-weight: bold;
+  font-weight: 500;
   font-size: 15px;
   padding: 10px 0;
 `;
 
 const Text = styled.div`
   font-size: 14px;
+  font-weight: 400;
   width: 70%;
   line-height: 18px;
   padding: 10px 0;
@@ -145,6 +147,8 @@ const AmountWrapper = styled.div`
 const StyledBtn = styled(Btn)`
   background: ${(props) => (props.cur ? props.theme.color.blue : "#fff")};
   color: ${(props) => (props.cur ? "#fff" : "#4F4F4F")};
+  font-size: 14px;
+  font-weight: 700;
 `;
 
 const Alert = styled.div`
