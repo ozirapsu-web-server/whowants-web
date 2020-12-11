@@ -8,7 +8,7 @@ import { PC_MIN } from "utils/media";
 
 const MediaWrapper = styled.div`
   @media only screen and (min-width: ${PC_MIN}px) {
-    width: 70%;
+    width: 60%;
     margin: auto;
   }
 `;

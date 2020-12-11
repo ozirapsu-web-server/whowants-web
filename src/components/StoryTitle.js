@@ -33,6 +33,9 @@ const Tag = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 7px;
+  padding: 5px;
+  flex-shrink: 0;
+  white-space: nowrap;
 `;
 
 //  사연 요약 정보 컴포넌트
