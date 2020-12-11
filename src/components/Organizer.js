@@ -22,8 +22,8 @@ const OrganizerWrapper = styled.div`
 `;
 
 const Header = styled.div`
-  font-size: ${(props) => props.theme.size.mmd};
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 700;
 `;
 
 const Author = styled.div`
@@ -31,10 +31,13 @@ const Author = styled.div`
   display: flex;
   flex-direction: column;
   & > div:nth-child(1) {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 16px;
   }
   & > div:nth-child(2) {
-    line-height: 1.3em;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
   }
   & > * {
     margin: 3px 0;
