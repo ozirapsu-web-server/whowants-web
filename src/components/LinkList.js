@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory, Link } from "react-router-dom";
 import { TABLET_MIN } from "utils/media";
@@ -44,6 +44,10 @@ const LinkList = () => {
     },
     [history]
   );
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <ListWrapper>

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { getAllComments, toggleComments, toggleAdded } from "modules/comment";
 
-const CommentContainer = React.memo(({pageIdx}) => {
+const CommentContainer = React.memo(({ pageIdx }) => {
   let { comments, seeAllComments, supportCount, added } = useSelector(
     (state) => ({
       comments: state.comment.comments,
@@ -22,7 +22,7 @@ const CommentContainer = React.memo(({pageIdx}) => {
 
   useEffect(() => {
     dispatch(getAllComments(pageIdx, 0));
-  }, [dispatch, pageIdx]);
+  }, [dispatch, pageIdx, comments]);
   //  댓글을 전체 보여주기 토글 기능
   const onToggleComments = useCallback(() => {
     dispatch(toggleComments());
