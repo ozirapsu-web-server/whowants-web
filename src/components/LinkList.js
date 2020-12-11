@@ -28,7 +28,7 @@ const Title = styled.h1`
 `;
 
 const Section = styled.div`
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 900;
 `;
 
