@@ -69,8 +69,11 @@ const TabList = React.memo(
           centered
         >
           <Tab label="스토리" className={classes.tab} />
-          <Tab label="새소식" className={classes.tab} />
-          <Tab label="서포터" className={classes.tab} />
+          <Tab label={`새소식`} className={classes.tab} />
+          <Tab
+            label={`서포터 ${comments.length ? comments.length : ""}`}
+            className={classes.tab}
+          />
         </Tabs>
         <TabPanel value={value} index={0}>
           <Tab1 content={content} pageIdx={pageIdx} />
