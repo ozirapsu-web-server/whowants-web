@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Close } from "@styled-icons/evaicons-solid/Close";
+import { PC_MIN } from "utils/media";
 
 const StyledClose = styled(Close)`
   position: absolute;
@@ -19,9 +20,9 @@ const Btn = styled.button`
   align-items: center;
   font-weight: bold;
   color: #fff;
-  border:none;
+  border: none;
   border-radius: 10px;
-  font-size: ${(props) => props.theme.size.mmd}; 
+  font-size: ${(props) => props.theme.size.mmd};
 `;
 
 const Percent = styled.div`
@@ -74,6 +75,9 @@ const CommentWrapper = styled.section`
   width: 100%;
   padding: 20px;
   background: #f0f0f0;
+  @media only screen and (min-width: ${PC_MIN}px) {
+    border-radius: 6px;
+  }
 `;
 
 const Notice = styled.div`
@@ -90,5 +94,14 @@ const NumberOfSupporter = styled.div`
   font-size: 15px;
 `;
 
-
-export { StyledClose, Btn, Percent, ProgressWrapper, Bar, ProgressBar,CommentWrapper,Notice,NumberOfSupporter };
+export {
+  StyledClose,
+  Btn,
+  Percent,
+  ProgressWrapper,
+  Bar,
+  ProgressBar,
+  CommentWrapper,
+  Notice,
+  NumberOfSupporter,
+};

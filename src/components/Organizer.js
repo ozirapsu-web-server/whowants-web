@@ -1,22 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 import profileLogo from "images/profileLogo.png";
+import { PC_MIN, TABLET_MAX } from "utils/media";
 
 const OrganizerWrapper = styled.div`
   min-height: 100px;
   background: #fff;
   margin-top: 10px;
+  @media only screen and (max-width: ${TABLET_MAX}px) {
+    margin: 26px;
+  }
+  @media only screen and (min-width: ${PC_MIN}px) {
+    margin: 26px 0;
+  }
   padding: 20px;
   display: flex;
   flex-direction: column;
   border: 1px solid ${(props) => props.theme.color.gray};
   border-radius: 6px;
-  margin: 26px;
 `;
 
 const Header = styled.div`
-  font-size: ${(props) => props.theme.size.mmd};\
-  font-weight:bold;
+  font-size: ${(props) => props.theme.size.mmd};
+  font-weight: bold;
 `;
 
 const OrganizerProfile = styled.div`
@@ -59,17 +65,17 @@ const Author = styled.div`
   }
 `;
 
-const InquiryBtn = styled.button`
-  height: 40px;
-  width: 80px;
-  border-radius: 10px;
-  background: ${(props) =>
-    props.disabled ? "#ddd" : (props) => props.theme.color.blue};
-  border: none;
-  color: #fff;
-  margin-left: auto;
-  font-weight: bold;
-`;
+// const InquiryBtn = styled.button`
+//   height: 40px;
+//   width: 80px;
+//   border-radius: 10px;
+//   background: ${(props) =>
+//     props.disabled ? "#ddd" : (props) => props.theme.color.blue};
+//   border: none;
+//   color: #fff;
+//   margin-left: auto;
+//   font-weight: bold;
+// `;
 //  모금함 생성자 컴포넌트
 const Organizer = ({ organizer }) => {
   return (
