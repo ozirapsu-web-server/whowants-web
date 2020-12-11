@@ -66,7 +66,8 @@ const Organizer = ({ organizer }) => {
         </ProfileImg>
         <Author>
           <div>{organizer}</div>
-          <div>반갑습니다. 최해랑입니다.(서버연결안한 테스트 문구)</div>
+          {/* 안한 부분 체크 */}
+          <div>반갑습니다.</div>
         </Author>
         {/* <InquiryBtn disabled>문의하기</InquiryBtn> */}
       </OrganizerProfile>

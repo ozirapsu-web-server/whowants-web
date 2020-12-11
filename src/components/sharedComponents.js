@@ -87,10 +87,11 @@ const Notice = styled.div`
   align-items: center;
   font-weight: 400;
   padding-left: 5px;
+  font-weight: 15px;
 `;
 
 const NumberOfSupporter = styled.div`
-  font-weight: 800;
+  font-weight: 900;
   font-size: 15px;
 `;
 

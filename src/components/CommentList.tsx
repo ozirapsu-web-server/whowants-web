@@ -3,8 +3,12 @@ import styled from "styled-components";
 import Comment from "components/Comment";
 import { ArrowIosDownwardOutline } from "@styled-icons/evaicons-outline/ArrowIosDownwardOutline";
 import { ArrowIosUpwardOutline } from "@styled-icons/evaicons-outline/ArrowIosUpwardOutline";
-import {CommentListProps} from 'interfaces/Comment.interface';
-import {CommentWrapper,Notice,NumberOfSupporter} from 'components/sharedComponents';
+import { CommentListProps } from "interfaces/Comment.interface";
+import {
+  CommentWrapper,
+  Notice,
+  NumberOfSupporter,
+} from "components/sharedComponents";
 
 const DownArrow = styled(ArrowIosDownwardOutline)`
   width: ${(props) => props.theme.size.mmd};
@@ -27,14 +31,12 @@ const SeeAllBtn = styled.button`
     border-bottom: 1px solid ${(props) => props.theme.color.blue};
   }
   font-size: ${(props) => props.theme.size.mmd};
-  font-weight: bold;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
 `;
-
-
 
 //  댓글 리스트 컴포넌트
 const CommentList = React.memo(
@@ -45,7 +47,7 @@ const CommentList = React.memo(
     seeAllComments,
     added,
     onToggleAdded,
-  }:CommentListProps) => {
+  }: CommentListProps) => {
     const myComment = useRef<HTMLDivElement>(null);
     useEffect(() => {
       if (added && myComment.current) {
