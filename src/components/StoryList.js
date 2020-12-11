@@ -49,7 +49,7 @@ const Story = styled.div`
   flex-direction: column;
   width: 230px;
   min-height: 193px;
-  margin: 0 20px;
+  margin: 0 10px;
   @media only screen and (min-width: ${TABLET_MIN}px) and (max-width: ${TABLET_MAX}px) {
     margin: 0 30px;
   }
