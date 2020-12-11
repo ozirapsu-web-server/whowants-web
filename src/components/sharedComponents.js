@@ -33,7 +33,7 @@ const Percent = styled.div`
 
   & p:nth-child(1) {
     color: ${(props) => props.theme.color.blue};
-    font-size: 20.43px;
+    font-size: 24px;
     font-weight: 800;
     margin-right: 3px;
   }
