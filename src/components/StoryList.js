@@ -7,7 +7,7 @@ import {
   Bar,
   ProgressBar,
 } from "components/sharedComponents";
-import { TABLET_MAX, TABLET_MIN } from "utils/media";
+import { PC_MIN, TABLET_MAX, TABLET_MIN } from "utils/media";
 
 const Container = styled.section`
   width: 100%;
@@ -23,6 +23,14 @@ const Container = styled.section`
   @media only screen and (min-width: ${TABLET_MIN}px) and (max-width: ${TABLET_MAX}px) {
     margin: 30px;
   }
+  @media only screen and (min-width: ${PC_MIN}px) {
+    display: flex;
+    flex-direction: column;
+    // background: pink;
+    & > h1 {
+      margin: 20px 0;
+    }
+  }
 `;
 
 const Wrapper = styled.div`
@@ -31,6 +39,9 @@ const Wrapper = styled.div`
   display: flex;
   overflow: auto;
   padding-bottom: 20px;
+  @media only screen and (min-width: ${PC_MIN}px) {
+    justify-content: space-between;
+  }
 `;
 
 const Story = styled.div`
@@ -41,6 +52,14 @@ const Story = styled.div`
   margin: 0 20px;
   @media only screen and (min-width: ${TABLET_MIN}px) and (max-width: ${TABLET_MAX}px) {
     margin: 0 30px;
+  }
+  @media only screen and (min-width: ${PC_MIN}px) {
+    &:first-of-type {
+      margin-left: 0;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 `;
 
@@ -80,7 +99,7 @@ const StoryList = ({ title, data, onClick }) => {
             </Story>
           );
         })}
-        <div
+        {/* <div
           style={{
             width: "20px",
             height: "100%",
@@ -88,7 +107,7 @@ const StoryList = ({ title, data, onClick }) => {
           }}
         >
           a
-        </div>
+        </div> */}
       </Wrapper>
     </Container>
   );
