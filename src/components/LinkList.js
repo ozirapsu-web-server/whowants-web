@@ -30,6 +30,9 @@ const Title = styled.h1`
 const Section = styled.div`
   font-size: 28px;
   font-weight: 900;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const LinkList = () => {
