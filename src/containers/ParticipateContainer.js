@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import Participate from "components/Participate";
 import Modal from "components/Modal";
 import useInputs from "customHooks/useInputs";
@@ -8,9 +8,9 @@ import { withRouter } from "react-router-dom";
 import { getStoryInfo } from "modules/story";
 
 // 후원하는 자의 작성 컴포넌트
-const ParticipateContainer = React.memo(({ history,match }) => {
-  const {pageIdx}=match.params;
-  const {title} = useSelector((state) => ({
+const ParticipateContainer = React.memo(({ history, match }) => {
+  const { pageIdx } = match.params;
+  const { title } = useSelector((state) => ({
     title: state.story.title,
   }));
 
@@ -18,22 +18,27 @@ const ParticipateContainer = React.memo(({ history,match }) => {
   useEffect(() => {
     dispatch(getStoryInfo(pageIdx));
   }, [dispatch, pageIdx]);
- 
+
   const [form, onChange, alert, onToggleModal, visible, reset] = useInputs({
     nickname: "",
     phoneNumberFirst: "010",
     phoneNumberMid: "",
     phoneNumberLast: "",
-    email:"",
+    email: "",
     comment: "응원합니다",
     amount: 0,
-    checked:false
+    checked: false,
   });
   //  모달 보여주기 상태 visible
   //  댓글 추가 기능
   const onAddComment = () => {
     // 댓글 추가 api와 연동하여 댓글을 추가한다
-    const phoneNumber=form.phoneNumberFirst+'-'+form.phoneNumberMid+'-'+form.phoneNumberLast;
+    const phoneNumber =
+      form.phoneNumberFirst +
+      "-" +
+      form.phoneNumberMid +
+      "-" +
+      form.phoneNumberLast;
 
     dispatch(
       addComment(pageIdx, {
@@ -41,7 +46,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
         support_comment: form.comment,
         support_amount: form.amount,
         support_phone_number: phoneNumber,
-        support_email:form.email
+        support_email: form.email,
       })
     );
     reset();
@@ -53,7 +58,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
   };
 
   return (
-    <>
+    <div>
       <Participate
         form={form}
         onChange={onChange}
@@ -67,7 +72,7 @@ const ParticipateContainer = React.memo(({ history,match }) => {
         visible={visible}
         onAddComment={onAddComment}
       ></Modal>
-    </>
+    </div>
   );
 });
 
