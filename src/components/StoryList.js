@@ -13,6 +13,7 @@ const Container = styled.section`
   width: 100%;
   min-height: 200px;
   background: #fff;
+  padding: 0 20px 0 20px;
   padding-bottom: 50px;
   & > h1 {
     font-weight: 700;
@@ -26,7 +27,6 @@ const Container = styled.section`
   @media only screen and (min-width: ${PC_MIN}px) {
     display: flex;
     flex-direction: column;
-    // background: pink;
     & > h1 {
       margin: 20px 0;
     }
@@ -47,7 +47,7 @@ const Wrapper = styled.div`
 const Story = styled.div`
   display: flex;
   flex-direction: column;
-  width: 264px;
+  width: 230px;
   min-height: 193px;
   margin: 0 20px;
   @media only screen and (min-width: ${TABLET_MIN}px) and (max-width: ${TABLET_MAX}px) {
@@ -64,8 +64,8 @@ const Story = styled.div`
 `;
 
 const Img = styled.img`
-  width: 264px;
-  height: 193px;
+  width: 230px;
+  height: 168px;
   border-radius: 6px;
 `;
 

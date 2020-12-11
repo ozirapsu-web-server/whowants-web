@@ -28,18 +28,18 @@ const Btn = styled.button`
 const Percent = styled.div`
   display: flex;
   align-items: center;
-  font-weight: bold;
+
   margin-bottom: 7px;
+
   & p:nth-child(1) {
-    margin-right: 3px;
-  }
-  & p:nth-child(1) {
-    font-size: 24px;
     color: ${(props) => props.theme.color.blue};
+    font-size: 20.43px;
+    font-weight: 800;
+    margin-right: 3px;
   }
 
   & p:nth-child(2) {
-    font-weight: bold;
+    font-weight: 500;
     font-size: 14px;
   }
 `;
