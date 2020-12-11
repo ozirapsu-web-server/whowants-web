@@ -50,6 +50,9 @@ const Story = styled.div`
   width: 230px;
   min-height: 193px;
   margin: 0 10px;
+  &:hover {
+    cursor: pointer;
+  }
   @media only screen and (min-width: ${TABLET_MIN}px) and (max-width: ${TABLET_MAX}px) {
     margin: 0 30px;
   }

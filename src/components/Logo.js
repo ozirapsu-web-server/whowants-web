@@ -21,6 +21,9 @@ const Header = styled.header`
     width: auto;
     height: auto;
   }
+  & img:hover {
+    cursor: pointer;
+  }
   & img:nth-child(2) {
     height: auto;
   }

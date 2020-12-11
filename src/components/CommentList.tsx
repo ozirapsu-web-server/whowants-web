@@ -24,6 +24,9 @@ const SeeAllBtn = styled.button`
   height: 45px;
   color: ${(props) => props.theme.color.blue};
   border: none;
+  &:hover {
+    cursor: pointer;
+  }
   & > div {
     display: flex;
     align-items: center;
