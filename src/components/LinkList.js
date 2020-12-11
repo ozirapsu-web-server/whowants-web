@@ -15,8 +15,8 @@ const ListWrapper = styled.section`
     font-weight: 700;
   }
   @media only screen and (min-width: ${TABLET_MIN}px) {
-    width: 380px;
-    margin: 70px auto;
+    width: 400px;
+    margin: 100px auto;
   }
 `;
 
@@ -28,7 +28,8 @@ const Title = styled.h1`
 `;
 
 const Section = styled.div`
-  font-size: 28px;
+  font-size: 30px;
+  font-weight: 900;
 `;
 
 const LinkList = () => {

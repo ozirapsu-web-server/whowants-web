@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-weight: 800;
+  font-weight: 900;
   font-size: 30px;
   line-height: 40px;
   width: 208px;
