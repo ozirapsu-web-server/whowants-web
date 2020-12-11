@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import landingImage from "images/landingImage.png";
 import { Link } from "react-router-dom";
+import { TABLET_MIN } from "utils/media";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -16,6 +17,9 @@ const Wrapper = styled.div`
   & > div {
     font-size: 16px;
     font-weight: 300;
+  }
+  @media only screen and (min-width: ${TABLET_MIN}px) {
+    height: 515px;
   }
 `;
 

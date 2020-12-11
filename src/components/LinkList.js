@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
 import { useHistory, Link } from "react-router-dom";
+import { TABLET_MIN } from "utils/media";
 
 const ListWrapper = styled.section`
   padding: 20px;
@@ -12,6 +13,10 @@ const ListWrapper = styled.section`
     line-height: 1.5em;
     margin-bottom: 0.5em;
     font-weight: 700;
+  }
+  @media only screen and (min-width: ${TABLET_MIN}px) {
+    width: 380px;
+    margin: 70px auto;
   }
 `;
 

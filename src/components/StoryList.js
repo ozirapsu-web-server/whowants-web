@@ -7,6 +7,7 @@ import {
   Bar,
   ProgressBar,
 } from "components/sharedComponents";
+import { TABLET_MAX, TABLET_MIN } from "utils/media";
 
 const Container = styled.section`
   width: 100%;
@@ -19,6 +20,9 @@ const Container = styled.section`
     margin: 20px;
   }
   overflow: hidden;
+  @media only screen and (min-width: ${TABLET_MIN}px) and (max-width: ${TABLET_MAX}px) {
+    margin: 30px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -35,6 +39,9 @@ const Story = styled.div`
   width: 264px;
   min-height: 193px;
   margin: 0 20px;
+  @media only screen and (min-width: ${TABLET_MIN}px) and (max-width: ${TABLET_MAX}px) {
+    margin: 0 30px;
+  }
 `;
 
 const Img = styled.img`
