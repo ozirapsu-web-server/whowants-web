@@ -26,7 +26,7 @@ const Header = styled.header`
   }
   @media only screen and (min-width: ${PC_MIN}px) {
     border-bottom: 1px solid #c7c7c7;
-    grid-template-columns: 80px 1fr 10px;
+    grid-template-columns: 80px 1fr 80px;
   }
 `;
 //  로고 크기 줄이기 위한 사이즈

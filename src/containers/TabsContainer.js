@@ -12,6 +12,7 @@ const TabsContainer = ({ pageIdx }) => {
       organizer: state.story.organizer,
     })
   );
+  console.log(content);
 
   return (
     <>
