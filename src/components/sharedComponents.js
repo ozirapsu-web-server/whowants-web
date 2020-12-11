@@ -33,7 +33,7 @@ const Percent = styled.div`
 
   & p:nth-child(1) {
     color: ${(props) => props.theme.color.blue};
-    font-size: 20.43px;
+    font-size: 24px;
     font-weight: 800;
     margin-right: 3px;
   }
@@ -87,10 +87,11 @@ const Notice = styled.div`
   align-items: center;
   font-weight: 400;
   padding-left: 5px;
+  font-weight: 15px;
 `;
 
 const NumberOfSupporter = styled.div`
-  font-weight: 800;
+  font-weight: 900;
   font-size: 15px;
 `;
 

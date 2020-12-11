@@ -22,8 +22,8 @@ const OrganizerWrapper = styled.div`
 `;
 
 const Header = styled.div`
-  font-size: ${(props) => props.theme.size.mmd};
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 700;
 `;
 
 const Author = styled.div`
@@ -31,10 +31,13 @@ const Author = styled.div`
   display: flex;
   flex-direction: column;
   & > div:nth-child(1) {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 16px;
   }
   & > div:nth-child(2) {
-    line-height: 1.3em;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
   }
   & > * {
     margin: 3px 0;
@@ -63,7 +66,8 @@ const Organizer = ({ organizer }) => {
         </ProfileImg>
         <Author>
           <div>{organizer}</div>
-          <div>반갑습니다. 최해랑입니다.(서버연결안한 테스트 문구)</div>
+          {/* 안한 부분 체크 */}
+          <div>반갑습니다.</div>
         </Author>
         {/* <InquiryBtn disabled>문의하기</InquiryBtn> */}
       </OrganizerProfile>

@@ -31,9 +31,10 @@ const AmountWrapper = styled.div`
   justify-content: space-between;
   font-size: 13px;
   line-height: 20px;
+  font-weight: 500;
   color: ${(props) => props.theme.color.black};
   & > div:nth-child(2) {
-    font-weight: bold;
+    font-weight: 800;
   }
 `;
 
@@ -43,10 +44,10 @@ const Notice = styled.div`
   line-height: 19px;
   padding: 15px 9px;
   background: ${(props) => props.theme.color.grayB2};
-  font-size: 12px;
+  font-size: 13px;
   border-radius: 6px;
   color: ${(props) => props.theme.color.black};
-  font-weight: bold;
+  font-weight: 400;
 
   & p {
     width: 100%;

@@ -11,10 +11,10 @@ const Carousel = styled.div`
   overflow: hidden;
   position: relative;
   @media only screen and (max-width: ${MOBILE_MAX}px) {
-    height: 350px;
+    height: 295px;
   }
   @media only screen and (min-width: ${TABLET_MIN}px) {
-    height: 500px;
+    height: 375px;
   }
   @media only screen and (min-width: ${PC_MIN}px) {
     height: 343px;

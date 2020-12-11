@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import landingImage from "images/landingImage.png";
+import pc_landing from "images/pc_landing.svg";
 import { Link } from "react-router-dom";
 import { MOBILE_MAX, PC_MIN, TABLET_MIN } from "utils/media";
 
@@ -8,8 +9,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 346px;
   margin-top: 55px;
-  background: url(${landingImage});
-  background-size: cover;
+  background: url(${landingImage}) center center/ cover no-repeat;
   padding: 30px 20px;
   color: #fff;
   position: relative;
@@ -24,11 +24,12 @@ const Wrapper = styled.div`
   @media only screen and (min-width: ${PC_MIN}px) {
     height: 515px;
     padding: 50px 200px;
+    background: url(${pc_landing}) cover;
   }
 `;
 
 const Title = styled.h1`
-  font-weight: 800;
+  font-weight: 900;
   font-size: 30px;
   line-height: 40px;
   width: 208px;
