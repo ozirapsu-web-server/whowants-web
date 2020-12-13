@@ -89,6 +89,7 @@ const StoryList = ({ title, data, onClick }) => {
                 tags={item.tags}
                 padding={10}
                 width={69}
+                headerFont={18}
               ></StoryTitle>
 
               <ProgressWrapper>

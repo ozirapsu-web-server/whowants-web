@@ -11,8 +11,8 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.header`
-  font-size: 17px;
-  font-weight: 500;
+  font-size: ${(props) => (props.font ? props.font : 18)}px;
+  font-weight: 700;
   width: 100%;
   letter-spacing: -0.03em;
   line-height: 36px;
@@ -39,21 +39,23 @@ const Tag = styled.div`
 `;
 
 //  사연 요약 정보 컴포넌트
-const StoryTitle = React.memo(({ tags, title, padding, size, story }) => {
-  return (
-    <Wrapper padding={padding || 0} story={story}>
-      <TagWrapper>
-        {tags.map((item, idx) => (
-          <div key={`${title}-${item}`}>
-            <Tag width={42} size={size || 10}>
-              #{item}
-            </Tag>
-          </div>
-        ))}
-      </TagWrapper>
-      <Header>{title}</Header>
-    </Wrapper>
-  );
-});
+const StoryTitle = React.memo(
+  ({ tags, title, padding, size, story, headerFont }) => {
+    return (
+      <Wrapper padding={padding || 0} story={story}>
+        <TagWrapper>
+          {tags.map((item, idx) => (
+            <div key={`${title}-${item}`}>
+              <Tag width={42} size={size || 10}>
+                #{item}
+              </Tag>
+            </div>
+          ))}
+        </TagWrapper>
+        <Header font={headerFont}>{title}</Header>
+      </Wrapper>
+    );
+  }
+);
 
 export default StoryTitle;

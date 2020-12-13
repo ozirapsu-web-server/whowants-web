@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getStoryInfo } from "modules/story";
 
 //  사연 요약 정보 컴포넌트 -> 태그로 변경
-const StoryTitleContainer = React.memo(({pageIdx}) => {
-
+const StoryTitleContainer = React.memo(({ pageIdx }) => {
   const { title, tags } = useSelector((state) => ({
     title: state.story.title,
     tags: state.story.tags,
@@ -14,7 +13,14 @@ const StoryTitleContainer = React.memo(({pageIdx}) => {
   useEffect(() => {
     dispatch(getStoryInfo(pageIdx));
   }, [dispatch, pageIdx]);
-  return <StoryTitle title={title} tags={tags} story={20}></StoryTitle>;
+  return (
+    <StoryTitle
+      title={title}
+      tags={tags}
+      story={20}
+      headerFont={23}
+    ></StoryTitle>
+  );
 });
 
 export default StoryTitleContainer;
