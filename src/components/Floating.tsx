@@ -89,10 +89,13 @@ const Participate = styled.button`
 
 interface Props {
   pageIdx: number;
+  title: string;
+  img: string;
 }
 
 //  웹 모바일 화면 밑에 떠다니며 참여하기, 공유하기, 좋아요 기능이 있는 FLOATING 컴포넌트
-const Floating = ({ pageIdx }: Props) => {
+const Floating = ({ pageIdx, title, img }: Props) => {
+  // console.log(title, img);
   return (
     <>
       <FloatWrapper>
@@ -101,7 +104,7 @@ const Floating = ({ pageIdx }: Props) => {
             <UnLiked />
           </div>
         </ExtraWrapper> */}
-        <KakaoShareButton />
+        <KakaoShareButton title={title} img={img} />
         <Participate>
           <Link to={`/participate/${pageIdx}`}>사연 후원하기</Link>
         </Participate>
