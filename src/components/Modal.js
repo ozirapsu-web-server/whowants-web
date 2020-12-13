@@ -70,8 +70,8 @@ const Modal = React.memo(({ visible, onAddComment, amount }) => {
       <ModalOverlay>
         <ModalContent>
           <ModalHeader>응원 댓글이 달렸습니다.</ModalHeader>
-
-          {amount ? (
+          <div>응원해주셔서 감사합니다</div>
+          {/* {amount ? (
             <div>
               응원해주셔서 감사합니다. <br />
               기부 기능은 아직 오픈되지 않아 기부는
@@ -83,7 +83,7 @@ const Modal = React.memo(({ visible, onAddComment, amount }) => {
             </div>
           ) : (
             <div>응원해주셔서 감사합니다</div>
-          )}
+          )} */}
           <ModalBtn onClick={onAddComment}>확인</ModalBtn>
         </ModalContent>
       </ModalOverlay>
