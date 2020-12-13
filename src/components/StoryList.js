@@ -23,12 +23,15 @@ const Container = styled.section`
   overflow: hidden;
   @media only screen and (min-width: ${TABLET_MIN}px) and (max-width: ${TABLET_MAX}px) {
     margin: 30px;
+    margin-top: 30px;
   }
   @media only screen and (min-width: ${PC_MIN}px) {
     display: flex;
     flex-direction: column;
     & > h1 {
-      margin: 50px 0 30px 0;
+      margin: 20px 0;
+      margin-top: 50px;
+      margin-bottom: 30px;
     }
   }
 `;
