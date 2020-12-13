@@ -15,8 +15,8 @@ const Header = styled.header`
   font-weight: 700;
   width: 100%;
   letter-spacing: -0.03em;
-  line-height: 36px;
-  height: 80px;
+  line-height: 1.5em;
+  min-height: 70px;
 `;
 const TagWrapper = styled.div`
   display: flex;
