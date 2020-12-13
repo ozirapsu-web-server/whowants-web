@@ -61,7 +61,7 @@ const ProgressWrapper = styled.div`
 
 const Bar = styled.div`
   width: 100%;
-  height: 18px;
+  height: 15px;
   background: ${(props) => props.theme.color.gray};
   position: absolute;
   left: 0;
@@ -71,7 +71,7 @@ const Bar = styled.div`
 const ProgressBar = styled(Bar)`
   width: ${(props) => props.onprogress}%;
   background: ${(props) => props.theme.color.blue};
-  height: 18px;
+  height: 15px;
 `;
 
 const CommentWrapper = styled.section`
