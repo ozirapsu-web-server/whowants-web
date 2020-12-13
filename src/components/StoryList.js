@@ -28,7 +28,7 @@ const Container = styled.section`
     display: flex;
     flex-direction: column;
     & > h1 {
-      margin: 20px 0;
+      margin: 50px 0 30px 0;
     }
   }
 `;
