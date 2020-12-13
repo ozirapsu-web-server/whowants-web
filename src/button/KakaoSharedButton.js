@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
- 
-const KakaoShareButton = () => {
-  useEffect(() => {
-    createKakaoButton();
-  }, []);
-  const createKakaoButton = () => {
+import React, { useEffect, useCallback } from "react";
+
+const KakaoShareButton = ({ title, img }) => {
+  const createKakaoButton = useCallback(() => {
     // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근이 가능합니다
 
     if (window.Kakao) {
@@ -19,10 +16,9 @@ const KakaoShareButton = () => {
         container: "#kakao-link-btn",
         objectType: "feed",
         content: {
-          title: "후원츠의 사연을 공유합니다",
+          title: `${title}`,
           description: "#사연 #카카오 #공유",
-          imageUrl:
-            "https://images.unsplash.com/photo-1579208575657-c595a05383b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", // i.e. process.env.FETCH_URL + '/logo.png'
+          imageUrl: ` ${img}`, // i.e. process.env.FETCH_URL + '/logo.png'
           link: {
             mobileWebUrl: document.location.href,
             webUrl: document.location.href,
@@ -51,7 +47,12 @@ const KakaoShareButton = () => {
         ],
       });
     }
-  };
+  }, [img]);
+
+  useEffect(() => {
+    console.log(title, img);
+    createKakaoButton();
+  }, [createKakaoButton, img, title]);
   return <div id="kakao-link-btn">카카오톡으로 공유하기</div>;
 };
 export default KakaoShareButton;
