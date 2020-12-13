@@ -16,10 +16,10 @@ const FloatWrapper = styled.section`
     bottom: 0;
     width: 100vw;
   }
-
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   & * {
     height: 44px;
@@ -28,13 +28,20 @@ const FloatWrapper = styled.section`
     align-items: center;
     font-size: ${(props) => props.theme.size.mmd};
     font-weight: 700;
-    width: 49%;
-    margin: 0 5px;
+    width: 60%;
+    margin: 0;
     border: none;
     border-radius: 6px;
     &:hover {
       cursor: pointer;
     }
+  }
+  & div:nth-child(1) {
+    width: 48%;
+    margin-right: 5px;
+  }
+  & div:nth-child(2) {
+    margin-left: 5px;
   }
   & > div {
     border: 1px solid #4f4f4f;
