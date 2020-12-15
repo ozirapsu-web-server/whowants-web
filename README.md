@@ -24,7 +24,7 @@
 - ![title](https://img.shields.io/badge/-EC2-232F3E?&logo=GitHubActions&logoColor=white)
 - ![title](https://img.shields.io/badge/-S3-13FF3D?&logo=Amazon-S3&logoColor=white)
 
-- [![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge)]
+- ![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge)
 
 ### 프로젝트
 
