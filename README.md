@@ -9,6 +9,23 @@
 - [후원츠 웹 버전 배포 v3](http://whowants.ga/)
 - [후원츠 figma](https://www.figma.com/file/lxwvUaVbH8qkfl3TJvIWpE/%ED%9B%84%EC%9B%90%EC%B8%A0_%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84_%EC%9B%B9?node-id=695%3A107)
 
+# 🐶 사용 기술 스택
+
+**프론트엔드**
+
+- ![title](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)
+- ![title](https://img.shields.io/badge/-Vanila_javascript-77216F?&logo=javascript&logoColor=white)
+- ![title](https://img.shields.io/badge/-React-00CAFF?&logo=React&logoColor=white)
+- ![title](https://img.shields.io/badge/-HTML5-E8E8E8?&logo=html5&logoColor=white)
+- ![title](https://img.shields.io/badge/logo-test-blueviolet?logo=Redux&logoColor=white)
+
+**배포**
+
+- ![title](https://img.shields.io/badge/-EC2-232F3E?&logo=GitHubActions&logoColor=white)
+- ![title](https://img.shields.io/badge/-S3-13FF3D?&logo=Amazon-S3&logoColor=white)
+
+- ![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge)
+
 ### 프로젝트
 
 - SOPT 동아리에서 사이드 프로젝트를 진행하고 있는 후원츠 팀입니다.
