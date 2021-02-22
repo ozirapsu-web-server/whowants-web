@@ -65,6 +65,7 @@ const Button = styled.button`
 `;
 
 const ApplyStory = () => {
+  let a: string = 2;
   return (
     <Wrapper>
       <Title>
