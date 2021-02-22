@@ -7,8 +7,7 @@
 
 ---
 
-<img src="./src/images/demo.gif" width="250px" height="300px">
-<img src="./src/images/responsive-demo.gif" width="250px" height="300px"/>
+<img src="./src/images/demo.gif" width="300px" height="350px"><img src="./src/images/responsive-demo.gif" width="300px" height="350px"/>
 
 ## 배포 v3
 
