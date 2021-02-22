@@ -5,6 +5,11 @@
 - [🎪 프로젝트 구조](#프로젝트-구조)
 - [✨개발에 대한 이야기](#개발에-대한-이야기)
 
+---
+
+<img src="./src/images/demo.gif" width="250px" height="300px">
+<img src="./src/images/responsive-demo.gif" width="250px" height="300px"/>
+
 ## 배포 v3
 
 - github Action으로 CI/CD를 구축했습니다.
