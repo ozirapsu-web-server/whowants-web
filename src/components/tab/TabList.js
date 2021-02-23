@@ -5,9 +5,9 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import Tab1 from "components/Tab1";
-import Tab3 from "components/Tab3";
-import Tab2 from "components/Tab2";
+import Tab1 from "components/tab/Tab1";
+import Tab3 from "components/tab/Tab3";
+import Tab2 from "components/tab/Tab2";
 
 const useStyles = makeStyles({
   root: {

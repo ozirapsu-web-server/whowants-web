@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from "react";
-import CommentList from "components/CommentList";
+import CommentList from "components/comment/CommentList";
 import { useSelector, useDispatch } from "react-redux";
 
 import { getAllComments, toggleComments, toggleAdded } from "modules/comment";

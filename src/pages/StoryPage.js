@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import LogoContainer from "containers/LogoContainer";
-import SlideContainer from "containers/SlideContainer";
-import StoryTitleContainer from "containers/StoryTitleContainer";
-import DonationContainer from "containers/DonationContainer";
-import TabsContainer from "containers/TabsContainer";
-import FloatingContainer from "containers/FloatingContainer";
+import SlideContainer from "containers/storyPage/SlideContainer";
+import StoryTitleContainer from "containers/storyPage/StoryTitleContainer";
+import DonationContainer from "containers/storyPage/DonationContainer";
+import TabsContainer from "containers/storyPage/TabsContainer";
+import FloatingContainer from "containers/storyPage/FloatingContainer";
 import styled from "styled-components";
 import hamburgerBar from "images/hamburgerBar.png";
 import useMedia from "customHooks/useMedia";

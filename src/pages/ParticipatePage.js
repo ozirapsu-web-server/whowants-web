@@ -1,5 +1,5 @@
 import React from "react";
-import ParticipateContainer from "containers/ParticipateContainer";
+import ParticipateContainer from "containers/particiatePage/ParticipateContainer";
 import LogoContainer from "containers/LogoContainer";
 import hamburgerBar from "images/hamburgerBar.png";
 import styled from "styled-components";

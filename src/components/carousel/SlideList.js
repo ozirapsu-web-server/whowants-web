@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { ArrowIosForwardOutline } from "@styled-icons/evaicons-outline/ArrowIosForwardOutline";
-import DotList from "components/DotList";
-import Slide from "components/Slide";
+import DotList from "components/carousel/DotList";
+import Slide from "components/carousel/Slide";
 import { MOBILE_MAX, PC_MIN, TABLET_MIN } from "utils/media";
 const Carousel = styled.div`
   width: 100%;

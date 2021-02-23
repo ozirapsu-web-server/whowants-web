@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import StoryTitle from "components/StoryTitle";
+import StoryTitle from "components/story/StoryTitle";
 import {
   Percent,
   ProgressWrapper,

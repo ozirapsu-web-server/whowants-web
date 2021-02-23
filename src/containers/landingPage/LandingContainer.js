@@ -1,5 +1,5 @@
 import React from "react";
-import ApplyStory from "components/ApplyStory";
+import ApplyStory from "components/applyStory/ApplyStory";
 const LandingContainer = () => {
   return (
     <>

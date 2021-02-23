@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from "react";
-import StoryList from "components/StoryList";
+import StoryList from "components/story/StoryList";
 import { useSelector, useDispatch } from "react-redux";
 import { getRecentStory, getHotStory, setStoryIdx } from "modules/story";
 import { useHistory } from "react-router-dom";

@@ -1,5 +1,5 @@
 import React from "react";
-import Dot from "components/Dot";
+import Dot from "components/carousel/Dot";
 import styled from "styled-components";
 
 const DotWrapper = styled.div`

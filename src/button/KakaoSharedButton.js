@@ -18,7 +18,7 @@ const KakaoShareButton = ({ title, img }) => {
         content: {
           title: `${title}`,
           description: "#사연 #카카오 #공유",
-          imageUrl: ` ${img}`, // i.e. process.env.FETCH_URL + '/logo.png'
+          imageUrl: `${img}`, // i.e. process.env.FETCH_URL + '/logo.png'
           link: {
             mobileWebUrl: document.location.href,
             webUrl: document.location.href,
@@ -47,10 +47,10 @@ const KakaoShareButton = ({ title, img }) => {
         ],
       });
     }
-  }, [img]);
+  }, [img,title]);
 
   useEffect(() => {
-    console.log(title, img);
+    // console.log(title, img);
     createKakaoButton();
   }, [createKakaoButton, img, title]);
   return <div id="kakao-link-btn">카카오톡으로 공유하기</div>;

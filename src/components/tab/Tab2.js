@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import profileLogo from "images/profileLogo.png";
-import { ProfileImg } from "./sharedComponents";
+import { ProfileImg } from "../sharedComponents";
 import { ChevronRight } from "@styled-icons/boxicons-regular/ChevronRight";
 import { CommentAlt } from "@styled-icons/fa-solid/CommentAlt";
 

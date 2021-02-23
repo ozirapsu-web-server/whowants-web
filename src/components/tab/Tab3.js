@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import Comment from "components/Comment";
+import Comment from "components/comment/Comment";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import {
