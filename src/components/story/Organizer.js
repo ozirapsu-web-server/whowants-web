@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import profileLogo from "images/profileLogo.png";
 import { PC_MIN, TABLET_MAX } from "utils/media";
-import { OrganizerProfile, ProfileImg } from "components/sharedComponents/sharedComponents";
+import { OrganizerProfile, ProfileImg } from "components/sharedComponents";
 
 const OrganizerWrapper = styled.div`
   min-height: 100px;

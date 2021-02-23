@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import LogoContainer from "containers/LogoContainer";
-import LandingContainer from "containers/LandingContainer";
-import NotableContainer from "containers/NotableContainer";
+import LandingContainer from "containers/landingPage/LandingContainer";
+import NotableContainer from "containers/landingPage/NotableContainer";
 import hamburgerBar from "images/hamburgerBar.png";
 const PageWrapper = styled.section`
   width: 100%;

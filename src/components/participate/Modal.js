@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Btn } from "components/sharedComponents/sharedComponents";
+import { Btn } from "components/sharedComponents";
 import { TABLET_MIN } from "utils/media";
 
 const ModalWrapper = styled.section`

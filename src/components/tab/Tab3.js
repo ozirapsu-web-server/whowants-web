@@ -7,7 +7,7 @@ import {
   Notice,
   NumberOfSupporter,
   Btn,
-} from "components/sharedComponents/sharedComponents";
+} from "components/sharedComponents";
 
 const ParticipateBtn = styled(Btn)`
   height: 44px;

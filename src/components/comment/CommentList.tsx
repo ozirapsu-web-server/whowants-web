@@ -8,7 +8,7 @@ import {
   CommentWrapper,
   Notice,
   NumberOfSupporter,
-} from "components/sharedComponents/sharedComponents";
+} from "components/sharedComponents";
 
 const DownArrow = styled(ArrowIosDownwardOutline)`
   width: ${(props) => props.theme.size.mmd};

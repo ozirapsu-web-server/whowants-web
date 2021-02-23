@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import OrganizerContainer from "containers/OrganizerContainer";
-import CommentContainer from "containers/CommentContainer";
+import OrganizerContainer from "containers/storyPage/OrganizerContainer";
+import CommentContainer from "containers/storyPage/CommentContainer";
 
 const Tab1Wrapper = styled.div`
   width: 100%;

@@ -6,7 +6,7 @@ import {
   ProgressWrapper,
   Bar,
   ProgressBar,
-} from "components/sharedComponents/sharedComponents";
+} from "components/sharedComponents";
 import { PC_MIN } from "utils/media";
 
 const DonationWrapper = styled.section`
