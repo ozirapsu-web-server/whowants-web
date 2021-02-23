@@ -8,7 +8,7 @@ import {
   setDirection,
   setActive,
 } from "modules/slide";
-import SlideList from "components/SlideList";
+import SlideList from "components/carousel/SlideList";
 // 이미지 슬라이드 컨테이너 컴포넌트
 const SlideContainer = React.memo(({ pageIdx }) => {
   const { imgs, sliderStyle, carouselStyle, direction, active } = useSelector(

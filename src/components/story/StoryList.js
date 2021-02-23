@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import StoryTitle from "components/StoryTitle";
+import StoryTitle from "components/story/StoryTitle";
 import {
   Percent,
   ProgressWrapper,
   Bar,
   ProgressBar,
-} from "components/sharedComponents";
+} from "components/sharedComponents/sharedComponents";
 import { PC_MIN, TABLET_MAX, TABLET_MIN } from "utils/media";
 
 const Container = styled.section`

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
-import { StyledClose, Btn } from "components/sharedComponents";
+import { StyledClose, Btn } from "components/sharedComponents/sharedComponents";
 import { numberWithCommas } from "utils/util";
 import { TABLET_MIN } from "utils/media";
 

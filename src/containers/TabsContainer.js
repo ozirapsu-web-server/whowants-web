@@ -1,5 +1,5 @@
 import React from "react";
-import TabList from "components/TabList";
+import TabList from "components/tab/TabList";
 import { useSelector } from "react-redux";
 
 //  탭 정보 컴포넌트

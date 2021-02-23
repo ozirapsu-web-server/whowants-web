@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import Comment from "components/Comment";
+import Comment from "components/comment/Comment";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import {
@@ -7,7 +7,7 @@ import {
   Notice,
   NumberOfSupporter,
   Btn,
-} from "components/sharedComponents";
+} from "components/sharedComponents/sharedComponents";
 
 const ParticipateBtn = styled(Btn)`
   height: 44px;

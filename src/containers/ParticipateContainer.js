@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Participate from "components/Participate";
-import Modal from "components/Modal";
+import Participate from "components/participate/Participate";
+import Modal from "components/participate/Modal";
 import useInputs from "customHooks/useInputs";
 import { useSelector, useDispatch } from "react-redux";
 import { addComment, getAllComments } from "modules/comment";

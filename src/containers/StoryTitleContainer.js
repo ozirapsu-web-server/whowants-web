@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import StoryTitle from "components/StoryTitle";
+import StoryTitle from "components/story/StoryTitle";
 import { useSelector, useDispatch } from "react-redux";
 import { getStoryInfo } from "modules/story";
 
