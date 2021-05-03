@@ -19,7 +19,7 @@
 
 
 
-~~[후원츠 웹 버전 배포 v3](http://whowants.ga/)~~ 현재 서버 닫았습니다.
+~~[후원츠 웹 버전 배포 v3](http://whowants.ga/)~~ 과금으로 인해 서버를 꺼놓은 상태입니다.
 - [후원츠 figma](https://www.figma.com/file/lxwvUaVbH8qkfl3TJvIWpE/%ED%9B%84%EC%9B%90%EC%B8%A0_%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84_%EC%9B%B9?node-id=695%3A107)
 
 # 사용 기술 스택
